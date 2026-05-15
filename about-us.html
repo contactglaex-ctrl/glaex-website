@@ -1,747 +1,470 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>About Us — GLAEX | Curated Women's Fashion Boutique</title>
-<meta name="description" content="GLAEX is a U.S.-based women's fashion boutique curating elevated essentials, vacation sets, and statement pieces. Weekly drops. Real fit notes. Free U.S. shipping over $75." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  :root {
-    --bg: #faf7f2;
-    --bg-alt: #f1ebe1;
-    --ink: #1a1a1a;
-    --muted: #6b6358;
-    --accent: #b08968;
-    --accent-dark: #7d5a3e;
-    --line: #e6dfd2;
-    --white: #ffffff;
-  }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-    line-height: 1.6;
+  .glaex-about * { margin: 0; padding: 0; box-sizing: border-box; }
+  .glaex-about {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    color: #1a1a1a;
+    line-height: 1.65;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
+    background: #faf7f2;
   }
-  h1, h2, h3, .serif {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+  .glaex-about h1, .glaex-about h2, .glaex-about h3, .glaex-about .serif {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
     font-weight: 500;
     letter-spacing: -0.01em;
   }
-  .container {
+  .glaex-about .container {
     max-width: 1180px;
     margin: 0 auto;
     padding: 0 24px;
   }
-  .nav {
-    border-bottom: 1px solid var(--line);
-    padding: 18px 0;
-    background: var(--white);
-  }
-  .nav-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    color: var(--ink);
-    text-decoration: none;
-  }
-  .nav-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-  }
-  .nav-links a {
-    color: var(--ink);
-    text-decoration: none;
-    font-size: 14px;
-    letter-spacing: 0.05em;
+  .glaex-about section { padding: 100px 0; }
+  .glaex-about .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.36em;
     text-transform: uppercase;
-    transition: color 0.2s;
+    color: #b08968;
+    margin-bottom: 18px;
+    display: inline-block;
+    font-weight: 500;
   }
-  .nav-links a:hover { color: var(--accent); }
+  .glaex-about .h2 {
+    font-size: clamp(34px, 4.5vw, 54px);
+    line-height: 1.12;
+    margin-bottom: 28px;
+    color: #1a1a1a;
+  }
+  .glaex-about .h2 em { font-style: italic; color: #7d5a3e; }
+  .glaex-about p { font-size: 16px; color: #4a4338; line-height: 1.85; margin-bottom: 18px; }
 
   /* HERO */
-  .hero {
-    padding: 100px 0 80px;
+  .glaex-hero {
     text-align: center;
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
+    padding: 140px 0 110px !important;
+    background: linear-gradient(180deg, #faf7f2 0%, #f1ebe1 100%);
+    border-bottom: 1px solid #e6dfd2;
   }
-  .hero-eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 24px;
+  .glaex-hero h1 {
+    font-size: clamp(48px, 7vw, 92px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+    color: #1a1a1a;
   }
-  .hero h1 {
-    font-size: clamp(42px, 6vw, 76px);
-    line-height: 1.05;
-    margin-bottom: 28px;
-    color: var(--ink);
-  }
-  .hero h1 em {
-    font-style: italic;
-    color: var(--accent-dark);
-  }
-  .hero-sub {
-    font-size: 18px;
-    max-width: 620px;
+  .glaex-hero h1 em { font-style: italic; color: #7d5a3e; }
+  .glaex-hero .hero-sub {
+    font-size: 19px;
+    max-width: 640px;
     margin: 0 auto;
-    color: var(--muted);
+    color: #6b6358;
     font-weight: 300;
+    line-height: 1.7;
   }
-
-  /* SECTIONS */
-  section { padding: 90px 0; }
-  .section-eyebrow {
-    font-size: 11px;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 16px;
-    display: block;
-  }
-  .section-title {
-    font-size: clamp(32px, 4vw, 48px);
-    line-height: 1.15;
-    margin-bottom: 24px;
+  .glaex-hero .hero-divider {
+    width: 60px;
+    height: 1px;
+    background: #b08968;
+    margin: 36px auto 0;
   }
 
   /* STORY */
-  .story {
+  .glaex-story-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 90px;
     align-items: center;
   }
-  .story-img {
+  .glaex-story-img {
     aspect-ratio: 4/5;
-    background: linear-gradient(135deg, #d4c4a8 0%, #b08968 100%);
-    border-radius: 4px;
-    position: relative;
-    overflow: hidden;
+    background:
+      linear-gradient(135deg, rgba(176,137,104,0.85) 0%, rgba(125,90,62,0.95) 100%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 125'%3E%3Crect fill='%23b08968' width='100' height='125'/%3E%3Ccircle cx='50' cy='40' r='14' fill='%23d4c4a8' opacity='0.5'/%3E%3Cpath d='M28 78 Q50 58 72 78 L72 125 L28 125 Z' fill='%23d4c4a8' opacity='0.45'/%3E%3C/svg%3E") center/cover;
+    border-radius: 2px;
   }
-  .story-img::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 125'%3E%3Crect fill='%23b08968' width='100' height='125'/%3E%3Ccircle cx='50' cy='40' r='14' fill='%23d4c4a8' opacity='0.6'/%3E%3Cpath d='M30 80 Q50 60 70 80 L70 125 L30 125 Z' fill='%23d4c4a8' opacity='0.5'/%3E%3C/svg%3E") center/cover;
-    opacity: 0.5;
-  }
-  .story-content p {
-    margin-bottom: 20px;
-    color: var(--muted);
-    font-size: 16px;
-    line-height: 1.8;
-  }
-  .story-content p:first-of-type::first-letter {
+  .glaex-story p:first-of-type::first-letter {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 64px;
+    font-size: 72px;
     font-weight: 600;
     float: left;
-    line-height: 0.9;
-    margin: 6px 12px 0 0;
-    color: var(--accent-dark);
-  }
-
-  /* VALUES */
-  .values { background: var(--bg-alt); }
-  .values-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    margin-top: 60px;
-  }
-  .value-card {
-    text-align: center;
-    padding: 20px;
-  }
-  .value-icon {
-    width: 56px;
-    height: 56px;
-    margin: 0 auto 24px;
-    border: 1px solid var(--accent);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent-dark);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
-    font-weight: 600;
-  }
-  .value-card h3 {
-    font-size: 22px;
-    margin-bottom: 12px;
-  }
-  .value-card p {
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  /* PROMISE */
-  .promise-wrap {
-    text-align: center;
-    max-width: 880px;
-    margin: 0 auto;
-  }
-  .promise-list {
-    list-style: none;
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-    text-align: left;
-  }
-  .promise-list li {
-    display: flex;
-    gap: 18px;
-    align-items: flex-start;
-    padding: 24px;
-    background: var(--white);
-    border: 1px solid var(--line);
-    border-radius: 4px;
-  }
-  .promise-list .check {
-    flex-shrink: 0;
-    width: 28px;
-    height: 28px;
-    background: var(--accent);
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 600;
-  }
-  .promise-list strong {
-    display: block;
-    margin-bottom: 4px;
-    color: var(--ink);
-  }
-  .promise-list span {
-    color: var(--muted);
-    font-size: 14px;
-  }
-
-  /* FOUNDER */
-  .founder {
-    background: var(--ink);
-    color: var(--bg);
-  }
-  .founder .container {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 80px;
-    align-items: center;
-  }
-  .founder-img {
-    aspect-ratio: 1/1;
-    background: linear-gradient(135deg, #b08968 0%, #7d5a3e 100%);
-    border-radius: 4px;
-    position: relative;
-    overflow: hidden;
-  }
-  .founder-img::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%237d5a3e' width='100' height='100'/%3E%3Ccircle cx='50' cy='38' r='16' fill='%23d4c4a8' opacity='0.7'/%3E%3Cpath d='M28 75 Q50 55 72 75 L72 100 L28 100 Z' fill='%23d4c4a8' opacity='0.6'/%3E%3C/svg%3E") center/cover;
-    opacity: 0.6;
-  }
-  .founder .section-eyebrow { color: var(--accent); }
-  .founder h2 { color: var(--bg); }
-  .founder-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    font-style: italic;
-    line-height: 1.4;
-    margin: 24px 0 32px;
-    color: var(--bg-alt);
-  }
-  .founder p {
-    color: rgba(250, 247, 242, 0.75);
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 16px;
-  }
-  .founder-sign {
-    margin-top: 32px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
-    font-style: italic;
-    color: var(--accent);
+    line-height: 0.85;
+    margin: 8px 14px 0 0;
+    color: #7d5a3e;
   }
 
   /* STATS */
-  .stats {
-    background: var(--bg-alt);
-    padding: 70px 0;
-  }
-  .stats-grid {
+  .glaex-stats { background: #1a1a1a; color: #faf7f2; padding: 80px 0 !important; }
+  .glaex-stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
     text-align: center;
   }
-  .stat-num {
+  .glaex-stat-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 56px;
-    font-weight: 600;
-    color: var(--accent-dark);
+    font-size: 58px;
+    font-weight: 500;
+    color: #b08968;
     line-height: 1;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
-  .stat-label {
-    font-size: 12px;
+  .glaex-stat-label {
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--muted);
+    letter-spacing: 0.28em;
+    color: rgba(250,247,242,0.55);
   }
 
-  /* PROCESS */
-  .process-steps {
+  /* VALUES */
+  .glaex-values { background: #f1ebe1; text-align: center; }
+  .glaex-values-intro { max-width: 720px; margin: 0 auto 60px; }
+  .glaex-values-intro p { color: #6b6358; font-size: 17px; }
+  .glaex-values-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    margin-top: 60px;
-    counter-reset: step;
+    gap: 36px;
   }
-  .process-step {
-    position: relative;
-    padding-top: 32px;
+  .glaex-value {
+    text-align: left;
+    padding: 36px 28px;
+    background: #faf7f2;
+    border: 1px solid #e6dfd2;
+    border-radius: 2px;
+    transition: transform 0.3s ease;
   }
-  .process-step::before {
-    counter-increment: step;
-    content: "0" counter(step);
-    position: absolute;
-    top: 0;
-    left: 0;
+  .glaex-value-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 14px;
-    color: var(--accent);
-    letter-spacing: 0.15em;
-  }
-  .process-step h3 {
+    font-style: italic;
     font-size: 22px;
-    margin-bottom: 12px;
-    border-top: 1px solid var(--line);
-    padding-top: 24px;
+    color: #b08968;
+    margin-bottom: 18px;
+    display: block;
   }
-  .process-step p {
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.7;
-  }
+  .glaex-value h3 { font-size: 22px; margin-bottom: 12px; color: #1a1a1a; }
+  .glaex-value p { color: #6b6358; font-size: 14px; line-height: 1.75; margin: 0; }
 
-  /* PRESS */
-  .press {
-    background: var(--white);
+  /* PHILOSOPHY */
+  .glaex-philosophy {
+    background: #1a1a1a;
+    color: #faf7f2;
     text-align: center;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
   }
-  .press-logos {
+  .glaex-philosophy .container { max-width: 820px; }
+  .glaex-philosophy .eyebrow { color: #b08968; }
+  .glaex-philosophy h2 { color: #faf7f2; }
+  .glaex-philosophy .pull-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-style: italic;
+    line-height: 1.4;
+    margin: 40px 0;
+    color: #faf7f2;
+  }
+  .glaex-philosophy .pull-quote::before,
+  .glaex-philosophy .pull-quote::after { color: #b08968; font-size: 1.2em; }
+  .glaex-philosophy p { color: rgba(250,247,242,0.78); font-size: 17px; }
+
+  /* WHY SHOP */
+  .glaex-why { background: #faf7f2; }
+  .glaex-why-intro { text-align: center; max-width: 720px; margin: 0 auto 70px; }
+  .glaex-why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .glaex-why-card {
     display: flex;
-    justify-content: space-around;
+    gap: 22px;
+    align-items: flex-start;
+    padding: 32px;
+    background: #fff;
+    border: 1px solid #e6dfd2;
+    border-radius: 2px;
+  }
+  .glaex-check {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    background: #1a1a1a;
+    color: #faf7f2;
+    border-radius: 50%;
+    display: flex;
     align-items: center;
-    margin-top: 50px;
-    flex-wrap: wrap;
-    gap: 40px;
-  }
-  .press-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--muted);
-    opacity: 0.6;
-    letter-spacing: 0.05em;
-    transition: opacity 0.3s;
-  }
-  .press-logo:hover { opacity: 1; }
-  .press-logo.italic { font-style: italic; }
-  .press-logo.condensed { letter-spacing: 0.25em; font-size: 16px; }
-
-  /* CTA */
-  .cta {
-    background: var(--bg);
-    text-align: center;
-  }
-  .cta-box {
-    background: var(--white);
-    padding: 80px 60px;
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    max-width: 780px;
-    margin: 0 auto;
-  }
-  .cta h2 {
-    font-size: clamp(32px, 4vw, 44px);
-    margin-bottom: 16px;
-  }
-  .cta p {
-    color: var(--muted);
-    margin-bottom: 32px;
-    font-size: 16px;
-  }
-  .cta-form {
-    display: flex;
-    gap: 0;
-    max-width: 480px;
-    margin: 0 auto;
-  }
-  .cta-form input {
-    flex: 1;
-    padding: 16px 20px;
-    border: 1px solid var(--line);
-    background: var(--bg);
-    font-family: inherit;
+    justify-content: center;
     font-size: 14px;
-    border-right: none;
-    outline: none;
   }
-  .cta-form button {
-    padding: 16px 32px;
-    background: var(--ink);
-    color: var(--white);
-    border: none;
-    font-family: inherit;
-    font-size: 13px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  .cta-form button:hover { background: var(--accent-dark); }
-  .cta-fine {
-    margin-top: 16px;
-    font-size: 12px;
-    color: var(--muted);
-  }
+  .glaex-why-card h3 { font-size: 20px; margin-bottom: 6px; color: #1a1a1a; }
+  .glaex-why-card p { color: #6b6358; font-size: 14px; line-height: 1.7; margin: 0; }
 
-  /* FOOTER */
-  .footer {
-    background: var(--ink);
-    color: var(--bg);
-    padding: 60px 0 30px;
+  /* COMMUNITY */
+  .glaex-community {
+    background: #f1ebe1;
     text-align: center;
   }
-  .footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    margin-bottom: 16px;
-  }
-  .footer p {
-    color: rgba(250, 247, 242, 0.55);
-    font-size: 13px;
-    margin-bottom: 8px;
-  }
-  .footer-social {
-    margin: 24px 0;
+  .glaex-community .container { max-width: 880px; }
+  .glaex-community-tags {
     display: flex;
     justify-content: center;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 36px 0;
   }
-  .footer-social a {
-    color: var(--bg);
-    text-decoration: none;
+  .glaex-tag {
+    background: transparent;
+    border: 1px solid #b08968;
+    color: #7d5a3e;
+    padding: 10px 22px;
+    border-radius: 999px;
     font-size: 13px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    opacity: 0.7;
-    transition: opacity 0.2s;
+    letter-spacing: 0.05em;
   }
-  .footer-social a:hover { opacity: 1; color: var(--accent); }
-  .footer-bottom {
-    border-top: 1px solid rgba(250, 247, 242, 0.1);
-    padding-top: 24px;
-    margin-top: 40px;
+  .glaex-community-handle {
+    margin-top: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-style: italic;
+    color: #1a1a1a;
+  }
+  .glaex-community-handle a { color: #7d5a3e; text-decoration: none; }
+
+  /* CTA */
+  .glaex-cta {
+    background: #1a1a1a;
+    color: #faf7f2;
+    text-align: center;
+  }
+  .glaex-cta h2 { color: #faf7f2; }
+  .glaex-cta p { color: rgba(250,247,242,0.7); font-size: 17px; max-width: 580px; margin: 0 auto 36px; }
+  .glaex-cta-btn {
+    display: inline-block;
+    padding: 18px 48px;
+    background: #faf7f2;
+    color: #1a1a1a;
+    text-decoration: none;
     font-size: 12px;
-    color: rgba(250, 247, 242, 0.4);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: background 0.25s ease, color 0.25s ease;
+    border: 1px solid #faf7f2;
   }
+  .glaex-cta-btn:hover { background: transparent; color: #faf7f2; }
+  .glaex-cta-btn.secondary {
+    background: transparent;
+    color: #faf7f2;
+    margin-left: 12px;
+  }
+  .glaex-cta-btn.secondary:hover { background: #faf7f2; color: #1a1a1a; }
 
   /* RESPONSIVE */
   @media (max-width: 880px) {
-    .nav-links { display: none; }
-    .story, .founder .container { grid-template-columns: 1fr; gap: 40px; }
-    .values-grid { grid-template-columns: repeat(2, 1fr); }
-    .promise-list { grid-template-columns: 1fr; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
-    .process-steps { grid-template-columns: 1fr 1fr; }
-    .cta-form { flex-direction: column; }
-    .cta-form input { border-right: 1px solid var(--line); }
-    .cta-box { padding: 50px 28px; }
-    section { padding: 60px 0; }
-    .hero { padding: 70px 0 50px; }
+    .glaex-about section { padding: 70px 0; }
+    .glaex-story-grid { grid-template-columns: 1fr; gap: 50px; }
+    .glaex-values-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .glaex-why-grid { grid-template-columns: 1fr; gap: 20px; }
+    .glaex-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+    .glaex-hero { padding: 100px 0 80px !important; }
+    .glaex-cta-btn.secondary { margin-left: 0; margin-top: 12px; }
   }
   @media (max-width: 520px) {
-    .values-grid, .process-steps { grid-template-columns: 1fr; }
-    .press-logos { gap: 24px; }
+    .glaex-values-grid { grid-template-columns: 1fr; }
+    .glaex-why-card { padding: 24px; }
+    .glaex-value { padding: 28px 22px; }
   }
 </style>
-</head>
-<body>
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="container nav-inner">
-    <a href="/" class="logo">GLAEX</a>
-    <ul class="nav-links">
-      <li><a href="/collections/all">Shop</a></li>
-      <li><a href="/collections/new-arrivals">New Arrivals</a></li>
-      <li><a href="/pages/about-us">About</a></li>
-      <li><a href="/pages/contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+<div class="glaex-about">
 
-<!-- HERO -->
-<header class="hero">
-  <div class="container">
-    <div class="hero-eyebrow">Our Story</div>
-    <h1>Fashion, made <em>intentional</em>.</h1>
-    <p class="hero-sub">A small U.S. women's boutique curating elevated essentials, vacation-ready sets, and statement pieces — for the woman who shops with purpose.</p>
-  </div>
-</header>
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="glaex-hero">
+    <div class="container">
+      <span class="eyebrow">Our Story</span>
+      <h1>Made for the woman<br>who shows up <em>as herself</em>.</h1>
+      <p class="hero-sub">GLAEX is a modern American boutique designing for the woman who treats getting dressed as an act of self-expression — never an obligation.</p>
+      <div class="hero-divider"></div>
+    </div>
+  </section>
 
-<!-- STORY -->
-<section>
-  <div class="container">
-    <div class="story">
-      <div class="story-img" role="img" aria-label="GLAEX founding image"></div>
-      <div class="story-content">
-        <span class="section-eyebrow">How it started</span>
-        <h2 class="section-title">Built for the women we couldn't shop for.</h2>
-        <p>GLAEX was born from a simple frustration. After years of scrolling through endless fast-fashion catalogs and overpriced contemporary brands, we kept asking the same question: where is the boutique made for real women, with real lives, who want pieces that feel considered — without the designer markup?</p>
-        <p>So in 2024, we built it. We started GLAEX as a small, women-led team obsessed with one idea: every piece in our shop should be hand-selected, fit-tested, and worth keeping. No bloat. No clutter. Just clothing that earns its place in your wardrobe.</p>
-        <p>Today, we curate weekly drops from our base in the United States — partnering with trusted U.S.-based fulfillment to bring our customers fast shipping, honest fit, and the kind of quiet confidence that only comes from clothes that fit your life.</p>
+  <!-- ═══════════════ BRAND STORY ═══════════════ -->
+  <section>
+    <div class="container">
+      <div class="glaex-story-grid">
+        <div class="glaex-story-img" role="img" aria-label="GLAEX brand image"></div>
+        <div class="glaex-story">
+          <span class="eyebrow">The Beginning</span>
+          <h2 class="h2">We started with a <em>question</em>.</h2>
+          <p>Why does shopping for the woman we've become feel so impossible? Fast fashion that falls apart by the third wear. Contemporary labels priced like investments. A market full of pieces designed for someone else's life — and nothing made for the in-between.</p>
+          <p>GLAEX exists in that in-between. We launched with a single belief: that elevated design and intentional craftsmanship shouldn't be reserved for the few. That a woman should be able to walk into her closet and find pieces that move with her — through Monday mornings, Friday nights, last-minute weddings, slow Sunday brunches, and everything she doesn't know she's about to live through.</p>
+          <p>Today, we curate weekly drops from our base in the United States. Every fabric is touched. Every fit is tested. Every piece earns its place. Because the only thing we believe in more than great clothes is the woman wearing them.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- STATS -->
-<section class="stats">
-  <div class="container">
-    <div class="stats-grid">
-      <div>
-        <div class="stat-num">2024</div>
-        <div class="stat-label">Founded</div>
-      </div>
-      <div>
-        <div class="stat-num">35+</div>
-        <div class="stat-label">Weekly Drops</div>
-      </div>
-      <div>
-        <div class="stat-num">4.8★</div>
-        <div class="stat-label">Customer Rating</div>
-      </div>
-      <div>
-        <div class="stat-num">2-5d</div>
-        <div class="stat-label">U.S. Shipping</div>
+  <!-- ═══════════════ STATS ═══════════════ -->
+  <section class="glaex-stats">
+    <div class="container">
+      <div class="glaex-stats-grid">
+        <div>
+          <div class="glaex-stat-num">35+</div>
+          <div class="glaex-stat-label">Weekly Drops</div>
+        </div>
+        <div>
+          <div class="glaex-stat-num">50</div>
+          <div class="glaex-stat-label">U.S. States Served</div>
+        </div>
+        <div>
+          <div class="glaex-stat-num">4.8★</div>
+          <div class="glaex-stat-label">Customer Rating</div>
+        </div>
+        <div>
+          <div class="glaex-stat-num">2-5d</div>
+          <div class="glaex-stat-label">U.S. Delivery</div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- VALUES -->
-<section class="values">
-  <div class="container" style="text-align:center; max-width:780px;">
-    <span class="section-eyebrow">What we believe</span>
-    <h2 class="section-title">Less, but better.</h2>
-    <p style="color: var(--muted); font-size:17px;">Four principles that shape every piece we add to GLAEX, every drop we launch, every email we send.</p>
-
-    <div class="values-grid" style="text-align:center;">
-      <div class="value-card">
-        <div class="value-icon">I</div>
-        <h3>Intentional Curation</h3>
-        <p>Thirty pieces you love beats three thousand you scroll past. Every item is chosen by hand.</p>
+  <!-- ═══════════════ BRAND VALUES ═══════════════ -->
+  <section class="glaex-values">
+    <div class="container">
+      <div class="glaex-values-intro">
+        <span class="eyebrow">What we believe</span>
+        <h2 class="h2">Style is a <em>language</em>. We translate it.</h2>
+        <p>Six principles guide every piece we add, every drop we launch, every decision we make as a brand.</p>
       </div>
-      <div class="value-card">
-        <div class="value-icon">II</div>
-        <h3>Honest Fit</h3>
-        <p>We photograph on real bodies, share fit notes, and invest in sizing that respects every shape.</p>
-      </div>
-      <div class="value-card">
-        <div class="value-icon">III</div>
-        <h3>Fast U.S. Fulfillment</h3>
-        <p>Orders ship from our U.S. partners within 1-2 business days. No long waits. No surprises.</p>
-      </div>
-      <div class="value-card">
-        <div class="value-icon">IV</div>
-        <h3>Real Human Care</h3>
-        <p>No bots, no scripts. When you reach out, a real woman from our team replies — usually within hours.</p>
+      <div class="glaex-values-grid">
+        <div class="glaex-value">
+          <span class="glaex-value-num">i.</span>
+          <h3>Confidence</h3>
+          <p>Clothes shouldn't ask permission. We design with quiet certainty — pieces that let her walk into any room like it was built for her.</p>
+        </div>
+        <div class="glaex-value">
+          <span class="glaex-value-num">ii.</span>
+          <h3>Individuality</h3>
+          <p>Trends inform. They don't decide. Every piece in our edit is chosen because it adds something — never because it follows something.</p>
+        </div>
+        <div class="glaex-value">
+          <span class="glaex-value-num">iii.</span>
+          <h3>Effortless Fashion</h3>
+          <p>The best outfits look unstudied. We design for the woman who wants to look intentional without thinking about it.</p>
+        </div>
+        <div class="glaex-value">
+          <span class="glaex-value-num">iv.</span>
+          <h3>Elevated Accessibility</h3>
+          <p>Premium fabrics. Considered design. Pricing that makes sense. Luxury feeling shouldn't require a luxury credit limit.</p>
+        </div>
+        <div class="glaex-value">
+          <span class="glaex-value-num">v.</span>
+          <h3>Inclusivity</h3>
+          <p>Real fit on real bodies. Sizes that respect every shape. Photography that shows clothes the way they'll actually live on her.</p>
+        </div>
+        <div class="glaex-value">
+          <span class="glaex-value-num">vi.</span>
+          <h3>Community</h3>
+          <p>We're not a brand talking at her — we're a community building with her. From DMs to drops, our customers shape what we become.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOUNDER -->
-<section class="founder">
-  <div class="container">
-    <div class="founder-img" role="img" aria-label="Founder portrait"></div>
-    <div>
-      <span class="section-eyebrow">From the Founder</span>
-      <h2 class="section-title">"I started GLAEX because I wanted somewhere to shop, and it didn't exist."</h2>
-      <p>I'm a believer that the clothes we wear shape how we move through the world. A perfect linen set on a Sunday morning. The dress that makes you feel like yourself again. The blazer that quietly commands the room.</p>
-      <p>For too long, finding those pieces meant choosing between fast fashion that fell apart in three washes — or designer labels that felt out of reach. GLAEX exists for the in-between. The space where craftsmanship, considered design, and accessibility live together.</p>
-      <p>Thank you for being here. It means everything to us.</p>
-      <div class="founder-sign">— The GLAEX Team</div>
+  <!-- ═══════════════ FASHION PHILOSOPHY ═══════════════ -->
+  <section class="glaex-philosophy">
+    <div class="container">
+      <span class="eyebrow">Our Philosophy</span>
+      <h2 class="h2">We don't sell <em>clothes</em>.<br>We design <em>moments</em>.</h2>
+      <p class="pull-quote">"The dress she'll remember the night in. The blazer she'll close the deal in. The set she'll never want to take off. We make the pieces that become part of the story — not the ones she forgets by the next season."</p>
+      <p>Fashion, to us, is less about what's worn — and more about how it makes her feel when she's wearing it. The shift in her shoulders. The way she catches her own reflection. The confidence that doesn't need an audience.</p>
+      <p>That's the philosophy behind every cut, every fabric, every fit decision we make. Not louder. Not more. Just better — for the woman who knows the difference.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PROMISE -->
-<section>
-  <div class="container">
-    <div class="promise-wrap">
-      <span class="section-eyebrow">The GLAEX Promise</span>
-      <h2 class="section-title">Every order, our standard.</h2>
-      <p style="color: var(--muted); font-size:16px;">Five things you can count on, every single time you shop with us.</p>
-
-      <ul class="promise-list">
-        <li>
-          <span class="check">✓</span>
+  <!-- ═══════════════ WHY SHOP WITH US ═══════════════ -->
+  <section class="glaex-why">
+    <div class="container">
+      <div class="glaex-why-intro">
+        <span class="eyebrow">The GLAEX Difference</span>
+        <h2 class="h2">Why she <em>shops with us</em>.</h2>
+        <p>Six promises behind every order — every single time.</p>
+      </div>
+      <div class="glaex-why-grid">
+        <div class="glaex-why-card">
+          <div class="glaex-check">✓</div>
           <div>
-            <strong>Free U.S. Shipping over $75</strong>
-            <span>Standard ground delivery on all qualifying orders, with tracking from the moment your package leaves our warehouse.</span>
+            <h3>Curated Styles, Not Catalogs</h3>
+            <p>Thirty pieces she'll love beats three thousand she'll scroll past. Every item is hand-selected by our in-house edit team — never algorithmically dumped onto the site.</p>
           </div>
-        </li>
-        <li>
-          <span class="check">✓</span>
+        </div>
+        <div class="glaex-why-card">
+          <div class="glaex-check">✓</div>
           <div>
-            <strong>14-Day Easy Returns</strong>
-            <span>Not the right fit? Return any unworn item within 14 days for store credit or refund — no questions asked.</span>
+            <h3>Fast U.S. Shipping</h3>
+            <p>Orders ship from our American fulfillment partners within 1-2 business days. Most arrive in 3-5 days, fully tracked, no surprises.</p>
           </div>
-        </li>
-        <li>
-          <span class="check">✓</span>
+        </div>
+        <div class="glaex-why-card">
+          <div class="glaex-check">✓</div>
           <div>
-            <strong>Real Fit Notes</strong>
-            <span>Every product page includes honest sizing guidance, model height, and fabric feedback from our team.</span>
+            <h3>Trend-Driven, Not Trend-Chased</h3>
+            <p>We watch the runways, the street, the algorithms — and we filter relentlessly. Only the pieces with staying power make our drops.</p>
           </div>
-        </li>
-        <li>
-          <span class="check">✓</span>
+        </div>
+        <div class="glaex-why-card">
+          <div class="glaex-check">✓</div>
           <div>
-            <strong>Hand-Selected Drops</strong>
-            <span>New pieces every Friday — curated, tested, and approved by our team before they ever reach you.</span>
+            <h3>Real Quality Control</h3>
+            <p>Every style is sampled, fit-tested, and reviewed before launch. If it doesn't pass our wear test, it doesn't reach her closet.</p>
           </div>
-        </li>
-        <li>
-          <span class="check">✓</span>
+        </div>
+        <div class="glaex-why-card">
+          <div class="glaex-check">✓</div>
           <div>
-            <strong>Human Customer Care</strong>
-            <span>Real people answering your questions — by email, text, or DM. No bots, no scripts, no runaround.</span>
+            <h3>Customer-First, Always</h3>
+            <p>Real humans answer every email and DM. Easy 14-day returns. A handwritten note in every box. Because she deserves better than a chatbot.</p>
           </div>
-        </li>
-        <li>
-          <span class="check">✓</span>
+        </div>
+        <div class="glaex-why-card">
+          <div class="glaex-check">✓</div>
           <div>
-            <strong>Branded Packaging</strong>
-            <span>A handwritten thank-you note and signature GLAEX wrap with every order. Because the unboxing matters too.</span>
+            <h3>Secure, Effortless Checkout</h3>
+            <p>SSL-encrypted payments through Shop Pay, Apple Pay, Google Pay, Klarna, and Afterpay. Buy now, pay later — on her terms.</p>
           </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section class="values">
-  <div class="container" style="text-align:center; max-width:780px; margin-bottom:0;">
-    <span class="section-eyebrow">How we curate</span>
-    <h2 class="section-title">Four steps, every drop.</h2>
-    <p style="color: var(--muted); font-size:16px;">Behind every Friday launch is a process designed to make sure only the right pieces reach you.</p>
-  </div>
-  <div class="container">
-    <div class="process-steps">
-      <div class="process-step">
-        <h3>Source</h3>
-        <p>We work with trusted U.S. and L.A.-based fashion partners and emerging boutique manufacturers — never compromising on fabric quality or fit.</p>
-      </div>
-      <div class="process-step">
-        <h3>Test</h3>
-        <p>Every piece is sampled, fit-tested on multiple body types, and photographed in natural light before it ever appears on the site.</p>
-      </div>
-      <div class="process-step">
-        <h3>Curate</h3>
-        <p>Only 30-40 pieces make our weekly drop. If we wouldn't wear it ourselves — or recommend it to a friend — it doesn't go live.</p>
-      </div>
-      <div class="process-step">
-        <h3>Launch</h3>
-        <p>Friday mornings. Limited quantities. Real fit notes. Subscribers get first access 24 hours before the public drop.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PRESS -->
-<section class="press">
-  <div class="container">
-    <span class="section-eyebrow">As loved by</span>
-    <h2 class="section-title" style="margin-bottom:0;">Customers across all 50 states.</h2>
-    <div class="press-logos">
-      <div class="press-logo italic">vogue daily</div>
-      <div class="press-logo">WHO WHAT WEAR</div>
-      <div class="press-logo italic">refinery</div>
-      <div class="press-logo condensed">THE EVERYGIRL</div>
-      <div class="press-logo italic">byrdie</div>
+  <!-- ═══════════════ COMMUNITY ═══════════════ -->
+  <section class="glaex-community">
+    <div class="container">
+      <span class="eyebrow">The GLAEX Community</span>
+      <h2 class="h2">She's not a customer. She's <em>one of us</em>.</h2>
+      <p>Across all 50 states — and growing — GLAEX women are stylists, mothers, founders, students, travelers, and everything in between. They tag us in airport selfies, wedding-day mirror shots, first-date fits, and Tuesday morning coffee runs.</p>
+
+      <div class="glaex-community-tags">
+        <span class="glaex-tag">#GLAEXgirl</span>
+        <span class="glaex-tag">Weekly Drops</span>
+        <span class="glaex-tag">Real Fit Notes</span>
+        <span class="glaex-tag">Member Exclusives</span>
+        <span class="glaex-tag">Early Access</span>
+      </div>
+
+      <p>This isn't a brand. It's a quiet movement of women who refuse to settle for fashion that doesn't see them.</p>
+
+      <div class="glaex-community-handle">
+        Join us → <a href="https://instagram.com/glaex">@glaex</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA -->
-<section class="cta">
-  <div class="container">
-    <div class="cta-box">
-      <span class="section-eyebrow">Join the GLAEX Edit</span>
-      <h2>Friday drops, in your inbox first.</h2>
-      <p>Subscribe to get early access to our weekly launches, behind-the-scenes content, and 10% off your first order.</p>
-      <form class="cta-form" action="/pages/subscribe" method="post">
-        <input type="email" name="email" placeholder="your@email.com" required />
-        <button type="submit">Subscribe</button>
-      </form>
-      <p class="cta-fine">No spam. Unsubscribe anytime. We respect your inbox.</p>
+  <!-- ═══════════════ CTA FINAL ═══════════════ -->
+  <section class="glaex-cta">
+    <div class="container">
+      <span class="eyebrow" style="color:#b08968;">Welcome to GLAEX</span>
+      <h2 class="h2">She's ready. <em>Are you?</em></h2>
+      <p>Explore our latest drop — or join the GLAEX inner circle for early access, exclusive offers, and 10% off your first order.</p>
+      <a href="/collections/all" class="glaex-cta-btn">Shop the Edit</a>
+      <a href="/pages/subscribe" class="glaex-cta-btn secondary">Join the List</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-logo">GLAEX</div>
-    <p>A women-led boutique. Based in the United States.</p>
-    <p>hello@glaex.com  ·  Mon–Fri 9am–6pm CST</p>
-
-    <div class="footer-social">
-      <a href="https://instagram.com/glaex">Instagram</a>
-      <a href="https://tiktok.com/@glaex">TikTok</a>
-      <a href="https://pinterest.com/glaex">Pinterest</a>
-    </div>
-
-    <div class="footer-bottom">
-      © 2026 GLAEX Boutique. All rights reserved.  ·  <a href="/pages/privacy" style="color:inherit;">Privacy</a>  ·  <a href="/pages/terms" style="color:inherit;">Terms</a>  ·  <a href="/pages/shipping" style="color:inherit;">Shipping</a>
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
+</div>
