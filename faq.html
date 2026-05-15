@@ -1,0 +1,141 @@
+<style>
+  .glaex-faq * { margin: 0; padding: 0; box-sizing: border-box; }
+  .glaex-faq { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #1a1a1a; line-height: 1.65; -webkit-font-smoothing: antialiased; background: #faf7f2; }
+  .glaex-faq h1, .glaex-faq h2, .glaex-faq h3 { font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-weight: 500; letter-spacing: -0.01em; }
+  .glaex-faq .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .glaex-faq section { padding: 100px 0; }
+  .glaex-faq .eyebrow { font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase; color: #b08968; margin-bottom: 18px; display: inline-block; font-weight: 500; }
+  .glaex-faq .h2 { font-size: clamp(34px, 4.5vw, 54px); line-height: 1.12; margin-bottom: 28px; color: #1a1a1a; }
+  .glaex-faq .h2 em { font-style: italic; color: #7d5a3e; }
+  .glaex-faq p { font-size: 16px; color: #4a4338; line-height: 1.85; }
+  .glaex-f-hero { text-align: center; padding: 140px 0 110px !important; background: linear-gradient(180deg, #faf7f2 0%, #f1ebe1 100%); border-bottom: 1px solid #e6dfd2; }
+  .glaex-f-hero h1 { font-size: clamp(48px, 7vw, 92px); line-height: 1; letter-spacing: -0.02em; margin-bottom: 32px; }
+  .glaex-f-hero h1 em { font-style: italic; color: #7d5a3e; }
+  .glaex-f-hero .hero-sub { font-size: 19px; max-width: 680px; margin: 0 auto; color: #6b6358; font-weight: 300; line-height: 1.7; }
+  .glaex-f-hero .hero-divider { width: 60px; height: 1px; background: #b08968; margin: 36px auto 0; }
+  .glaex-f-categories { background: #1a1a1a; color: #faf7f2; padding: 60px 0 !important; }
+  .glaex-f-categories-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; text-align: center; }
+  .glaex-f-category { padding: 24px 16px; background: transparent; border: 1px solid rgba(250,247,242,0.15); border-radius: 2px; text-decoration: none; color: #faf7f2; transition: border-color 0.2s ease; }
+  .glaex-f-category:hover { border-color: #b08968; }
+  .glaex-f-category-icon { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; color: #b08968; margin-bottom: 8px; display: block; }
+  .glaex-f-category-label { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; }
+  .glaex-f-section { background: #faf7f2; }
+  .glaex-f-section.alt { background: #f1ebe1; }
+  .glaex-f-section .container { max-width: 880px; }
+  .glaex-f-section-title { text-align: center; margin-bottom: 60px; }
+  .glaex-f-item { background: #fff; border: 1px solid #e6dfd2; border-radius: 2px; margin-bottom: 14px; transition: border-color 0.2s ease; }
+  .glaex-f-item:hover { border-color: #b08968; }
+  .glaex-f-item summary { padding: 28px 32px; cursor: pointer; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #1a1a1a; list-style: none; position: relative; padding-right: 60px; line-height: 1.3; font-weight: 500; }
+  .glaex-f-item summary::-webkit-details-marker { display: none; }
+  .glaex-f-item summary::after { content: "+"; position: absolute; right: 32px; top: 50%; transform: translateY(-50%); font-family: 'Cormorant Garamond', serif; font-size: 32px; color: #b08968; transition: transform 0.2s ease; line-height: 0; }
+  .glaex-f-item[open] summary::after { content: "−"; }
+  .glaex-f-item-content { padding: 0 32px 28px; }
+  .glaex-f-item-content p { font-size: 15px; color: #4a4338; line-height: 1.85; margin-bottom: 14px; }
+  .glaex-f-item-content p:last-child { margin-bottom: 0; }
+  .glaex-f-item-content ul { margin: 0 0 14px 20px; }
+  .glaex-f-item-content li { font-size: 15px; color: #4a4338; line-height: 1.85; margin-bottom: 6px; }
+  .glaex-f-item-content a { color: #7d5a3e; }
+  .glaex-f-cta { background: #1a1a1a; color: #faf7f2; text-align: center; }
+  .glaex-f-cta h2 { color: #faf7f2; }
+  .glaex-f-cta p { color: rgba(250,247,242,0.7); font-size: 17px; max-width: 600px; margin: 0 auto 36px; }
+  .glaex-f-cta-btn { display: inline-block; padding: 18px 48px; background: #faf7f2; color: #1a1a1a; text-decoration: none; font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 500; border: 1px solid #faf7f2; }
+  .glaex-f-cta-btn:hover { background: transparent; color: #faf7f2; }
+  .glaex-f-cta-btn.secondary { background: transparent; color: #faf7f2; margin-left: 12px; }
+  .glaex-f-cta-btn.secondary:hover { background: #faf7f2; color: #1a1a1a; }
+  @media (max-width: 880px) {
+    .glaex-faq section { padding: 70px 0; }
+    .glaex-f-hero { padding: 100px 0 80px !important; }
+    .glaex-f-categories-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .glaex-f-item summary { padding: 22px 24px; padding-right: 50px; font-size: 19px; }
+    .glaex-f-item summary::after { right: 24px; }
+    .glaex-f-item-content { padding: 0 24px 22px; }
+    .glaex-f-cta-btn.secondary { margin-left: 0; margin-top: 12px; }
+  }
+</style>
+
+<div class="glaex-faq">
+  <section class="glaex-f-hero"><div class="container">
+    <span class="eyebrow">Help Center</span>
+    <h1>Frequently <em>asked</em>.</h1>
+    <p class="hero-sub">Quick answers to the questions we hear most. If you don't see yours below, scroll to the bottom — a real human will reply within 24 hours.</p>
+    <div class="hero-divider"></div>
+  </div></section>
+
+  <section class="glaex-f-categories"><div class="container">
+    <div class="glaex-f-categories-grid">
+      <a href="#orders" class="glaex-f-category"><span class="glaex-f-category-icon">i.</span><span class="glaex-f-category-label">Orders</span></a>
+      <a href="#shipping" class="glaex-f-category"><span class="glaex-f-category-icon">ii.</span><span class="glaex-f-category-label">Shipping</span></a>
+      <a href="#returns" class="glaex-f-category"><span class="glaex-f-category-icon">iii.</span><span class="glaex-f-category-label">Returns</span></a>
+      <a href="#products" class="glaex-f-category"><span class="glaex-f-category-icon">iv.</span><span class="glaex-f-category-label">Products</span></a>
+      <a href="#account" class="glaex-f-category"><span class="glaex-f-category-icon">v.</span><span class="glaex-f-category-label">Account</span></a>
+    </div>
+  </div></section>
+
+  <section class="glaex-f-section" id="orders"><div class="container">
+    <div class="glaex-f-section-title">
+      <span class="eyebrow">Orders & Payment</span>
+      <h2 class="h2">About <em>your order</em>.</h2>
+    </div>
+    <details class="glaex-f-item"><summary>How do I place an order?</summary><div class="glaex-f-item-content"><p>Add items to your cart, click the cart icon, and follow the checkout process. You can check out as a guest or create an account for faster future orders and order tracking.</p></div></details>
+    <details class="glaex-f-item"><summary>What payment methods do you accept?</summary><div class="glaex-f-item-content"><p>We accept all major credit cards (Visa, Mastercard, American Express, Discover), Shop Pay, Apple Pay, Google Pay, Klarna, and Afterpay for buy-now-pay-later.</p></div></details>
+    <details class="glaex-f-item"><summary>Can I modify or cancel my order after placing it?</summary><div class="glaex-f-item-content"><p>Orders are sent to our warehouse within minutes. Email <a href="mailto:hello@glaex.com">hello@glaex.com</a> immediately — if it hasn't shipped yet, we'll do our best to modify or cancel. Once shipped, you'll need to return it.</p></div></details>
+    <details class="glaex-f-item"><summary>Will I receive an order confirmation?</summary><div class="glaex-f-item-content"><p>Yes. You'll receive an email confirmation within 5 minutes of placing your order. If you don't see it, check your spam folder or contact us.</p></div></details>
+    <details class="glaex-f-item"><summary>Can I use multiple discount codes?</summary><div class="glaex-f-item-content"><p>Only one discount code can be applied per order. Sale items and bundles already include savings and may not be combined with additional codes.</p></div></details>
+  </div></section>
+
+  <section class="glaex-f-section alt" id="shipping"><div class="container">
+    <div class="glaex-f-section-title">
+      <span class="eyebrow">Shipping & Delivery</span>
+      <h2 class="h2">Getting it <em>to her</em>.</h2>
+    </div>
+    <details class="glaex-f-item"><summary>How long does shipping take?</summary><div class="glaex-f-item-content"><p>Standard U.S. shipping: 3-5 business days. Expedited: 2-3 days. Express: 1-2 days. Add 1-2 days for processing. International varies by country — see our <a href="/pages/shipping-policy">Shipping Policy</a> for full details.</p></div></details>
+    <details class="glaex-f-item"><summary>Do you offer free shipping?</summary><div class="glaex-f-item-content"><p>Yes — free standard ground shipping on all U.S. orders over $75.</p></div></details>
+    <details class="glaex-f-item"><summary>Do you ship internationally?</summary><div class="glaex-f-item-content"><p>We currently ship to Canada, Mexico, the UK, Australia, and select EU countries. International customers are responsible for any customs duties or import taxes.</p></div></details>
+    <details class="glaex-f-item"><summary>How do I track my order?</summary><div class="glaex-f-item-content"><p>You'll receive a tracking number by email as soon as your order ships. You can track via the carrier (USPS, UPS, FedEx) or your GLAEX account.</p></div></details>
+    <details class="glaex-f-item"><summary>My tracking says delivered but I didn't receive it. What now?</summary><div class="glaex-f-item-content"><p>First, check with neighbors and household members. Packages occasionally scan as delivered 24 hours early. If still missing after 48 hours, contact us at <a href="mailto:hello@glaex.com">hello@glaex.com</a> and we'll help file a claim.</p></div></details>
+  </div></section>
+
+  <section class="glaex-f-section" id="returns"><div class="container">
+    <div class="glaex-f-section-title">
+      <span class="eyebrow">Returns & Refunds</span>
+      <h2 class="h2">If it's not <em>quite right</em>.</h2>
+    </div>
+    <details class="glaex-f-item"><summary>What's your return policy?</summary><div class="glaex-f-item-content"><p>14 days from delivery to return unworn, unwashed items with original tags. Free U.S. return label for most orders. Full details at <a href="/pages/returns-refunds">Returns & Refunds</a>.</p></div></details>
+    <details class="glaex-f-item"><summary>How do I start a return?</summary><div class="glaex-f-item-content"><p>Visit glaex.com/returns, enter your order number and email, and follow the prompts. You'll get a prepaid USPS label within minutes.</p></div></details>
+    <details class="glaex-f-item"><summary>When will I receive my refund?</summary><div class="glaex-f-item-content"><p>Once we receive your return, refunds are processed within 5 business days to your original payment method. Bank processing may take an additional 3-10 days.</p></div></details>
+    <details class="glaex-f-item"><summary>What items can't be returned?</summary><div class="glaex-f-item-content"><p>Items 40%+ off, intimates, bodysuits, swimwear (if liner removed), earrings, beauty, gift cards, and anything marked "Final Sale."</p></div></details>
+    <details class="glaex-f-item"><summary>Do you offer exchanges?</summary><div class="glaex-f-item-content"><p>We process exchanges as a return + new order. Start a return for the original item and place a new order for the replacement — this ensures the new item ships immediately.</p></div></details>
+  </div></section>
+
+  <section class="glaex-f-section alt" id="products"><div class="container">
+    <div class="glaex-f-section-title">
+      <span class="eyebrow">Products & Sizing</span>
+      <h2 class="h2">About the <em>pieces</em>.</h2>
+    </div>
+    <details class="glaex-f-item"><summary>How does GLAEX sizing run?</summary><div class="glaex-f-item-content"><p>Most pieces run true to size. Specific fit notes (e.g., "runs small," "oversized") are included on every product page. See our <a href="/pages/size-guide">Size Guide</a> for measurements.</p></div></details>
+    <details class="glaex-f-item"><summary>What size models are pictured?</summary><div class="glaex-f-item-content"><p>Each product page lists the model's height and the size she's wearing. We photograph on multiple body types where possible.</p></div></details>
+    <details class="glaex-f-item"><summary>Where are GLAEX products made?</summary><div class="glaex-f-item-content"><p>We source from U.S.-based wholesale partners and L.A.-based boutique manufacturers. Country of origin is disclosed on every product page and care label.</p></div></details>
+    <details class="glaex-f-item"><summary>How should I care for my GLAEX pieces?</summary><div class="glaex-f-item-content"><p>Follow the care label inside each garment. Most pieces are machine washable on cold, gentle cycle. Hang dry to preserve shape and color. Wash inside out for darks and prints.</p></div></details>
+    <details class="glaex-f-item"><summary>Do you restock sold-out items?</summary><div class="glaex-f-item-content"><p>Sometimes — especially bestsellers. Use the "Notify Me" button on the product page to get an email when your size restocks.</p></div></details>
+  </div></section>
+
+  <section class="glaex-f-section" id="account"><div class="container">
+    <div class="glaex-f-section-title">
+      <span class="eyebrow">Account & Communication</span>
+      <h2 class="h2">Your <em>GLAEX account</em>.</h2>
+    </div>
+    <details class="glaex-f-item"><summary>Do I need an account to shop?</summary><div class="glaex-f-item-content"><p>No — you can check out as a guest. But creating an account lets you track orders, save favorites, and check out faster.</p></div></details>
+    <details class="glaex-f-item"><summary>How do I subscribe to or unsubscribe from emails?</summary><div class="glaex-f-item-content"><p>Subscribe at the footer of any page. Unsubscribe via the link at the bottom of any email — takes effect within 24 hours.</p></div></details>
+    <details class="glaex-f-item"><summary>How do I opt into SMS messages?</summary><div class="glaex-f-item-content"><p>At checkout or via our SMS signup form. Text STOP to any message to unsubscribe. Standard messaging rates may apply.</p></div></details>
+    <details class="glaex-f-item"><summary>I forgot my password. What now?</summary><div class="glaex-f-item-content"><p>Click "Forgot Password" on the login page. You'll receive a reset link by email within 2 minutes.</p></div></details>
+    <details class="glaex-f-item"><summary>Do you offer student or military discounts?</summary><div class="glaex-f-item-content"><p>Yes. We offer 15% off for verified students (via Student Beans) and active or veteran military (via ID.me). The verification widget appears at checkout.</p></div></details>
+  </div></section>
+
+  <section class="glaex-f-cta"><div class="container">
+    <span class="eyebrow" style="color:#b08968;">Didn't Find It?</span>
+    <h2 class="h2">Talk to a <em>real human</em>.</h2>
+    <p>We respond personally to every message within 24 hours — usually faster. Email, text, or DM — whichever works best for you.</p>
+    <a href="/pages/contact" class="glaex-f-cta-btn">Contact Us</a>
+    <a href="mailto:hello@glaex.com" class="glaex-f-cta-btn secondary">Email Support</a>
+  </div></section>
+</div>

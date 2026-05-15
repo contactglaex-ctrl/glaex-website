@@ -1,0 +1,208 @@
+<style>
+  .glaex-contact * { margin: 0; padding: 0; box-sizing: border-box; }
+  .glaex-contact { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #1a1a1a; line-height: 1.65; -webkit-font-smoothing: antialiased; background: #faf7f2; }
+  .glaex-contact h1, .glaex-contact h2, .glaex-contact h3 { font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-weight: 500; letter-spacing: -0.01em; }
+  .glaex-contact .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .glaex-contact section { padding: 100px 0; }
+  .glaex-contact .eyebrow { font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase; color: #b08968; margin-bottom: 18px; display: inline-block; font-weight: 500; }
+  .glaex-contact .h2 { font-size: clamp(34px, 4.5vw, 54px); line-height: 1.12; margin-bottom: 28px; color: #1a1a1a; }
+  .glaex-contact .h2 em { font-style: italic; color: #7d5a3e; }
+  .glaex-contact p { font-size: 16px; color: #4a4338; line-height: 1.85; margin-bottom: 18px; }
+  .glaex-c-hero { text-align: center; padding: 140px 0 110px !important; background: linear-gradient(180deg, #faf7f2 0%, #f1ebe1 100%); border-bottom: 1px solid #e6dfd2; }
+  .glaex-c-hero h1 { font-size: clamp(48px, 7vw, 92px); line-height: 1; letter-spacing: -0.02em; margin-bottom: 32px; }
+  .glaex-c-hero h1 em { font-style: italic; color: #7d5a3e; }
+  .glaex-c-hero .hero-sub { font-size: 19px; max-width: 660px; margin: 0 auto; color: #6b6358; font-weight: 300; line-height: 1.7; }
+  .glaex-c-hero .hero-divider { width: 60px; height: 1px; background: #b08968; margin: 36px auto 0; }
+  .glaex-c-methods { background: #faf7f2; }
+  .glaex-c-methods-intro { text-align: center; max-width: 720px; margin: 0 auto 70px; }
+  .glaex-c-methods-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .glaex-c-method { text-align: center; padding: 40px 28px; background: #fff; border: 1px solid #e6dfd2; border-radius: 2px; transition: border-color 0.2s ease; text-decoration: none; color: inherit; display: block; }
+  .glaex-c-method:hover { border-color: #b08968; }
+  .glaex-c-method-icon { width: 56px; height: 56px; margin: 0 auto 24px; border: 1px solid #b08968; color: #7d5a3e; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; font-style: italic; }
+  .glaex-c-method h3 { font-size: 22px; margin-bottom: 8px; color: #1a1a1a; }
+  .glaex-c-method-value { font-size: 15px; color: #7d5a3e; font-family: 'Cormorant Garamond', serif; font-style: italic; margin-bottom: 8px; font-weight: 600; }
+  .glaex-c-method p { font-size: 13px; color: #6b6358; line-height: 1.7; margin: 0; }
+  .glaex-c-form-section { background: #f1ebe1; }
+  .glaex-c-form-wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; }
+  .glaex-c-form-info p { color: #6b6358; font-size: 16px; }
+  .glaex-c-form-meta { margin-top: 32px; padding-top: 32px; border-top: 1px solid #e6dfd2; }
+  .glaex-c-form-meta-item { margin-bottom: 20px; }
+  .glaex-c-form-meta-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #b08968; display: block; margin-bottom: 4px; font-weight: 500; }
+  .glaex-c-form-meta-value { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: #1a1a1a; }
+  .glaex-c-form { background: #faf7f2; padding: 50px 40px; border: 1px solid #e6dfd2; border-radius: 2px; }
+  .glaex-c-form-field { margin-bottom: 24px; }
+  .glaex-c-form-label { display: block; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #1a1a1a; margin-bottom: 8px; font-weight: 500; }
+  .glaex-c-form-input, .glaex-c-form-textarea, .glaex-c-form-select { width: 100%; padding: 14px 16px; border: 1px solid #e6dfd2; background: #fff; font-family: inherit; font-size: 15px; color: #1a1a1a; outline: none; transition: border-color 0.2s ease; border-radius: 2px; }
+  .glaex-c-form-input:focus, .glaex-c-form-textarea:focus, .glaex-c-form-select:focus { border-color: #b08968; }
+  .glaex-c-form-textarea { resize: vertical; min-height: 140px; line-height: 1.6; }
+  .glaex-c-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .glaex-c-form-submit { width: 100%; padding: 18px; background: #1a1a1a; color: #faf7f2; border: none; font-family: inherit; font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 500; cursor: pointer; margin-top: 12px; transition: background 0.2s ease; }
+  .glaex-c-form-submit:hover { background: #7d5a3e; }
+  .glaex-c-form-fine { margin-top: 16px; font-size: 12px; color: #6b6358; text-align: center; line-height: 1.6; }
+  .glaex-c-hours { background: #1a1a1a; color: #faf7f2; text-align: center; padding: 80px 0 !important; }
+  .glaex-c-hours-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 980px; margin: 0 auto; }
+  .glaex-c-hours-block h3 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; color: #b08968; margin-bottom: 12px; }
+  .glaex-c-hours-block p { color: rgba(250,247,242,0.78); font-size: 15px; line-height: 1.8; margin: 0; }
+  .glaex-c-locations { background: #faf7f2; text-align: center; }
+  .glaex-c-locations-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 60px; }
+  .glaex-c-location { padding: 40px; background: #fff; border: 1px solid #e6dfd2; border-radius: 2px; text-align: left; }
+  .glaex-c-location-eyebrow { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #b08968; margin-bottom: 14px; display: block; font-weight: 500; }
+  .glaex-c-location h3 { font-size: 24px; color: #1a1a1a; margin-bottom: 16px; }
+  .glaex-c-location p { font-size: 15px; color: #6b6358; line-height: 1.75; margin-bottom: 4px; }
+  .glaex-c-cta { background: #1a1a1a; color: #faf7f2; text-align: center; }
+  .glaex-c-cta h2 { color: #faf7f2; }
+  .glaex-c-cta p { color: rgba(250,247,242,0.7); font-size: 17px; max-width: 600px; margin: 0 auto 36px; }
+  .glaex-c-cta-btn { display: inline-block; padding: 18px 48px; background: #faf7f2; color: #1a1a1a; text-decoration: none; font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 500; border: 1px solid #faf7f2; }
+  .glaex-c-cta-btn:hover { background: transparent; color: #faf7f2; }
+  .glaex-c-cta-btn.secondary { background: transparent; color: #faf7f2; margin-left: 12px; }
+  .glaex-c-cta-btn.secondary:hover { background: #faf7f2; color: #1a1a1a; }
+  @media (max-width: 880px) {
+    .glaex-contact section { padding: 70px 0; }
+    .glaex-c-hero { padding: 100px 0 80px !important; }
+    .glaex-c-methods-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .glaex-c-form-wrap { grid-template-columns: 1fr; gap: 50px; }
+    .glaex-c-form { padding: 32px 24px; }
+    .glaex-c-form-row { grid-template-columns: 1fr; gap: 0; }
+    .glaex-c-hours-grid { grid-template-columns: 1fr; gap: 30px; }
+    .glaex-c-locations-grid { grid-template-columns: 1fr; gap: 20px; }
+    .glaex-c-location { padding: 28px; }
+    .glaex-c-cta-btn.secondary { margin-left: 0; margin-top: 12px; }
+  }
+</style>
+
+<div class="glaex-contact">
+  <section class="glaex-c-hero"><div class="container">
+    <span class="eyebrow">Contact Us</span>
+    <h1>We're <em>here</em>, really.</h1>
+    <p class="hero-sub">No bots. No call-center scripts. A small team of real women, responding personally to every message — usually within hours.</p>
+    <div class="hero-divider"></div>
+  </div></section>
+
+  <section class="glaex-c-methods"><div class="container">
+    <div class="glaex-c-methods-intro">
+      <span class="eyebrow">How to Reach Us</span>
+      <h2 class="h2">Pick your <em>channel</em>.</h2>
+      <p style="color:#6b6358; font-size:17px;">Use whatever works for you. We monitor all four during business hours and respond within 24 hours.</p>
+    </div>
+    <div class="glaex-c-methods-grid">
+      <a href="mailto:hello@glaex.com" class="glaex-c-method"><div class="glaex-c-method-icon">i</div><h3>Email</h3><div class="glaex-c-method-value">hello@glaex.com</div><p>Best for order questions, returns, sizing help, or anything you'd write more than two sentences about.</p></a>
+      <a href="sms:+18005550151" class="glaex-c-method"><div class="glaex-c-method-icon">ii</div><h3>Text / SMS</h3><div class="glaex-c-method-value">+1 (800) 555-0151</div><p>Quick questions. We typically reply within an hour during business hours, 24h on weekends.</p></a>
+      <a href="tel:+18005550150" class="glaex-c-method"><div class="glaex-c-method-icon">iii</div><h3>Phone</h3><div class="glaex-c-method-value">+1 (800) 555-0150</div><p>Talk to a real person, Monday-Friday 9am-6pm CST. For urgent or complex issues.</p></a>
+      <a href="https://instagram.com/glaex" class="glaex-c-method"><div class="glaex-c-method-icon">iv</div><h3>DM Us</h3><div class="glaex-c-method-value">@glaex</div><p>Instagram DMs. Great for styling questions, sizing screenshots, or just saying hi.</p></a>
+    </div>
+  </div></section>
+
+  <section class="glaex-c-form-section"><div class="container">
+    <div class="glaex-c-form-wrap">
+      <div class="glaex-c-form-info">
+        <span class="eyebrow">Send a Message</span>
+        <h2 class="h2">Tell us what you <em>need</em>.</h2>
+        <p>Whether it's an order issue, a styling question, a wholesale inquiry, or feedback we should hear — fill out the form and we'll respond personally within 24 hours.</p>
+        <div class="glaex-c-form-meta">
+          <div class="glaex-c-form-meta-item">
+            <span class="glaex-c-form-meta-label">Avg. Response Time</span>
+            <span class="glaex-c-form-meta-value">Under 6 hours</span>
+          </div>
+          <div class="glaex-c-form-meta-item">
+            <span class="glaex-c-form-meta-label">Hours</span>
+            <span class="glaex-c-form-meta-value">Mon–Fri, 9am–6pm CST</span>
+          </div>
+          <div class="glaex-c-form-meta-item">
+            <span class="glaex-c-form-meta-label">Languages</span>
+            <span class="glaex-c-form-meta-value">English, Español</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="glaex-c-form" action="/contact#contact_form" method="post">
+        <div class="glaex-c-form-row">
+          <div class="glaex-c-form-field">
+            <label class="glaex-c-form-label" for="first-name">First Name</label>
+            <input class="glaex-c-form-input" type="text" id="first-name" name="contact[first-name]" required />
+          </div>
+          <div class="glaex-c-form-field">
+            <label class="glaex-c-form-label" for="last-name">Last Name</label>
+            <input class="glaex-c-form-input" type="text" id="last-name" name="contact[last-name]" required />
+          </div>
+        </div>
+        <div class="glaex-c-form-field">
+          <label class="glaex-c-form-label" for="email">Email Address</label>
+          <input class="glaex-c-form-input" type="email" id="email" name="contact[email]" required />
+        </div>
+        <div class="glaex-c-form-field">
+          <label class="glaex-c-form-label" for="order">Order Number (Optional)</label>
+          <input class="glaex-c-form-input" type="text" id="order" name="contact[order]" placeholder="#1234" />
+        </div>
+        <div class="glaex-c-form-field">
+          <label class="glaex-c-form-label" for="topic">What's This About?</label>
+          <select class="glaex-c-form-select" id="topic" name="contact[topic]" required>
+            <option value="">Select a topic</option>
+            <option value="order">Order question</option>
+            <option value="returns">Return / refund</option>
+            <option value="sizing">Sizing or fit help</option>
+            <option value="product">Product question</option>
+            <option value="wholesale">Wholesale inquiry</option>
+            <option value="press">Press inquiry</option>
+            <option value="careers">Careers</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="glaex-c-form-field">
+          <label class="glaex-c-form-label" for="message">Your Message</label>
+          <textarea class="glaex-c-form-textarea" id="message" name="contact[body]" required placeholder="Tell us how we can help…"></textarea>
+        </div>
+        <button type="submit" class="glaex-c-form-submit">Send Message</button>
+        <p class="glaex-c-form-fine">By submitting this form, you agree to our <a href="/pages/privacy-policy" style="color:#7d5a3e;">Privacy Policy</a>. We respond within 24h.</p>
+      </form>
+    </div>
+  </div></section>
+
+  <section class="glaex-c-hours"><div class="container">
+    <span class="eyebrow" style="color:#b08968;">When We're Here</span>
+    <h2 class="h2" style="color:#faf7f2;">Hours of <em>operation</em>.</h2>
+    <div class="glaex-c-hours-grid" style="margin-top:50px;">
+      <div class="glaex-c-hours-block">
+        <h3>Customer Care</h3>
+        <p>Monday–Friday<br>9am–6pm CST<br><br>Saturday–Sunday<br>Email replies within 24h</p>
+      </div>
+      <div class="glaex-c-hours-block">
+        <h3>Order Processing</h3>
+        <p>Monday–Friday<br>Orders placed before 12pm CST<br>ship the same day<br><br>Closed major U.S. holidays</p>
+      </div>
+      <div class="glaex-c-hours-block">
+        <h3>Wholesale & Press</h3>
+        <p>Monday–Friday<br>9am–5pm CST<br><br>Press inquiries: 24h response<br>Wholesale: 48h response</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="glaex-c-locations"><div class="container">
+    <span class="eyebrow">Our Locations</span>
+    <h2 class="h2">Where we <em>are</em>.</h2>
+    <p style="color:#6b6358; font-size:17px; max-width:680px; margin:0 auto;">We're an online-first boutique. Both addresses below are for mail correspondence and business operations only — not retail walk-ins.</p>
+    <div class="glaex-c-locations-grid">
+      <div class="glaex-c-location">
+        <span class="glaex-c-location-eyebrow">Headquarters</span>
+        <h3>Austin, Texas</h3>
+        <p>500 Main Street, Suite 200</p>
+        <p>Austin, TX 78701</p>
+        <p>United States</p>
+      </div>
+      <div class="glaex-c-location">
+        <span class="glaex-c-location-eyebrow">Fulfillment Studio</span>
+        <h3>Los Angeles, CA</h3>
+        <p>1240 Industrial Way</p>
+        <p>Los Angeles, CA 90021</p>
+        <p>United States</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="glaex-c-cta"><div class="container">
+    <span class="eyebrow" style="color:#b08968;">Quick Answers</span>
+    <h2 class="h2">Most questions are <em>already answered</em>.</h2>
+    <p>Before reaching out, check our FAQ — most common questions have detailed answers there, and you'll get help in 30 seconds instead of waiting for a reply.</p>
+    <a href="/pages/faq" class="glaex-c-cta-btn">Browse FAQ</a>
+    <a href="mailto:hello@glaex.com" class="glaex-c-cta-btn secondary">Email Us</a>
+  </div></section>
+</div>

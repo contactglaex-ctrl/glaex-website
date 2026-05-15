@@ -1,0 +1,131 @@
+<style>
+  .glaex-legal * { margin: 0; padding: 0; box-sizing: border-box; }
+  .glaex-legal { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #1a1a1a; line-height: 1.65; -webkit-font-smoothing: antialiased; background: #faf7f2; }
+  .glaex-legal h1, .glaex-legal h2, .glaex-legal h3 { font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif; font-weight: 500; letter-spacing: -0.01em; }
+  .glaex-legal .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .glaex-legal section { padding: 100px 0; }
+  .glaex-legal .eyebrow { font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase; color: #b08968; margin-bottom: 18px; display: inline-block; font-weight: 500; }
+  .glaex-legal .h2 { font-size: clamp(34px, 4.5vw, 54px); line-height: 1.12; margin-bottom: 28px; color: #1a1a1a; }
+  .glaex-legal .h2 em { font-style: italic; color: #7d5a3e; }
+  .glaex-l-hero { text-align: center; padding: 140px 0 110px !important; background: linear-gradient(180deg, #faf7f2 0%, #f1ebe1 100%); border-bottom: 1px solid #e6dfd2; }
+  .glaex-l-hero h1 { font-size: clamp(48px, 7vw, 92px); line-height: 1; letter-spacing: -0.02em; margin-bottom: 32px; }
+  .glaex-l-hero h1 em { font-style: italic; color: #7d5a3e; }
+  .glaex-l-hero .hero-sub { font-size: 19px; max-width: 680px; margin: 0 auto; color: #6b6358; font-weight: 300; line-height: 1.7; }
+  .glaex-l-hero .hero-divider { width: 60px; height: 1px; background: #b08968; margin: 36px auto 0; }
+  .glaex-l-stats { background: #1a1a1a; color: #faf7f2; padding: 80px 0 !important; }
+  .glaex-l-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
+  .glaex-l-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 58px; color: #b08968; line-height: 1; margin-bottom: 10px; }
+  .glaex-l-stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.28em; color: rgba(250,247,242,0.55); }
+  .glaex-l-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: #fff; border: 1px solid #e6dfd2; border-radius: 2px; overflow: hidden; }
+  .glaex-l-table th, .glaex-l-table td { padding: 18px 20px; text-align: left; border-bottom: 1px solid #e6dfd2; font-size: 15px; }
+  .glaex-l-table th { background: #f1ebe1; color: #7d5a3e; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; font-weight: 600; letter-spacing: 0.03em; }
+  .glaex-l-table td { color: #4a4338; }
+  .glaex-l-table tr:last-child td { border-bottom: none; }
+  .glaex-l-content { background: #faf7f2; }
+  .glaex-l-content .container { max-width: 820px; }
+  .glaex-l-content h2 { font-size: 32px; color: #1a1a1a; margin: 60px 0 20px; line-height: 1.2; }
+  .glaex-l-content h2:first-child { margin-top: 0; }
+  .glaex-l-content h3 { font-size: 22px; color: #1a1a1a; margin: 36px 0 14px; line-height: 1.3; }
+  .glaex-l-content p { font-size: 16px; color: #4a4338; line-height: 1.85; margin-bottom: 18px; }
+  .glaex-l-content ul { margin: 0 0 24px 24px; color: #4a4338; }
+  .glaex-l-content li { font-size: 16px; line-height: 1.85; margin-bottom: 10px; }
+  .glaex-l-content strong { color: #1a1a1a; font-weight: 600; }
+  .glaex-l-content a { color: #7d5a3e; }
+  .glaex-l-cta { background: #1a1a1a; color: #faf7f2; text-align: center; }
+  .glaex-l-cta h2 { color: #faf7f2; }
+  .glaex-l-cta p { color: rgba(250,247,242,0.7); font-size: 17px; max-width: 600px; margin: 0 auto 36px; }
+  .glaex-l-cta-btn { display: inline-block; padding: 18px 48px; background: #faf7f2; color: #1a1a1a; text-decoration: none; font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 500; border: 1px solid #faf7f2; }
+  .glaex-l-cta-btn:hover { background: transparent; color: #faf7f2; }
+  .glaex-l-cta-btn.secondary { background: transparent; color: #faf7f2; margin-left: 12px; }
+  .glaex-l-cta-btn.secondary:hover { background: #faf7f2; color: #1a1a1a; }
+  @media (max-width: 880px) {
+    .glaex-legal section { padding: 70px 0; }
+    .glaex-l-hero { padding: 100px 0 80px !important; }
+    .glaex-l-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+    .glaex-l-content h2 { font-size: 26px; }
+    .glaex-l-table { font-size: 13px; }
+    .glaex-l-table th, .glaex-l-table td { padding: 12px 14px; }
+    .glaex-l-cta-btn.secondary { margin-left: 0; margin-top: 12px; }
+  }
+</style>
+
+<div class="glaex-legal">
+  <section class="glaex-l-hero"><div class="container">
+    <span class="eyebrow">Shipping</span>
+    <h1>Fast, tracked, <em>U.S.-based</em>.</h1>
+    <p class="hero-sub">Orders ship from our American fulfillment partners in 1-2 business days. Most reach her door in 3-5 days. Free over $75.</p>
+    <div class="hero-divider"></div>
+  </div></section>
+
+  <section class="glaex-l-stats"><div class="container"><div class="glaex-l-stats-grid">
+    <div><div class="glaex-l-stat-num">1-2d</div><div class="glaex-l-stat-label">Processing Time</div></div>
+    <div><div class="glaex-l-stat-num">3-5d</div><div class="glaex-l-stat-label">U.S. Delivery</div></div>
+    <div><div class="glaex-l-stat-num">$75+</div><div class="glaex-l-stat-label">Free Shipping</div></div>
+    <div><div class="glaex-l-stat-num">50</div><div class="glaex-l-stat-label">U.S. States</div></div>
+  </div></div></section>
+
+  <section class="glaex-l-content"><div class="container">
+    <h2>Processing Times</h2>
+    <p>Orders placed Monday-Friday before 12pm CST ship the same business day. Orders placed after 12pm CST, on weekends, or on U.S. holidays ship the next business day. Most orders are processed within 1-2 business days.</p>
+
+    <h2>Domestic Shipping (U.S.)</h2>
+    <p>We offer the following options for orders within the United States:</p>
+    <table class="glaex-l-table">
+      <thead><tr><th>Method</th><th>Estimated Delivery</th><th>Cost</th></tr></thead>
+      <tbody>
+        <tr><td>Standard Ground</td><td>3-5 business days</td><td>$6.95 (Free over $75)</td></tr>
+        <tr><td>Expedited</td><td>2-3 business days</td><td>$14.95</td></tr>
+        <tr><td>Express (Priority)</td><td>1-2 business days</td><td>$24.95</td></tr>
+      </tbody>
+    </table>
+    <p>Delivery times are estimates from the date your order ships — not from the date of order. Carriers occasionally experience delays beyond our control (weather, holidays, peak season).</p>
+
+    <h2>International Shipping</h2>
+    <p>We currently ship to Canada, Mexico, the United Kingdom, Australia, and select EU countries. International delivery times vary by destination.</p>
+    <table class="glaex-l-table">
+      <thead><tr><th>Region</th><th>Estimated Delivery</th><th>Cost</th></tr></thead>
+      <tbody>
+        <tr><td>Canada</td><td>5-10 business days</td><td>$19.95</td></tr>
+        <tr><td>Mexico</td><td>7-12 business days</td><td>$24.95</td></tr>
+        <tr><td>United Kingdom</td><td>7-14 business days</td><td>$29.95</td></tr>
+        <tr><td>Australia</td><td>10-18 business days</td><td>$34.95</td></tr>
+        <tr><td>EU Select</td><td>7-15 business days</td><td>$29.95</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Duties & Taxes:</strong> International customers are responsible for any customs duties, import taxes, and fees imposed by the destination country. These are collected by the carrier at delivery.</p>
+
+    <h2>Tracking Your Order</h2>
+    <p>Once your order ships, you'll receive a confirmation email with a tracking number. You can track in real time via your shipping carrier (USPS, UPS, or FedEx). Tracking updates every 24-48 hours.</p>
+    <p>If you haven't received tracking within 3 business days of ordering, email us at <a href="mailto:hello@glaex.com">hello@glaex.com</a>.</p>
+
+    <h2>Address Accuracy</h2>
+    <p>Please double-check your shipping address at checkout. We are unable to reroute or modify orders after they ship. Orders returned due to incorrect addresses are subject to a $9.95 reshipment fee.</p>
+
+    <h2>Lost or Stolen Packages</h2>
+    <p>If your tracking shows "Delivered" but the package isn't there, please:</p>
+    <ul>
+      <li>Check with neighbors, household members, and your front office (if applicable).</li>
+      <li>Wait 24-48 hours — packages occasionally scan early.</li>
+      <li>File a claim with the carrier directly.</li>
+      <li>Contact us at <a href="mailto:hello@glaex.com">hello@glaex.com</a> for help.</li>
+    </ul>
+    <p>We offer Route package protection at checkout for $1.50 — recommended for high-value orders or apartment buildings.</p>
+
+    <h2>Damaged or Missing Items</h2>
+    <p>If your order arrives damaged or with missing items, contact us within 7 days of delivery with photos at <a href="mailto:hello@glaex.com">hello@glaex.com</a>. We'll make it right — replacement, store credit, or refund.</p>
+
+    <h2>Holidays & Peak Seasons</h2>
+    <p>During major holidays (Black Friday, Cyber Monday, Christmas) and peak seasons, processing and delivery may take 1-3 additional business days. Order early for time-sensitive purchases.</p>
+
+    <h2>P.O. Boxes & APO/FPO</h2>
+    <p>We ship to U.S. P.O. boxes via USPS only. APO/FPO addresses are supported at standard shipping rates.</p>
+  </div></section>
+
+  <section class="glaex-l-cta"><div class="container">
+    <span class="eyebrow" style="color:#b08968;">Questions About a Shipment?</span>
+    <h2 class="h2">We're <em>tracking with you</em>.</h2>
+    <p>If something's not arriving as expected, reach out — we respond personally within 24 hours and we make it right.</p>
+    <a href="mailto:hello@glaex.com" class="glaex-l-cta-btn">Contact Support</a>
+    <a href="/pages/returns-refunds" class="glaex-l-cta-btn secondary">Returns Policy</a>
+  </div></section>
+</div>
