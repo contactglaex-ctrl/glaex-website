@@ -1,0 +1,527 @@
+<style>
+  .glaex-careers * { margin: 0; padding: 0; box-sizing: border-box; }
+  .glaex-careers {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    color: #1a1a1a;
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    background: #faf7f2;
+  }
+  .glaex-careers h1, .glaex-careers h2, .glaex-careers h3, .glaex-careers .serif {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .glaex-careers .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .glaex-careers section { padding: 100px 0; }
+  .glaex-careers .eyebrow {
+    font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase;
+    color: #b08968; margin-bottom: 18px; display: inline-block; font-weight: 500;
+  }
+  .glaex-careers .h2 {
+    font-size: clamp(34px, 4.5vw, 54px); line-height: 1.12;
+    margin-bottom: 28px; color: #1a1a1a;
+  }
+  .glaex-careers .h2 em { font-style: italic; color: #7d5a3e; }
+  .glaex-careers p { font-size: 16px; color: #4a4338; line-height: 1.85; margin-bottom: 18px; }
+
+  /* HERO */
+  .glaex-c-hero {
+    text-align: center; padding: 140px 0 110px !important;
+    background: linear-gradient(180deg, #faf7f2 0%, #f1ebe1 100%);
+    border-bottom: 1px solid #e6dfd2;
+  }
+  .glaex-c-hero h1 {
+    font-size: clamp(48px, 7vw, 92px); line-height: 1;
+    letter-spacing: -0.02em; margin-bottom: 32px; color: #1a1a1a;
+  }
+  .glaex-c-hero h1 em { font-style: italic; color: #7d5a3e; }
+  .glaex-c-hero .hero-sub {
+    font-size: 19px; max-width: 660px; margin: 0 auto;
+    color: #6b6358; font-weight: 300; line-height: 1.7;
+  }
+  .glaex-c-hero .hero-divider { width: 60px; height: 1px; background: #b08968; margin: 36px auto 0; }
+
+  /* INTRO STORY */
+  .glaex-c-story-grid {
+    display: grid; grid-template-columns: 1.1fr 1fr;
+    gap: 90px; align-items: center;
+  }
+  .glaex-c-story-img {
+    aspect-ratio: 4/5;
+    background:
+      linear-gradient(135deg, rgba(176,137,104,0.85) 0%, rgba(125,90,62,0.95) 100%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 125'%3E%3Crect fill='%23b08968' width='100' height='125'/%3E%3Ccircle cx='35' cy='42' r='10' fill='%23d4c4a8' opacity='0.55'/%3E%3Ccircle cx='65' cy='42' r='10' fill='%23d4c4a8' opacity='0.55'/%3E%3Cpath d='M20 80 Q50 62 80 80 L80 125 L20 125 Z' fill='%23d4c4a8' opacity='0.45'/%3E%3C/svg%3E") center/cover;
+    border-radius: 2px;
+  }
+  .glaex-c-story p:first-of-type::first-letter {
+    font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 600;
+    float: left; line-height: 0.85; margin: 8px 14px 0 0; color: #7d5a3e;
+  }
+
+  /* CULTURE STATS */
+  .glaex-c-stats { background: #1a1a1a; color: #faf7f2; padding: 80px 0 !important; }
+  .glaex-c-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
+  .glaex-c-stat-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 500;
+    color: #b08968; line-height: 1; margin-bottom: 10px;
+  }
+  .glaex-c-stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.28em; color: rgba(250,247,242,0.55); }
+
+  /* CULTURE VALUES */
+  .glaex-c-culture { background: #f1ebe1; text-align: center; }
+  .glaex-c-culture-intro { max-width: 720px; margin: 0 auto 60px; }
+  .glaex-c-culture-intro p { color: #6b6358; font-size: 17px; }
+  .glaex-c-culture-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .glaex-c-culture-card {
+    text-align: left; padding: 40px 32px; background: #faf7f2;
+    border: 1px solid #e6dfd2; border-radius: 2px;
+  }
+  .glaex-c-culture-num {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 22px; color: #b08968; margin-bottom: 18px; display: block;
+  }
+  .glaex-c-culture-card h3 { font-size: 22px; margin-bottom: 12px; color: #1a1a1a; }
+  .glaex-c-culture-card p { color: #6b6358; font-size: 14px; line-height: 1.75; margin: 0; }
+
+  /* PHILOSOPHY */
+  .glaex-c-philosophy { background: #1a1a1a; color: #faf7f2; text-align: center; }
+  .glaex-c-philosophy .container { max-width: 820px; }
+  .glaex-c-philosophy .eyebrow { color: #b08968; }
+  .glaex-c-philosophy h2 { color: #faf7f2; }
+  .glaex-c-philosophy .pull-quote {
+    font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3.5vw, 40px);
+    font-style: italic; line-height: 1.4; margin: 40px 0; color: #faf7f2;
+  }
+  .glaex-c-philosophy p { color: rgba(250,247,242,0.78); font-size: 17px; }
+
+  /* OPEN ROLES */
+  .glaex-c-roles { background: #faf7f2; }
+  .glaex-c-roles-intro { text-align: center; max-width: 720px; margin: 0 auto 70px; }
+  .glaex-c-role {
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 24px; align-items: center; padding: 36px 40px;
+    background: #fff; border: 1px solid #e6dfd2; border-radius: 2px;
+    margin-bottom: 16px; transition: border-color 0.2s ease;
+  }
+  .glaex-c-role:hover { border-color: #b08968; }
+  .glaex-c-role-meta {
+    display: flex; gap: 18px; flex-wrap: wrap;
+    margin-top: 8px; font-size: 13px; color: #6b6358;
+    letter-spacing: 0.05em;
+  }
+  .glaex-c-role-meta span { display: flex; align-items: center; gap: 6px; }
+  .glaex-c-role-meta span::before {
+    content: ''; width: 4px; height: 4px;
+    background: #b08968; border-radius: 50%;
+  }
+  .glaex-c-role h3 { font-size: 24px; color: #1a1a1a; margin: 0; }
+  .glaex-c-role-cta {
+    color: #1a1a1a; text-decoration: none; font-size: 12px;
+    letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500;
+    border-bottom: 1px solid #1a1a1a; padding-bottom: 4px; white-space: nowrap;
+  }
+  .glaex-c-role-cta:hover { color: #7d5a3e; border-color: #7d5a3e; }
+
+  /* PERKS */
+  .glaex-c-perks { background: #f1ebe1; }
+  .glaex-c-perks-intro { text-align: center; max-width: 720px; margin: 0 auto 60px; }
+  .glaex-c-perks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .glaex-c-perk {
+    display: flex; gap: 18px; align-items: flex-start;
+    padding: 28px; background: #faf7f2;
+    border: 1px solid #e6dfd2; border-radius: 2px;
+  }
+  .glaex-c-perk-icon {
+    flex-shrink: 0; width: 36px; height: 36px;
+    border: 1px solid #b08968; color: #7d5a3e;
+    border-radius: 50%; display: flex;
+    align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px; font-weight: 600; font-style: italic;
+  }
+  .glaex-c-perk h3 { font-size: 18px; margin-bottom: 4px; color: #1a1a1a; }
+  .glaex-c-perk p { color: #6b6358; font-size: 13px; line-height: 1.7; margin: 0; }
+
+  /* PROCESS */
+  .glaex-c-process { background: #faf7f2; text-align: center; }
+  .glaex-c-process-intro { max-width: 720px; margin: 0 auto 70px; }
+  .glaex-c-process-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 32px; counter-reset: cstep;
+  }
+  .glaex-c-process-step {
+    text-align: left; padding-top: 36px; position: relative;
+  }
+  .glaex-c-process-step::before {
+    counter-increment: cstep;
+    content: "0" counter(cstep);
+    position: absolute; top: 0; left: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px; color: #b08968; letter-spacing: 0.15em;
+  }
+  .glaex-c-process-step h3 {
+    font-size: 22px; margin-bottom: 12px;
+    border-top: 1px solid #e6dfd2; padding-top: 24px; color: #1a1a1a;
+  }
+  .glaex-c-process-step p { color: #6b6358; font-size: 14px; line-height: 1.75; margin: 0; }
+
+  /* TEAM SECTION */
+  .glaex-c-team { background: #f1ebe1; text-align: center; }
+  .glaex-c-team .container { max-width: 880px; }
+  .glaex-c-team-tags {
+    display: flex; justify-content: center; flex-wrap: wrap;
+    gap: 12px; margin: 36px 0;
+  }
+  .glaex-c-tag {
+    background: transparent; border: 1px solid #b08968; color: #7d5a3e;
+    padding: 10px 22px; border-radius: 999px; font-size: 13px; letter-spacing: 0.05em;
+  }
+  .glaex-c-team-quote {
+    margin-top: 30px; font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; font-style: italic; color: #1a1a1a;
+    max-width: 640px; margin-left: auto; margin-right: auto;
+  }
+  .glaex-c-team-author {
+    margin-top: 16px; font-size: 12px; color: #6b6358;
+    letter-spacing: 0.2em; text-transform: uppercase;
+  }
+
+  /* CTA */
+  .glaex-c-cta { background: #1a1a1a; color: #faf7f2; text-align: center; }
+  .glaex-c-cta h2 { color: #faf7f2; }
+  .glaex-c-cta p { color: rgba(250,247,242,0.7); font-size: 17px; max-width: 600px; margin: 0 auto 36px; }
+  .glaex-c-cta-btn {
+    display: inline-block; padding: 18px 48px; background: #faf7f2; color: #1a1a1a;
+    text-decoration: none; font-size: 12px; letter-spacing: 0.25em;
+    text-transform: uppercase; font-weight: 500; border: 1px solid #faf7f2;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+  .glaex-c-cta-btn:hover { background: transparent; color: #faf7f2; }
+  .glaex-c-cta-btn.secondary { background: transparent; color: #faf7f2; margin-left: 12px; }
+  .glaex-c-cta-btn.secondary:hover { background: #faf7f2; color: #1a1a1a; }
+
+  /* RESPONSIVE */
+  @media (max-width: 880px) {
+    .glaex-careers section { padding: 70px 0; }
+    .glaex-c-story-grid { grid-template-columns: 1fr; gap: 50px; }
+    .glaex-c-culture-grid { grid-template-columns: 1fr; gap: 20px; }
+    .glaex-c-perks-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .glaex-c-process-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .glaex-c-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+    .glaex-c-hero { padding: 100px 0 80px !important; }
+    .glaex-c-role { grid-template-columns: 1fr; padding: 28px; }
+    .glaex-c-cta-btn.secondary { margin-left: 0; margin-top: 12px; }
+  }
+  @media (max-width: 520px) {
+    .glaex-c-perks-grid, .glaex-c-process-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="glaex-careers">
+
+  <!-- HERO -->
+  <section class="glaex-c-hero">
+    <div class="container">
+      <span class="eyebrow">Careers at GLAEX</span>
+      <h1>Build the future of <em>modern boutique</em> fashion.</h1>
+      <p class="hero-sub">We're a small, women-led team building one of the most considered fashion brands in America — and we're looking for people who want to build it with us.</p>
+      <div class="hero-divider"></div>
+    </div>
+  </section>
+
+  <!-- WHY GLAEX -->
+  <section>
+    <div class="container">
+      <div class="glaex-c-story-grid">
+        <div class="glaex-c-story">
+          <span class="eyebrow">Why GLAEX</span>
+          <h2 class="h2">A small team. <em>Big ambition</em>.</h2>
+          <p>GLAEX is an early-stage modern boutique with a long-term vision. We're not chasing exits, we're not optimizing for vanity metrics, and we're definitely not interested in being the next "fast fashion" brand. We're building something that gets better with every season — and we want people on this team who care about that as much as we do.</p>
+          <p>Working here means being closer to the work than you've ever been. No layers. No politics. No twelve-step approval chains for a single product photo. You'll have ownership, autonomy, and the freedom to do your best work — alongside teammates who push you to do even better.</p>
+          <p>We don't promise free snacks or ping-pong tables. We promise meaningful work, mutual respect, and the kind of creative environment most people leave their corporate jobs to find.</p>
+        </div>
+        <div class="glaex-c-story-img" role="img" aria-label="GLAEX team working together"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CULTURE STATS -->
+  <section class="glaex-c-stats">
+    <div class="container">
+      <div class="glaex-c-stats-grid">
+        <div><div class="glaex-c-stat-num">100%</div><div class="glaex-c-stat-label">Remote-First</div></div>
+        <div><div class="glaex-c-stat-num">4</div><div class="glaex-c-stat-label">Day Workweek</div></div>
+        <div><div class="glaex-c-stat-num">∞</div><div class="glaex-c-stat-label">PTO Policy</div></div>
+        <div><div class="glaex-c-stat-num">$2k</div><div class="glaex-c-stat-label">Annual Learning Budget</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CULTURE VALUES -->
+  <section class="glaex-c-culture">
+    <div class="container">
+      <div class="glaex-c-culture-intro">
+        <span class="eyebrow">Our Culture</span>
+        <h2 class="h2">How we <em>work together</em>.</h2>
+        <p>Six principles that shape how we hire, how we collaborate, and how we treat each other every day.</p>
+      </div>
+      <div class="glaex-c-culture-grid">
+        <div class="glaex-c-culture-card">
+          <span class="glaex-c-culture-num">i.</span>
+          <h3>Ownership Over Permission</h3>
+          <p>We hire smart people and trust them to make decisions. If you need to ask permission for everything, you'll be miserable here.</p>
+        </div>
+        <div class="glaex-c-culture-card">
+          <span class="glaex-c-culture-num">ii.</span>
+          <h3>Craft Over Speed</h3>
+          <p>We move fast — but never at the expense of quality. We'd rather ship one beautiful thing than ten mediocre ones.</p>
+        </div>
+        <div class="glaex-c-culture-card">
+          <span class="glaex-c-culture-num">iii.</span>
+          <h3>Direct, Always Kind</h3>
+          <p>Honest feedback is how we grow. Delivered with care is how we stay a team.</p>
+        </div>
+        <div class="glaex-c-culture-card">
+          <span class="glaex-c-culture-num">iv.</span>
+          <h3>Customer-Obsessed</h3>
+          <p>Every decision starts with her. If it doesn't make the experience better for our customer, we don't ship it.</p>
+        </div>
+        <div class="glaex-c-culture-card">
+          <span class="glaex-c-culture-num">v.</span>
+          <h3>Bias Toward Action</h3>
+          <p>Strong opinions, loosely held. Try things, learn fast, iterate. Done is better than perfect — but excellent beats both.</p>
+        </div>
+        <div class="glaex-c-culture-card">
+          <span class="glaex-c-culture-num">vi.</span>
+          <h3>Real Lives, Real Boundaries</h3>
+          <p>We work hard during work hours. Then we close the laptop. We respect your time, your energy, and your life outside this team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="glaex-c-philosophy">
+    <div class="container">
+      <span class="eyebrow">What We're Really Hiring For</span>
+      <h2 class="h2">We don't hire for <em>résumés</em>.<br>We hire for <em>taste</em>.</h2>
+      <p class="pull-quote">"Skills can be taught. Tools can be learned. Taste — the ability to know what's good, why it's good, and how to make it better — is what separates the people who build great brands from the people who just work at them."</p>
+      <p>We care less about where you went to school and more about what you've made. Less about your title at your last company and more about the work you're proudest of. If you have a portfolio, a side project, a Substack, a Pinterest board you've curated for years — we want to see it.</p>
+      <p>Bring us your taste. We'll handle the rest.</p>
+    </div>
+  </section>
+
+  <!-- OPEN ROLES -->
+  <section class="glaex-c-roles">
+    <div class="container">
+      <div class="glaex-c-roles-intro">
+        <span class="eyebrow">Open Positions</span>
+        <h2 class="h2">Join the <em>team</em>.</h2>
+        <p>Roles open right now. Don't see your fit? Scroll to the bottom and send us your story anyway.</p>
+      </div>
+
+      <div class="glaex-c-role">
+        <div>
+          <h3>Senior Performance Marketing Manager</h3>
+          <div class="glaex-c-role-meta">
+            <span>Marketing</span>
+            <span>Remote (U.S.)</span>
+            <span>Full-Time</span>
+            <span>$85k–$120k + equity</span>
+          </div>
+        </div>
+        <a href="mailto:careers@glaex.com?subject=Application: Senior Performance Marketing Manager" class="glaex-c-role-cta">Apply →</a>
+      </div>
+
+      <div class="glaex-c-role">
+        <div>
+          <h3>Creative Director — Brand & Content</h3>
+          <div class="glaex-c-role-meta">
+            <span>Creative</span>
+            <span>Remote (U.S.)</span>
+            <span>Full-Time</span>
+            <span>$110k–$150k + equity</span>
+          </div>
+        </div>
+        <a href="mailto:careers@glaex.com?subject=Application: Creative Director" class="glaex-c-role-cta">Apply →</a>
+      </div>
+
+      <div class="glaex-c-role">
+        <div>
+          <h3>UGC & Influencer Manager</h3>
+          <div class="glaex-c-role-meta">
+            <span>Marketing</span>
+            <span>Remote (U.S.)</span>
+            <span>Full-Time</span>
+            <span>$65k–$90k</span>
+          </div>
+        </div>
+        <a href="mailto:careers@glaex.com?subject=Application: UGC & Influencer Manager" class="glaex-c-role-cta">Apply →</a>
+      </div>
+
+      <div class="glaex-c-role">
+        <div>
+          <h3>E-Commerce Merchandiser</h3>
+          <div class="glaex-c-role-meta">
+            <span>Buying & Merchandising</span>
+            <span>Hybrid (LA)</span>
+            <span>Full-Time</span>
+            <span>$70k–$95k</span>
+          </div>
+        </div>
+        <a href="mailto:careers@glaex.com?subject=Application: E-Commerce Merchandiser" class="glaex-c-role-cta">Apply →</a>
+      </div>
+
+      <div class="glaex-c-role">
+        <div>
+          <h3>Customer Experience Specialist</h3>
+          <div class="glaex-c-role-meta">
+            <span>Customer Care</span>
+            <span>Remote (U.S.)</span>
+            <span>Full-Time</span>
+            <span>$48k–$62k</span>
+          </div>
+        </div>
+        <a href="mailto:careers@glaex.com?subject=Application: Customer Experience Specialist" class="glaex-c-role-cta">Apply →</a>
+      </div>
+
+      <div class="glaex-c-role">
+        <div>
+          <h3>Email & SMS Lifecycle Manager</h3>
+          <div class="glaex-c-role-meta">
+            <span>Marketing</span>
+            <span>Remote (U.S.)</span>
+            <span>Full-Time</span>
+            <span>$70k–$95k</span>
+          </div>
+        </div>
+        <a href="mailto:careers@glaex.com?subject=Application: Email & SMS Lifecycle Manager" class="glaex-c-role-cta">Apply →</a>
+      </div>
+
+      <div class="glaex-c-role">
+        <div>
+          <h3>Photographer & Visual Stylist</h3>
+          <div class="glaex-c-role-meta">
+            <span>Creative</span>
+            <span>Hybrid (LA)</span>
+            <span>Contract</span>
+            <span>Project-Based</span>
+          </div>
+        </div>
+        <a href="mailto:careers@glaex.com?subject=Application: Photographer & Visual Stylist" class="glaex-c-role-cta">Apply →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERKS -->
+  <section class="glaex-c-perks">
+    <div class="container">
+      <div class="glaex-c-perks-intro">
+        <span class="eyebrow">What We Offer</span>
+        <h2 class="h2">Built for <em>real lives</em>.</h2>
+        <p>Benefits designed by women who've been on the other side — and know what actually matters.</p>
+      </div>
+      <div class="glaex-c-perks-grid">
+        <div class="glaex-c-perk">
+          <div class="glaex-c-perk-icon">i</div>
+          <div><h3>Remote-First, Always</h3><p>Work from anywhere in the U.S. Some hybrid roles in our LA studio for those who want it.</p></div>
+        </div>
+        <div class="glaex-c-perk">
+          <div class="glaex-c-perk-icon">ii</div>
+          <div><h3>4-Day Workweek</h3><p>Fridays off, every week. We trust you to do great work in less time — and you do.</p></div>
+        </div>
+        <div class="glaex-c-perk">
+          <div class="glaex-c-perk-icon">iii</div>
+          <div><h3>Unlimited PTO</h3><p>Take what you need. We track minimum days off, not maximum. Real rest, no guilt.</p></div>
+        </div>
+        <div class="glaex-c-perk">
+          <div class="glaex-c-perk-icon">iv</div>
+          <div><h3>Full Health Coverage</h3><p>Medical, dental, vision — fully covered for you, 75% covered for dependents.</p></div>
+        </div>
+        <div class="glaex-c-perk">
+          <div class="glaex-c-perk-icon">v</div>
+          <div><h3>$2k Learning Budget</h3><p>Annual stipend for courses, conferences, books, coaching — anything that grows you.</p></div>
+        </div>
+        <div class="glaex-c-perk">
+          <div class="glaex-c-perk-icon">vi</div>
+          <div><h3>Generous Parental Leave</h3><p>16 weeks paid leave for primary caregivers, 8 weeks for secondary. No questions asked.</p></div>
+        </div>
+        <div class="glaex-c-perk">
+          <div class="glaex-c-perk-icon">vii</div>
+          <div><h3>50% Employee Discount</h3><p>On every drop. Plus first access to new collections and sample sales.</p></div>
+        </div>
+        <div class="glaex-c-perk">
+          <div class="glaex-c-perk-icon">viii</div>
+          <div><h3>Annual Team Retreat</h3><p>Fully expensed team trip every year. Past locations: Joshua Tree, Charleston, Mexico City.</p></div>
+        </div>
+        <div class="glaex-c-perk">
+          <div class="glaex-c-perk-icon">ix</div>
+          <div><h3>Equity in the Brand</h3><p>Every full-time hire receives equity. When GLAEX wins, you win.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIRING PROCESS -->
+  <section class="glaex-c-process">
+    <div class="container">
+      <div class="glaex-c-process-intro">
+        <span class="eyebrow">Hiring Process</span>
+        <h2 class="h2">Four steps. <em>No mystery</em>.</h2>
+        <p>Most hires move from application to offer in 2-3 weeks. We respect your time as much as our own.</p>
+      </div>
+      <div class="glaex-c-process-grid">
+        <div class="glaex-c-process-step">
+          <h3>Application</h3>
+          <p>Send us your résumé, portfolio, or anything you've made you're proud of. Skip the cover letter — tell us what you'd build here instead.</p>
+        </div>
+        <div class="glaex-c-process-step">
+          <h3>Intro Call</h3>
+          <p>30 minutes with the hiring manager. Conversational, two-way. We're learning about each other, not running a checklist.</p>
+        </div>
+        <div class="glaex-c-process-step">
+          <h3>Work Sample</h3>
+          <p>A small, paid project or live work session — designed to mirror what you'd actually do here. Never more than 4 hours of your time.</p>
+        </div>
+        <div class="glaex-c-process-step">
+          <h3>Team Meet</h3>
+          <p>Meet 2-3 future teammates. Ask hard questions. Hear honest answers. Then we make an offer — usually within 48 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM VOICES -->
+  <section class="glaex-c-team">
+    <div class="container">
+      <span class="eyebrow">From the Team</span>
+      <h2 class="h2">What it's <em>actually like</em> here.</h2>
+      <p>Don't take our word for it. This is what people on the team say when no one's writing it down for HR.</p>
+
+      <div class="glaex-c-team-tags">
+        <span class="glaex-c-tag">Remote-First</span>
+        <span class="glaex-c-tag">4-Day Week</span>
+        <span class="glaex-c-tag">Equity for All</span>
+        <span class="glaex-c-tag">No Politics</span>
+        <span class="glaex-c-tag">Real Ownership</span>
+      </div>
+
+      <p class="glaex-c-team-quote">"It's the first job where I've felt like I'm building something — not just executing on someone else's brief. The pace is real, but so is the trust."</p>
+      <div class="glaex-c-team-author">— Marketing Lead, GLAEX</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="glaex-c-cta">
+    <div class="container">
+      <span class="eyebrow" style="color:#b08968;">Don't See Your Role?</span>
+      <h2 class="h2">Send us your <em>story</em> anyway.</h2>
+      <p>We're always looking for sharp, considered people who care about building something real. If that's you — even without a posted role — we want to hear from you.</p>
+      <a href="mailto:careers@glaex.com?subject=Open Application" class="glaex-c-cta-btn">Send Your Story</a>
+      <a href="/pages/about-us" class="glaex-c-cta-btn secondary">About GLAEX</a>
+    </div>
+  </section>
+
+</div>
