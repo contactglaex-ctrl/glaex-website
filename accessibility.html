@@ -1,0 +1,237 @@
+<style>
+  .glaex-a11y * { margin: 0; padding: 0; box-sizing: border-box; }
+  .glaex-a11y {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    color: #1a1a1a; line-height: 1.65; font-weight: 400;
+    -webkit-font-smoothing: antialiased; background: #faf7f2;
+  }
+  .glaex-a11y h1, .glaex-a11y h2, .glaex-a11y h3 {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    font-weight: 500; letter-spacing: -0.01em;
+  }
+  .glaex-a11y .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .glaex-a11y section { padding: 100px 0; }
+  .glaex-a11y .eyebrow { font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase; color: #b08968; margin-bottom: 18px; display: inline-block; font-weight: 500; }
+  .glaex-a11y .h2 { font-size: clamp(34px, 4.5vw, 54px); line-height: 1.12; margin-bottom: 28px; color: #1a1a1a; }
+  .glaex-a11y .h2 em { font-style: italic; color: #7d5a3e; }
+  .glaex-a11y p { font-size: 16px; color: #4a4338; line-height: 1.85; margin-bottom: 18px; }
+
+  .glaex-a-hero { text-align: center; padding: 140px 0 110px !important; background: linear-gradient(180deg, #faf7f2 0%, #f1ebe1 100%); border-bottom: 1px solid #e6dfd2; }
+  .glaex-a-hero h1 { font-size: clamp(48px, 7vw, 92px); line-height: 1; letter-spacing: -0.02em; margin-bottom: 32px; color: #1a1a1a; }
+  .glaex-a-hero h1 em { font-style: italic; color: #7d5a3e; }
+  .glaex-a-hero .hero-sub { font-size: 19px; max-width: 680px; margin: 0 auto; color: #6b6358; font-weight: 300; line-height: 1.7; }
+  .glaex-a-hero .hero-divider { width: 60px; height: 1px; background: #b08968; margin: 36px auto 0; }
+
+  .glaex-a-statement { max-width: 820px; margin: 0 auto; text-align: center; }
+  .glaex-a-statement p { font-size: 17px; color: #4a4338; line-height: 1.85; }
+  .glaex-a-statement p:first-of-type::first-letter { font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 600; float: left; line-height: 0.85; margin: 8px 14px 0 0; color: #7d5a3e; }
+
+  .glaex-a-stats { background: #1a1a1a; color: #faf7f2; padding: 80px 0 !important; }
+  .glaex-a-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
+  .glaex-a-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 500; color: #b08968; line-height: 1; margin-bottom: 10px; }
+  .glaex-a-stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.28em; color: rgba(250,247,242,0.55); }
+
+  .glaex-a-features { background: #f1ebe1; }
+  .glaex-a-features-intro { text-align: center; max-width: 720px; margin: 0 auto 60px; }
+  .glaex-a-features-intro p { color: #6b6358; font-size: 17px; }
+  .glaex-a-features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .glaex-a-feature { display: flex; gap: 22px; align-items: flex-start; padding: 32px; background: #faf7f2; border: 1px solid #e6dfd2; border-radius: 2px; }
+  .glaex-a-feature-check { flex-shrink: 0; width: 36px; height: 36px; background: #1a1a1a; color: #faf7f2; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+  .glaex-a-feature h3 { font-size: 20px; margin-bottom: 6px; color: #1a1a1a; }
+  .glaex-a-feature p { color: #6b6358; font-size: 14px; line-height: 1.7; margin: 0; }
+
+  .glaex-a-philosophy { background: #1a1a1a; color: #faf7f2; text-align: center; }
+  .glaex-a-philosophy .container { max-width: 820px; }
+  .glaex-a-philosophy .eyebrow { color: #b08968; }
+  .glaex-a-philosophy h2 { color: #faf7f2; }
+  .glaex-a-philosophy .pull-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3.5vw, 40px); font-style: italic; line-height: 1.4; margin: 40px 0; color: #faf7f2; }
+  .glaex-a-philosophy p { color: rgba(250,247,242,0.78); font-size: 17px; }
+
+  .glaex-a-standards { background: #faf7f2; text-align: center; }
+  .glaex-a-standards-intro { max-width: 720px; margin: 0 auto 60px; }
+  .glaex-a-standards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .glaex-a-standard { text-align: left; padding: 40px 32px; background: #fff; border: 1px solid #e6dfd2; border-radius: 2px; }
+  .glaex-a-standard-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: #b08968; margin-bottom: 18px; display: block; }
+  .glaex-a-standard h3 { font-size: 22px; margin-bottom: 12px; color: #1a1a1a; }
+  .glaex-a-standard p { color: #6b6358; font-size: 14px; line-height: 1.75; margin: 0; }
+
+  .glaex-a-ongoing { background: #f1ebe1; text-align: center; }
+  .glaex-a-ongoing-intro { max-width: 720px; margin: 0 auto 70px; }
+  .glaex-a-ongoing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; counter-reset: astep; }
+  .glaex-a-ongoing-step { text-align: left; padding-top: 36px; position: relative; }
+  .glaex-a-ongoing-step::before { counter-increment: astep; content: "0" counter(astep); position: absolute; top: 0; left: 0; font-family: 'Cormorant Garamond', serif; font-size: 14px; color: #b08968; letter-spacing: 0.15em; }
+  .glaex-a-ongoing-step h3 { font-size: 22px; margin-bottom: 12px; border-top: 1px solid #e6dfd2; padding-top: 24px; color: #1a1a1a; }
+  .glaex-a-ongoing-step p { color: #6b6358; font-size: 14px; line-height: 1.75; margin: 0; }
+
+  .glaex-a-contact { background: #faf7f2; text-align: center; }
+  .glaex-a-contact .container { max-width: 880px; }
+  .glaex-a-contact-box { background: #fff; padding: 60px 50px; border: 1px solid #e6dfd2; border-radius: 2px; margin-top: 40px; text-align: left; }
+  .glaex-a-contact-box h3 { font-size: 24px; color: #1a1a1a; margin-bottom: 16px; }
+  .glaex-a-contact-box p { color: #6b6358; font-size: 15px; }
+  .glaex-a-contact-list { list-style: none; padding: 0; margin: 24px 0 0; }
+  .glaex-a-contact-list li { padding: 16px 0; border-top: 1px solid #e6dfd2; font-size: 15px; color: #4a4338; }
+  .glaex-a-contact-list li:first-child { border-top: none; }
+  .glaex-a-contact-list strong { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: #7d5a3e; display: block; margin-bottom: 4px; font-weight: 600; }
+
+  .glaex-a-cta { background: #1a1a1a; color: #faf7f2; text-align: center; }
+  .glaex-a-cta h2 { color: #faf7f2; }
+  .glaex-a-cta p { color: rgba(250,247,242,0.7); font-size: 17px; max-width: 600px; margin: 0 auto 36px; }
+  .glaex-a-cta-btn { display: inline-block; padding: 18px 48px; background: #faf7f2; color: #1a1a1a; text-decoration: none; font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 500; border: 1px solid #faf7f2; transition: background 0.25s ease, color 0.25s ease; }
+  .glaex-a-cta-btn:hover { background: transparent; color: #faf7f2; }
+  .glaex-a-cta-btn.secondary { background: transparent; color: #faf7f2; margin-left: 12px; }
+  .glaex-a-cta-btn.secondary:hover { background: #faf7f2; color: #1a1a1a; }
+
+  @media (max-width: 880px) {
+    .glaex-a11y section { padding: 70px 0; }
+    .glaex-a-features-grid { grid-template-columns: 1fr; gap: 16px; }
+    .glaex-a-standards-grid { grid-template-columns: 1fr; gap: 20px; }
+    .glaex-a-ongoing-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .glaex-a-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+    .glaex-a-hero { padding: 100px 0 80px !important; }
+    .glaex-a-contact-box { padding: 40px 28px; }
+    .glaex-a-cta-btn.secondary { margin-left: 0; margin-top: 12px; }
+  }
+  @media (max-width: 520px) {
+    .glaex-a-ongoing-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="glaex-a11y">
+
+  <section class="glaex-a-hero">
+    <div class="container">
+      <span class="eyebrow">Accessibility</span>
+      <h1>Designed for <em>everyone</em>.</h1>
+      <p class="hero-sub">GLAEX is committed to making our website usable, navigable, and enjoyable for every customer — including those with disabilities and assistive technology needs.</p>
+      <div class="hero-divider"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="glaex-a-statement">
+        <span class="eyebrow">Our Commitment</span>
+        <h2 class="h2">A site that <em>works for her</em>.</h2>
+        <p>At GLAEX, we believe that great fashion — and the experience of shopping for it — should be accessible to every woman. Independently of how she navigates the web, the device she uses, or the assistive technology she relies on.</p>
+        <p>We are committed to providing a digital experience that conforms to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA — the international standard set by the World Wide Web Consortium (W3C). Our team works continuously to identify and remediate accessibility issues across our site, app, email communications, and customer service touchpoints.</p>
+        <p>We see accessibility not as a one-time project, but as an ongoing practice woven into how we design, build, and operate this brand.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="glaex-a-stats">
+    <div class="container">
+      <div class="glaex-a-stats-grid">
+        <div><div class="glaex-a-stat-num">WCAG</div><div class="glaex-a-stat-label">2.1 Level AA</div></div>
+        <div><div class="glaex-a-stat-num">100%</div><div class="glaex-a-stat-label">Keyboard Navigable</div></div>
+        <div><div class="glaex-a-stat-num">24h</div><div class="glaex-a-stat-label">Response Time</div></div>
+        <div><div class="glaex-a-stat-num">∞</div><div class="glaex-a-stat-label">Ongoing Improvements</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="glaex-a-features">
+    <div class="container">
+      <div class="glaex-a-features-intro">
+        <span class="eyebrow">Features</span>
+        <h2 class="h2">What we've <em>built in</em>.</h2>
+        <p>Accessibility features available across the GLAEX experience right now.</p>
+      </div>
+      <div class="glaex-a-features-grid">
+        <div class="glaex-a-feature"><div class="glaex-a-feature-check">✓</div><div><h3>Keyboard Navigation</h3><p>Every page is fully navigable with a keyboard alone — Tab, Shift+Tab, Enter, and Space — without requiring a mouse or touchscreen.</p></div></div>
+        <div class="glaex-a-feature"><div class="glaex-a-feature-check">✓</div><div><h3>Screen Reader Support</h3><p>Compatible with major screen readers: NVDA, JAWS, VoiceOver, and TalkBack. All images include descriptive alt text.</p></div></div>
+        <div class="glaex-a-feature"><div class="glaex-a-feature-check">✓</div><div><h3>Color Contrast Standards</h3><p>All text and interactive elements meet or exceed WCAG 2.1 AA color contrast ratios for readability.</p></div></div>
+        <div class="glaex-a-feature"><div class="glaex-a-feature-check">✓</div><div><h3>Resizable Text</h3><p>Text can be resized up to 200% without breaking layouts, loss of content, or loss of functionality.</p></div></div>
+        <div class="glaex-a-feature"><div class="glaex-a-feature-check">✓</div><div><h3>Clear Focus Indicators</h3><p>Visible focus states on every interactive element so keyboard users always know where they are on the page.</p></div></div>
+        <div class="glaex-a-feature"><div class="glaex-a-feature-check">✓</div><div><h3>Descriptive Link Text</h3><p>Links are written to make sense out of context — no generic "click here" or "read more" without surrounding meaning.</p></div></div>
+        <div class="glaex-a-feature"><div class="glaex-a-feature-check">✓</div><div><h3>Form Labels & Error Messages</h3><p>Every form field has a clear, programmatically-associated label. Errors are announced clearly with guidance to fix them.</p></div></div>
+        <div class="glaex-a-feature"><div class="glaex-a-feature-check">✓</div><div><h3>Skip-to-Content Links</h3><p>Skip-navigation links allow keyboard and screen reader users to bypass repetitive menus and jump to main content.</p></div></div>
+        <div class="glaex-a-feature"><div class="glaex-a-feature-check">✓</div><div><h3>Reduced Motion Support</h3><p>We respect the prefers-reduced-motion setting in your browser — animations are minimized for users who request it.</p></div></div>
+        <div class="glaex-a-feature"><div class="glaex-a-feature-check">✓</div><div><h3>Multiple Payment & Checkout Options</h3><p>Shop Pay, Apple Pay, Google Pay, Klarna, and Afterpay — multiple paths through checkout to suit different needs.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="glaex-a-philosophy">
+    <div class="container">
+      <span class="eyebrow">Why It Matters</span>
+      <h2 class="h2">Accessibility is <em>not optional</em>.</h2>
+      <p class="pull-quote">"Designing for accessibility isn't a compliance checklist. It's a sign of respect — for the women who shop with us, for the diversity of how they experience the web, and for the principle that good design works for everyone."</p>
+      <p>Beautiful design and accessible design are not opposites — they're the same discipline taken seriously. Every accessibility decision we make also improves the experience for customers without disabilities: clearer labels, faster pages, simpler flows, more legible text.</p>
+      <p>When the site works better for someone using a screen reader, it works better for everyone.</p>
+    </div>
+  </section>
+
+  <section class="glaex-a-standards">
+    <div class="container">
+      <div class="glaex-a-standards-intro">
+        <span class="eyebrow">Standards</span>
+        <h2 class="h2">What we <em>follow</em>.</h2>
+        <p>The international guidelines and legal frameworks that shape our accessibility practice.</p>
+      </div>
+      <div class="glaex-a-standards-grid">
+        <div class="glaex-a-standard">
+          <span class="glaex-a-standard-num">i.</span>
+          <h3>WCAG 2.1 Level AA</h3>
+          <p>Our site is designed to conform to the Web Content Accessibility Guidelines 2.1 at Level AA — the international standard developed by the W3C.</p>
+        </div>
+        <div class="glaex-a-standard">
+          <span class="glaex-a-standard-num">ii.</span>
+          <h3>ADA Title III</h3>
+          <p>We follow the principles of the Americans with Disabilities Act for digital experiences, ensuring our online services remain available to all U.S. customers.</p>
+        </div>
+        <div class="glaex-a-standard">
+          <span class="glaex-a-standard-num">iii.</span>
+          <h3>Section 508</h3>
+          <p>We align our practices with Section 508 of the U.S. Rehabilitation Act, the standard for federal electronic and information technology accessibility.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="glaex-a-ongoing">
+    <div class="container">
+      <div class="glaex-a-ongoing-intro">
+        <span class="eyebrow">Our Process</span>
+        <h2 class="h2">An <em>ongoing practice</em>.</h2>
+        <p>Accessibility is not a feature we shipped once. It's a continuous, four-step cycle built into how we operate.</p>
+      </div>
+      <div class="glaex-a-ongoing-grid">
+        <div class="glaex-a-ongoing-step"><h3>Audit</h3><p>We conduct regular accessibility audits with both automated tools and manual testing by experienced reviewers.</p></div>
+        <div class="glaex-a-ongoing-step"><h3>Remediate</h3><p>Identified issues are prioritized and resolved on a rolling basis — critical fixes within 72 hours where possible.</p></div>
+        <div class="glaex-a-ongoing-step"><h3>Train</h3><p>Our design, engineering, and content teams receive ongoing training on accessibility best practices.</p></div>
+        <div class="glaex-a-ongoing-step"><h3>Listen</h3><p>We act on real feedback from real customers. Every accessibility report is reviewed personally and responded to within 24 hours.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="glaex-a-contact">
+    <div class="container">
+      <span class="eyebrow">Need Help?</span>
+      <h2 class="h2">We're <em>here</em>.</h2>
+      <p style="color:#6b6358; font-size:17px;">If you experience any difficulty accessing GLAEX content, or if you have feedback about how we can do better — reach out. We respond personally to every accessibility-related message within 24 hours.</p>
+
+      <div class="glaex-a-contact-box">
+        <h3>Contact Our Accessibility Team</h3>
+        <p>Multiple ways to reach us. Use whichever works best for you — we'll respond to any of them.</p>
+        <ul class="glaex-a-contact-list">
+          <li><strong>Email</strong> accessibility@glaex.com</li>
+          <li><strong>Phone</strong> +1 (800) 555-0150 · Mon–Fri 9am–6pm CST</li>
+          <li><strong>Text / SMS</strong> +1 (800) 555-0151 · Reply 24/7, responses within 24h</li>
+          <li><strong>Mail</strong> GLAEX Accessibility · 500 Main Street · Austin, TX 78701 · USA</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="glaex-a-cta">
+    <div class="container">
+      <span class="eyebrow" style="color:#b08968;">Spotted Something?</span>
+      <h2 class="h2">Tell us where we <em>fall short</em>.</h2>
+      <p>If something on this site doesn't work for you the way it should — an unlabeled button, a contrast issue, a checkout step that's hard to navigate — we want to know. Your feedback shapes how we build.</p>
+      <a href="mailto:accessibility@glaex.com?subject=Accessibility Feedback" class="glaex-a-cta-btn">Report an Issue</a>
+      <a href="/pages/about-us" class="glaex-a-cta-btn secondary">About GLAEX</a>
+    </div>
+  </section>
+
+</div>

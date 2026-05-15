@@ -1,0 +1,219 @@
+<style>
+  .glaex-sustain * { margin: 0; padding: 0; box-sizing: border-box; }
+  .glaex-sustain {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    color: #1a1a1a; line-height: 1.65; font-weight: 400;
+    -webkit-font-smoothing: antialiased; background: #faf7f2;
+  }
+  .glaex-sustain h1, .glaex-sustain h2, .glaex-sustain h3 {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    font-weight: 500; letter-spacing: -0.01em;
+  }
+  .glaex-sustain .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .glaex-sustain section { padding: 100px 0; }
+  .glaex-sustain .eyebrow { font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase; color: #b08968; margin-bottom: 18px; display: inline-block; font-weight: 500; }
+  .glaex-sustain .h2 { font-size: clamp(34px, 4.5vw, 54px); line-height: 1.12; margin-bottom: 28px; color: #1a1a1a; }
+  .glaex-sustain .h2 em { font-style: italic; color: #7d5a3e; }
+  .glaex-sustain p { font-size: 16px; color: #4a4338; line-height: 1.85; margin-bottom: 18px; }
+
+  .glaex-s-hero { text-align: center; padding: 140px 0 110px !important; background: linear-gradient(180deg, #faf7f2 0%, #f1ebe1 100%); border-bottom: 1px solid #e6dfd2; }
+  .glaex-s-hero h1 { font-size: clamp(48px, 7vw, 92px); line-height: 1; letter-spacing: -0.02em; margin-bottom: 32px; color: #1a1a1a; }
+  .glaex-s-hero h1 em { font-style: italic; color: #7d5a3e; }
+  .glaex-s-hero .hero-sub { font-size: 19px; max-width: 660px; margin: 0 auto; color: #6b6358; font-weight: 300; line-height: 1.7; }
+  .glaex-s-hero .hero-divider { width: 60px; height: 1px; background: #b08968; margin: 36px auto 0; }
+
+  .glaex-s-story-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 90px; align-items: center; }
+  .glaex-s-story-img { aspect-ratio: 4/5; background: linear-gradient(135deg, rgba(176,137,104,0.85) 0%, rgba(125,90,62,0.95) 100%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 125'%3E%3Crect fill='%23b08968' width='100' height='125'/%3E%3Cpath d='M50 30 Q40 45 50 60 Q60 45 50 30 Z' fill='%23d4c4a8' opacity='0.6'/%3E%3Cpath d='M30 70 Q50 50 70 70 L70 110 L30 110 Z' fill='%23d4c4a8' opacity='0.4'/%3E%3C/svg%3E") center/cover; border-radius: 2px; }
+  .glaex-s-story p:first-of-type::first-letter { font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 600; float: left; line-height: 0.85; margin: 8px 14px 0 0; color: #7d5a3e; }
+
+  .glaex-s-stats { background: #1a1a1a; color: #faf7f2; padding: 80px 0 !important; }
+  .glaex-s-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
+  .glaex-s-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 500; color: #b08968; line-height: 1; margin-bottom: 10px; }
+  .glaex-s-stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.28em; color: rgba(250,247,242,0.55); }
+
+  .glaex-s-pillars { background: #f1ebe1; text-align: center; }
+  .glaex-s-pillars-intro { max-width: 720px; margin: 0 auto 60px; }
+  .glaex-s-pillars-intro p { color: #6b6358; font-size: 17px; }
+  .glaex-s-pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .glaex-s-pillar { text-align: left; padding: 40px 32px; background: #faf7f2; border: 1px solid #e6dfd2; border-radius: 2px; }
+  .glaex-s-pillar-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: #b08968; margin-bottom: 18px; display: block; }
+  .glaex-s-pillar h3 { font-size: 22px; margin-bottom: 12px; color: #1a1a1a; }
+  .glaex-s-pillar p { color: #6b6358; font-size: 14px; line-height: 1.75; margin: 0; }
+
+  .glaex-s-philosophy { background: #1a1a1a; color: #faf7f2; text-align: center; }
+  .glaex-s-philosophy .container { max-width: 820px; }
+  .glaex-s-philosophy .eyebrow { color: #b08968; }
+  .glaex-s-philosophy h2 { color: #faf7f2; }
+  .glaex-s-philosophy .pull-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3.5vw, 40px); font-style: italic; line-height: 1.4; margin: 40px 0; color: #faf7f2; }
+  .glaex-s-philosophy p { color: rgba(250,247,242,0.78); font-size: 17px; }
+
+  .glaex-s-process { background: #faf7f2; text-align: center; }
+  .glaex-s-process-intro { max-width: 720px; margin: 0 auto 70px; }
+  .glaex-s-process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; counter-reset: sstep; }
+  .glaex-s-process-step { text-align: left; padding-top: 36px; position: relative; }
+  .glaex-s-process-step::before { counter-increment: sstep; content: "0" counter(sstep); position: absolute; top: 0; left: 0; font-family: 'Cormorant Garamond', serif; font-size: 14px; color: #b08968; letter-spacing: 0.15em; }
+  .glaex-s-process-step h3 { font-size: 22px; margin-bottom: 12px; border-top: 1px solid #e6dfd2; padding-top: 24px; color: #1a1a1a; }
+  .glaex-s-process-step p { color: #6b6358; font-size: 14px; line-height: 1.75; margin: 0; }
+
+  .glaex-s-materials { background: #f1ebe1; }
+  .glaex-s-materials-intro { text-align: center; max-width: 720px; margin: 0 auto 60px; }
+  .glaex-s-materials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .glaex-s-material { display: flex; gap: 22px; align-items: flex-start; padding: 32px; background: #faf7f2; border: 1px solid #e6dfd2; border-radius: 2px; }
+  .glaex-s-material-check { flex-shrink: 0; width: 36px; height: 36px; background: #1a1a1a; color: #faf7f2; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+  .glaex-s-material h3 { font-size: 20px; margin-bottom: 6px; color: #1a1a1a; }
+  .glaex-s-material p { color: #6b6358; font-size: 14px; line-height: 1.7; margin: 0; }
+
+  .glaex-s-commitment { background: #faf7f2; text-align: center; }
+  .glaex-s-commitment .container { max-width: 880px; }
+  .glaex-s-commitment-tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin: 36px 0; }
+  .glaex-s-tag { background: transparent; border: 1px solid #b08968; color: #7d5a3e; padding: 10px 22px; border-radius: 999px; font-size: 13px; letter-spacing: 0.05em; }
+
+  .glaex-s-cta { background: #1a1a1a; color: #faf7f2; text-align: center; }
+  .glaex-s-cta h2 { color: #faf7f2; }
+  .glaex-s-cta p { color: rgba(250,247,242,0.7); font-size: 17px; max-width: 600px; margin: 0 auto 36px; }
+  .glaex-s-cta-btn { display: inline-block; padding: 18px 48px; background: #faf7f2; color: #1a1a1a; text-decoration: none; font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 500; border: 1px solid #faf7f2; transition: background 0.25s ease, color 0.25s ease; }
+  .glaex-s-cta-btn:hover { background: transparent; color: #faf7f2; }
+  .glaex-s-cta-btn.secondary { background: transparent; color: #faf7f2; margin-left: 12px; }
+  .glaex-s-cta-btn.secondary:hover { background: #faf7f2; color: #1a1a1a; }
+
+  @media (max-width: 880px) {
+    .glaex-sustain section { padding: 70px 0; }
+    .glaex-s-story-grid { grid-template-columns: 1fr; gap: 50px; }
+    .glaex-s-pillars-grid { grid-template-columns: 1fr; gap: 20px; }
+    .glaex-s-process-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .glaex-s-materials-grid { grid-template-columns: 1fr; gap: 16px; }
+    .glaex-s-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+    .glaex-s-hero { padding: 100px 0 80px !important; }
+    .glaex-s-cta-btn.secondary { margin-left: 0; margin-top: 12px; }
+  }
+  @media (max-width: 520px) {
+    .glaex-s-process-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="glaex-sustain">
+
+  <section class="glaex-s-hero">
+    <div class="container">
+      <span class="eyebrow">Sustainability</span>
+      <h1>Fashion, made <em>with intention</em>.</h1>
+      <p class="hero-sub">We're not a perfect brand. But we're a transparent one — and we believe that's what real sustainability actually looks like.</p>
+      <div class="hero-divider"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="glaex-s-story-grid">
+        <div class="glaex-s-story-img" role="img" aria-label="Sustainable fashion image"></div>
+        <div class="glaex-s-story">
+          <span class="eyebrow">Our Approach</span>
+          <h2 class="h2">Honesty over <em>greenwashing</em>.</h2>
+          <p>The fashion industry has a sustainability problem. We're not pretending we've solved it. What we are doing is making considered, measurable progress — and being honest about where we still have work to do.</p>
+          <p>GLAEX was built on a simple premise: fewer, better pieces. Our entire business model — curation over catalog bloat, weekly drops in small quantities, no aggressive markdowns — is designed to reduce overproduction, the single biggest source of fashion waste.</p>
+          <p>We work with U.S.-based fulfillment partners to cut shipping emissions. We choose fabrics that last beyond a season. We refuse to chase trends that will be landfill by spring. And every year, we publish an honest progress report — not a marketing campaign.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="glaex-s-stats">
+    <div class="container">
+      <div class="glaex-s-stats-grid">
+        <div><div class="glaex-s-stat-num">0%</div><div class="glaex-s-stat-label">Overproduction Burned</div></div>
+        <div><div class="glaex-s-stat-num">85%</div><div class="glaex-s-stat-label">U.S.-Sourced Inventory</div></div>
+        <div><div class="glaex-s-stat-num">100%</div><div class="glaex-s-stat-label">Recyclable Packaging</div></div>
+        <div><div class="glaex-s-stat-num">3-5d</div><div class="glaex-s-stat-label">Domestic Shipping</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="glaex-s-pillars">
+    <div class="container">
+      <div class="glaex-s-pillars-intro">
+        <span class="eyebrow">Our Pillars</span>
+        <h2 class="h2">Six <em>commitments</em>.</h2>
+        <p>Real action, measured outcomes, and the discipline to say what we don't do — not just what we do.</p>
+      </div>
+      <div class="glaex-s-pillars-grid">
+        <div class="glaex-s-pillar"><span class="glaex-s-pillar-num">i.</span><h3>No Overproduction</h3><p>Small-batch drops, sized to expected demand. No mass clearance fires, no incineration of unsold stock — ever.</p></div>
+        <div class="glaex-s-pillar"><span class="glaex-s-pillar-num">ii.</span><h3>Considered Materials</h3><p>We prioritize linen, cotton, modal, and TENCEL™ where possible. We disclose fabric composition on every product page.</p></div>
+        <div class="glaex-s-pillar"><span class="glaex-s-pillar-num">iii.</span><h3>U.S.-Based Logistics</h3><p>85% of our inventory ships from U.S. warehouses, reducing transport emissions and supporting domestic supply chains.</p></div>
+        <div class="glaex-s-pillar"><span class="glaex-s-pillar-num">iv.</span><h3>Recyclable Packaging</h3><p>All mailers, hangtags, and ribbons are recyclable or compostable. We use FSC-certified paper for everything printed.</p></div>
+        <div class="glaex-s-pillar"><span class="glaex-s-pillar-num">v.</span><h3>Transparent Pricing</h3><p>We don't fake-discount. No phony "70% off" sales. Our prices reflect real cost — published clearly, never inflated.</p></div>
+        <div class="glaex-s-pillar"><span class="glaex-s-pillar-num">vi.</span><h3>Annual Impact Report</h3><p>Every January, we publish a public report on our emissions, materials, and waste — with the wins and the misses.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="glaex-s-philosophy">
+    <div class="container">
+      <span class="eyebrow">Real Talk</span>
+      <h2 class="h2">We don't call ourselves <em>"sustainable"</em>.</h2>
+      <p class="pull-quote">"The most sustainable garment is the one already in her closet. We're not here to convince her to buy more — we're here to make sure that when she does, what she buys earns its place and stays there."</p>
+      <p>"Sustainable" has become one of the most overused words in fashion. We try not to use it. Instead, we use words that mean something specific: smaller, slower, considered, traceable, measurable, accountable.</p>
+      <p>We're not certified anything. We're not perfect anything. We're a small American boutique trying to do better than the industry standard — and being transparent about where we still fall short.</p>
+    </div>
+  </section>
+
+  <section class="glaex-s-process">
+    <div class="container">
+      <div class="glaex-s-process-intro">
+        <span class="eyebrow">Our Process</span>
+        <h2 class="h2">How we <em>source</em>.</h2>
+        <p>Four checkpoints every piece passes through before it reaches her closet.</p>
+      </div>
+      <div class="glaex-s-process-grid">
+        <div class="glaex-s-process-step"><h3>Source</h3><p>We work with U.S.-based wholesale partners and LA-based fashion houses. We disclose origin on every product page.</p></div>
+        <div class="glaex-s-process-step"><h3>Vet</h3><p>Suppliers must meet our fabric, fit, and labor standards. We reject 60% of styles we sample — quality over quantity.</p></div>
+        <div class="glaex-s-process-step"><h3>Curate</h3><p>30-40 pieces per drop. We forecast demand using past data to avoid producing more than we'll sell.</p></div>
+        <div class="glaex-s-process-step"><h3>Track</h3><p>Every order is logged, every return analyzed. Patterns inform what we re-stock, what we retire, what we redesign.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="glaex-s-materials">
+    <div class="container">
+      <div class="glaex-s-materials-intro">
+        <span class="eyebrow">Our Materials</span>
+        <h2 class="h2">What we <em>prioritize</em>.</h2>
+        <p>The fabrics, finishes, and practices we lean into — and the ones we work to leave behind.</p>
+      </div>
+      <div class="glaex-s-materials-grid">
+        <div class="glaex-s-material"><div class="glaex-s-material-check">✓</div><div><h3>Natural Fibers</h3><p>Linen, cotton, and silk lead our material mix. We disclose every blend percentage on the product page.</p></div></div>
+        <div class="glaex-s-material"><div class="glaex-s-material-check">✓</div><div><h3>TENCEL™ & Modal</h3><p>Wood-pulp-based fibers that biodegrade naturally. Cool, breathable, and softer than synthetic blends.</p></div></div>
+        <div class="glaex-s-material"><div class="glaex-s-material-check">✓</div><div><h3>OEKO-TEX® Certified Suppliers</h3><p>Wherever possible, we partner with suppliers certified for low chemical use in the dyeing process.</p></div></div>
+        <div class="glaex-s-material"><div class="glaex-s-material-check">✓</div><div><h3>Recyclable Packaging</h3><p>FSC-certified paper, recyclable mailers, plastic-free hangtags. Compostable when possible.</p></div></div>
+        <div class="glaex-s-material"><div class="glaex-s-material-check">✓</div><div><h3>Reduced Polyester</h3><p>We minimize synthetic content. When used, it's recycled polyester or rPET — never virgin polyester.</p></div></div>
+        <div class="glaex-s-material"><div class="glaex-s-material-check">✓</div><div><h3>Carbon-Neutral Shipping</h3><p>We offset 100% of domestic shipping emissions through our logistics partners' carbon programs.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="glaex-s-commitment">
+    <div class="container">
+      <span class="eyebrow">Our Long View</span>
+      <h2 class="h2">A brand that <em>compounds</em>.</h2>
+      <p>Real sustainability isn't a campaign. It's a thousand small decisions made consistently over years. We're tracking ours — and we publish them every January for anyone to read.</p>
+      <div class="glaex-s-commitment-tags">
+        <span class="glaex-s-tag">Annual Reports</span>
+        <span class="glaex-s-tag">No Greenwashing</span>
+        <span class="glaex-s-tag">Small-Batch Drops</span>
+        <span class="glaex-s-tag">Transparent Sourcing</span>
+        <span class="glaex-s-tag">Honest Pricing</span>
+      </div>
+      <p>This isn't a marketing strategy. It's how we run the company.</p>
+    </div>
+  </section>
+
+  <section class="glaex-s-cta">
+    <div class="container">
+      <span class="eyebrow" style="color:#b08968;">Want the Numbers?</span>
+      <h2 class="h2">Read the full <em>impact report</em>.</h2>
+      <p>Our 2026 sustainability report is available now — emissions, materials breakdown, packaging audit, and an honest list of what we still need to fix.</p>
+      <a href="mailto:hello@glaex.com?subject=Sustainability Report Request" class="glaex-s-cta-btn">Download Report</a>
+      <a href="/pages/about-us" class="glaex-s-cta-btn secondary">About GLAEX</a>
+    </div>
+  </section>
+
+</div>

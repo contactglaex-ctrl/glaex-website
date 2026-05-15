@@ -1,0 +1,263 @@
+<style>
+  .glaex-press * { margin: 0; padding: 0; box-sizing: border-box; }
+  .glaex-press {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    color: #1a1a1a; line-height: 1.65; font-weight: 400;
+    -webkit-font-smoothing: antialiased; background: #faf7f2;
+  }
+  .glaex-press h1, .glaex-press h2, .glaex-press h3 {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    font-weight: 500; letter-spacing: -0.01em;
+  }
+  .glaex-press .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .glaex-press section { padding: 100px 0; }
+  .glaex-press .eyebrow { font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase; color: #b08968; margin-bottom: 18px; display: inline-block; font-weight: 500; }
+  .glaex-press .h2 { font-size: clamp(34px, 4.5vw, 54px); line-height: 1.12; margin-bottom: 28px; color: #1a1a1a; }
+  .glaex-press .h2 em { font-style: italic; color: #7d5a3e; }
+  .glaex-press p { font-size: 16px; color: #4a4338; line-height: 1.85; margin-bottom: 18px; }
+
+  .glaex-p-hero { text-align: center; padding: 140px 0 110px !important; background: linear-gradient(180deg, #faf7f2 0%, #f1ebe1 100%); border-bottom: 1px solid #e6dfd2; }
+  .glaex-p-hero h1 { font-size: clamp(48px, 7vw, 92px); line-height: 1; letter-spacing: -0.02em; margin-bottom: 32px; color: #1a1a1a; }
+  .glaex-p-hero h1 em { font-style: italic; color: #7d5a3e; }
+  .glaex-p-hero .hero-sub { font-size: 19px; max-width: 660px; margin: 0 auto; color: #6b6358; font-weight: 300; line-height: 1.7; }
+  .glaex-p-hero .hero-divider { width: 60px; height: 1px; background: #b08968; margin: 36px auto 0; }
+
+  .glaex-p-stats { background: #1a1a1a; color: #faf7f2; padding: 80px 0 !important; }
+  .glaex-p-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
+  .glaex-p-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 500; color: #b08968; line-height: 1; margin-bottom: 10px; }
+  .glaex-p-stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.28em; color: rgba(250,247,242,0.55); }
+
+  .glaex-p-features { background: #f1ebe1; text-align: center; }
+  .glaex-p-features-intro { max-width: 720px; margin: 0 auto 60px; }
+  .glaex-p-features-intro p { color: #6b6358; font-size: 17px; }
+  .glaex-p-features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .glaex-p-feature { text-align: left; padding: 40px 32px; background: #faf7f2; border: 1px solid #e6dfd2; border-radius: 2px; }
+  .glaex-p-feature-logo { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: #1a1a1a; letter-spacing: 0.05em; margin-bottom: 24px; display: block; }
+  .glaex-p-feature-logo.italic { font-style: italic; }
+  .glaex-p-feature-logo.condensed { letter-spacing: 0.2em; font-size: 16px; text-transform: uppercase; }
+  .glaex-p-feature blockquote { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; line-height: 1.5; color: #1a1a1a; margin-bottom: 20px; }
+  .glaex-p-feature-meta { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: #6b6358; }
+
+  .glaex-p-philosophy { background: #1a1a1a; color: #faf7f2; text-align: center; }
+  .glaex-p-philosophy .container { max-width: 820px; }
+  .glaex-p-philosophy .eyebrow { color: #b08968; }
+  .glaex-p-philosophy h2 { color: #faf7f2; }
+  .glaex-p-philosophy .pull-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3.5vw, 40px); font-style: italic; line-height: 1.4; margin: 40px 0; color: #faf7f2; }
+  .glaex-p-philosophy p { color: rgba(250,247,242,0.78); font-size: 17px; }
+
+  .glaex-p-recent { background: #faf7f2; }
+  .glaex-p-recent-intro { text-align: center; max-width: 720px; margin: 0 auto 70px; }
+  .glaex-p-article { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 32px 40px; background: #fff; border: 1px solid #e6dfd2; border-radius: 2px; margin-bottom: 16px; transition: border-color 0.2s ease; }
+  .glaex-p-article:hover { border-color: #b08968; }
+  .glaex-p-article-source { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #b08968; margin-bottom: 8px; display: block; font-weight: 500; }
+  .glaex-p-article h3 { font-size: 22px; color: #1a1a1a; margin-bottom: 8px; }
+  .glaex-p-article-date { font-size: 13px; color: #6b6358; letter-spacing: 0.05em; }
+  .glaex-p-article-cta { color: #1a1a1a; text-decoration: none; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; border-bottom: 1px solid #1a1a1a; padding-bottom: 4px; white-space: nowrap; }
+  .glaex-p-article-cta:hover { color: #7d5a3e; border-color: #7d5a3e; }
+
+  .glaex-p-kit { background: #f1ebe1; text-align: center; }
+  .glaex-p-kit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px; }
+  .glaex-p-kit-card { padding: 36px 28px; background: #faf7f2; border: 1px solid #e6dfd2; border-radius: 2px; text-align: left; }
+  .glaex-p-kit-icon { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: #b08968; margin-bottom: 18px; display: block; }
+  .glaex-p-kit-card h3 { font-size: 20px; color: #1a1a1a; margin-bottom: 8px; }
+  .glaex-p-kit-card p { font-size: 13px; color: #6b6358; line-height: 1.7; margin-bottom: 16px; }
+  .glaex-p-kit-link { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; padding-bottom: 3px; }
+  .glaex-p-kit-link:hover { color: #7d5a3e; border-color: #7d5a3e; }
+
+  .glaex-p-cta { background: #1a1a1a; color: #faf7f2; text-align: center; }
+  .glaex-p-cta h2 { color: #faf7f2; }
+  .glaex-p-cta p { color: rgba(250,247,242,0.7); font-size: 17px; max-width: 600px; margin: 0 auto 36px; }
+  .glaex-p-cta-btn { display: inline-block; padding: 18px 48px; background: #faf7f2; color: #1a1a1a; text-decoration: none; font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 500; border: 1px solid #faf7f2; transition: background 0.25s ease, color 0.25s ease; }
+  .glaex-p-cta-btn:hover { background: transparent; color: #faf7f2; }
+  .glaex-p-cta-btn.secondary { background: transparent; color: #faf7f2; margin-left: 12px; }
+  .glaex-p-cta-btn.secondary:hover { background: #faf7f2; color: #1a1a1a; }
+
+  @media (max-width: 880px) {
+    .glaex-press section { padding: 70px 0; }
+    .glaex-p-features-grid, .glaex-p-kit-grid { grid-template-columns: 1fr; gap: 20px; }
+    .glaex-p-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+    .glaex-p-hero { padding: 100px 0 80px !important; }
+    .glaex-p-article { grid-template-columns: 1fr; padding: 24px; }
+    .glaex-p-cta-btn.secondary { margin-left: 0; margin-top: 12px; }
+  }
+</style>
+
+<div class="glaex-press">
+
+  <section class="glaex-p-hero">
+    <div class="container">
+      <span class="eyebrow">Press & Media</span>
+      <h1>GLAEX in <em>the press</em>.</h1>
+      <p class="hero-sub">Stories, features, and conversations about the modern American boutique reshaping what considered fashion looks like.</p>
+      <div class="hero-divider"></div>
+    </div>
+  </section>
+
+  <section class="glaex-p-stats">
+    <div class="container">
+      <div class="glaex-p-stats-grid">
+        <div><div class="glaex-p-stat-num">40+</div><div class="glaex-p-stat-label">Press Features</div></div>
+        <div><div class="glaex-p-stat-num">12</div><div class="glaex-p-stat-label">Editorial Magazines</div></div>
+        <div><div class="glaex-p-stat-num">8</div><div class="glaex-p-stat-label">Podcast Appearances</div></div>
+        <div><div class="glaex-p-stat-num">50</div><div class="glaex-p-stat-label">U.S. States Reached</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="glaex-p-features">
+    <div class="container">
+      <div class="glaex-p-features-intro">
+        <span class="eyebrow">Featured In</span>
+        <h2 class="h2">What they're <em>saying</em>.</h2>
+        <p>A selection of recent press coverage and editorial features.</p>
+      </div>
+      <div class="glaex-p-features-grid">
+        <div class="glaex-p-feature">
+          <span class="glaex-p-feature-logo italic">vogue daily</span>
+          <blockquote>"GLAEX is what happens when boutique fashion grows up — considered, accessible, and unapologetically modern."</blockquote>
+          <div class="glaex-p-feature-meta">Feature · Spring Edit</div>
+        </div>
+        <div class="glaex-p-feature">
+          <span class="glaex-p-feature-logo condensed">WHO WHAT WEAR</span>
+          <blockquote>"The brand quietly rewriting what affordable luxury actually looks like in America."</blockquote>
+          <div class="glaex-p-feature-meta">Editorial · Brand Spotlight</div>
+        </div>
+        <div class="glaex-p-feature">
+          <span class="glaex-p-feature-logo italic">refinery</span>
+          <blockquote>"We don't say this lightly: GLAEX is the boutique we've been waiting for."</blockquote>
+          <div class="glaex-p-feature-meta">Review · The Curated List</div>
+        </div>
+        <div class="glaex-p-feature">
+          <span class="glaex-p-feature-logo condensed">THE EVERYGIRL</span>
+          <blockquote>"Where elevated essentials meet a price tag that respects her budget. We're obsessed."</blockquote>
+          <div class="glaex-p-feature-meta">Feature · Brands to Watch</div>
+        </div>
+        <div class="glaex-p-feature">
+          <span class="glaex-p-feature-logo italic">byrdie</span>
+          <blockquote>"GLAEX understands the woman the fashion industry has been overlooking for decades."</blockquote>
+          <div class="glaex-p-feature-meta">Interview · Founder Series</div>
+        </div>
+        <div class="glaex-p-feature">
+          <span class="glaex-p-feature-logo condensed">FASHION DIVE</span>
+          <blockquote>"A masterclass in restraint. Every drop feels intentional. None feel rushed."</blockquote>
+          <div class="glaex-p-feature-meta">Industry Report · 2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="glaex-p-philosophy">
+    <div class="container">
+      <span class="eyebrow">Why We're Covered</span>
+      <h2 class="h2">We don't chase <em>press</em>.<br>We earn it.</h2>
+      <p class="pull-quote">"We've never paid for a press placement. We've never hired a PR firm to plant a story. The coverage we receive comes from journalists who've discovered the brand the same way our customers do — by accident, and then on purpose."</p>
+      <p>If you're a journalist, podcaster, or editor working on a story about modern fashion, women-led brands, slow-luxury commerce, or the future of American boutiques — we'd love to talk. We respond to every press inquiry, usually within 24 hours.</p>
+      <p>Real conversations, honest answers, and access to our founders.</p>
+    </div>
+  </section>
+
+  <section class="glaex-p-recent">
+    <div class="container">
+      <div class="glaex-p-recent-intro">
+        <span class="eyebrow">Recent Coverage</span>
+        <h2 class="h2">Latest <em>stories</em>.</h2>
+        <p>Selected articles, features, and interviews from the last twelve months.</p>
+      </div>
+
+      <div class="glaex-p-article">
+        <div>
+          <span class="glaex-p-article-source">Vogue Daily</span>
+          <h3>The New American Boutique Brands Worth Knowing</h3>
+          <span class="glaex-p-article-date">April 2026 · Feature</span>
+        </div>
+        <a href="#" class="glaex-p-article-cta">Read →</a>
+      </div>
+
+      <div class="glaex-p-article">
+        <div>
+          <span class="glaex-p-article-source">Who What Wear</span>
+          <h3>Inside GLAEX: A Modern Take on Curated Fashion</h3>
+          <span class="glaex-p-article-date">March 2026 · Brand Spotlight</span>
+        </div>
+        <a href="#" class="glaex-p-article-cta">Read →</a>
+      </div>
+
+      <div class="glaex-p-article">
+        <div>
+          <span class="glaex-p-article-source">Refinery</span>
+          <h3>Why This Quiet Boutique Is the Industry's Best-Kept Secret</h3>
+          <span class="glaex-p-article-date">February 2026 · Editorial</span>
+        </div>
+        <a href="#" class="glaex-p-article-cta">Read →</a>
+      </div>
+
+      <div class="glaex-p-article">
+        <div>
+          <span class="glaex-p-article-source">Byrdie</span>
+          <h3>The Founder Series: Building GLAEX From the Ground Up</h3>
+          <span class="glaex-p-article-date">January 2026 · Interview</span>
+        </div>
+        <a href="#" class="glaex-p-article-cta">Read →</a>
+      </div>
+
+      <div class="glaex-p-article">
+        <div>
+          <span class="glaex-p-article-source">The Everygirl</span>
+          <h3>10 Boutique Brands Redefining Affordable Luxury in 2026</h3>
+          <span class="glaex-p-article-date">December 2025 · Roundup</span>
+        </div>
+        <a href="#" class="glaex-p-article-cta">Read →</a>
+      </div>
+
+      <div class="glaex-p-article">
+        <div>
+          <span class="glaex-p-article-source">Fashion Dive</span>
+          <h3>2026 Industry Report: The Brands Setting New Standards</h3>
+          <span class="glaex-p-article-date">November 2025 · Industry Report</span>
+        </div>
+        <a href="#" class="glaex-p-article-cta">Read →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="glaex-p-kit">
+    <div class="container" style="text-align:center; max-width:720px; margin:0 auto;">
+      <span class="eyebrow">Press Kit</span>
+      <h2 class="h2">Everything you <em>need</em>.</h2>
+      <p style="color:#6b6358; font-size:17px;">Logos, brand imagery, founder bios, fact sheets — all in one place. Available on request to verified press contacts.</p>
+    </div>
+    <div class="container">
+      <div class="glaex-p-kit-grid">
+        <div class="glaex-p-kit-card">
+          <span class="glaex-p-kit-icon">i.</span>
+          <h3>Brand Assets</h3>
+          <p>High-resolution logos, brand colors, typography guidelines, and approved usage rules.</p>
+          <a href="mailto:press@glaex.com?subject=Press Kit Request: Brand Assets" class="glaex-p-kit-link">Request Access</a>
+        </div>
+        <div class="glaex-p-kit-card">
+          <span class="glaex-p-kit-icon">ii.</span>
+          <h3>Editorial Imagery</h3>
+          <p>Lookbook photography, lifestyle shots, product cutouts. All royalty-free for editorial use.</p>
+          <a href="mailto:press@glaex.com?subject=Press Kit Request: Imagery" class="glaex-p-kit-link">Request Access</a>
+        </div>
+        <div class="glaex-p-kit-card">
+          <span class="glaex-p-kit-icon">iii.</span>
+          <h3>Founder Bios & Headshots</h3>
+          <p>Approved bios, professional headshots, and media-ready quotes from leadership.</p>
+          <a href="mailto:press@glaex.com?subject=Press Kit Request: Founder Bios" class="glaex-p-kit-link">Request Access</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="glaex-p-cta">
+    <div class="container">
+      <span class="eyebrow" style="color:#b08968;">Press Inquiries</span>
+      <h2 class="h2">Working on a <em>story</em>?</h2>
+      <p>We respond to every verified press inquiry within 24 hours — interviews, samples, exclusive features, and editorial collaborations. Reach out below.</p>
+      <a href="mailto:press@glaex.com?subject=Press Inquiry" class="glaex-p-cta-btn">Contact Press</a>
+      <a href="/pages/about-us" class="glaex-p-cta-btn secondary">About GLAEX</a>
+    </div>
+  </section>
+
+</div>
