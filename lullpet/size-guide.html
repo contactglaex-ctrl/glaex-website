@@ -1,0 +1,146 @@
+<style>
+  .lullpet-size * { margin: 0; padding: 0; box-sizing: border-box; }
+  .lullpet-size {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #3a2e26; line-height: 1.65; -webkit-font-smoothing: antialiased;
+    background: #faeade;
+  }
+  .lullpet-size h1, .lullpet-size h2, .lullpet-size h3 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400; letter-spacing: -0.015em;
+  }
+  .lullpet-size .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .lullpet-size .narrow { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+  .lullpet-size section { padding: 100px 0; }
+  .lullpet-size .eyebrow {
+    font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: #523122; margin-bottom: 20px; display: inline-block; font-weight: 500;
+  }
+  .lullpet-size p { font-size: 16px; color: #4a3f35; line-height: 1.85; margin-bottom: 16px; }
+  .lullpet-size .h2 { font-size: clamp(34px, 4.5vw, 52px); line-height: 1.15; margin-bottom: 28px; }
+  .lullpet-size .h2 em { font-style: italic; color: #523122; }
+
+  .lullpet-sz-hero {
+    text-align: center; padding: 140px 0 110px !important;
+    background: linear-gradient(180deg, #fdfff5 0%, #faeade 100%);
+    border-bottom: 1px solid #ecdfd0;
+  }
+  .lullpet-sz-hero h1 { font-size: clamp(48px, 7vw, 88px); line-height: 1; margin-bottom: 30px; }
+  .lullpet-sz-hero h1 em { font-style: italic; color: #523122; }
+  .lullpet-sz-hero .sub { font-size: 19px; max-width: 620px; margin: 0 auto; color: #6b5c4e; font-weight: 300; }
+  .lullpet-sz-hero .divider { width: 60px; height: 1px; background: #523122; margin: 36px auto 0; }
+
+  .lullpet-sz-product { background: #faeade; }
+  .lullpet-sz-product.alt { background: #fdfff5; }
+  .lullpet-sz-product h2 { margin-bottom: 14px; }
+  .lullpet-sz-product .intro { font-size: 16px; color: #6b5c4e; margin-bottom: 36px; max-width: 640px; }
+  .lullpet-sz-table {
+    width: 100%; background: #fff; border: 1px solid #ecdfd0; border-radius: 2px;
+    border-collapse: collapse; overflow: hidden;
+  }
+  .lullpet-sz-table th {
+    background: #3a2e26; color: #faeade; font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 18px 22px; text-align: left; font-weight: 500;
+  }
+  .lullpet-sz-table td {
+    padding: 22px; font-size: 15px; color: #3a2e26;
+    border-bottom: 1px solid #f0e4d4;
+  }
+  .lullpet-sz-table td:first-child {
+    font-family: 'DM Serif Display', serif; font-size: 22px;
+    color: #523122; font-weight: 400;
+  }
+  .lullpet-sz-table tr:last-child td { border-bottom: none; }
+  .lullpet-sz-tip {
+    margin-top: 24px; padding: 22px 28px;
+    background: rgba(168,181,160,0.15); border-left: 3px solid #a8b5a0;
+    font-size: 15px; color: #3a2e26; line-height: 1.7;
+  }
+  .lullpet-sz-tip strong { color: #523122; }
+
+  .lullpet-sz-help { background: #3a2e26; color: #faeade; text-align: center; }
+  .lullpet-sz-help .eyebrow { color: #a8b5a0; }
+  .lullpet-sz-help h2 { color: #faeade; }
+  .lullpet-sz-help h2 em { color: #a8b5a0; font-style: italic; }
+  .lullpet-sz-help p { color: rgba(250,234,222,0.8); max-width: 540px; margin: 0 auto 36px; }
+  .lullpet-sz-help-btn {
+    display: inline-block; padding: 20px 52px; background: #faeade; color: #3a2e26;
+    text-decoration: none; font-size: 12px; letter-spacing: 0.25em;
+    text-transform: uppercase; font-weight: 500;
+  }
+  .lullpet-sz-help-btn:hover { background: transparent; color: #faeade; border: 1px solid #faeade; }
+
+  @media (max-width: 880px) {
+    .lullpet-size section { padding: 70px 0; }
+    .lullpet-sz-hero { padding: 100px 0 80px !important; }
+    .lullpet-sz-table th, .lullpet-sz-table td { padding: 14px; font-size: 13px; }
+    .lullpet-sz-table td:first-child { font-size: 18px; }
+  }
+</style>
+
+<div class="lullpet-size">
+
+  <section class="lullpet-sz-hero">
+    <div class="container">
+      <span class="eyebrow">Pet sizing guide</span>
+      <h1>Get the right fit, <em>the first time.</em></h1>
+      <p class="sub">A snug fit matters — especially for calming products. Use the guides below or email us a photo. We'll help.</p>
+      <div class="divider"></div>
+    </div>
+  </section>
+
+  <section class="lullpet-sz-product">
+    <div class="narrow">
+      <span class="eyebrow">Calming Cuddler Bed</span>
+      <h2 class="h2">Bed sizing <em>by weight.</em></h2>
+      <p class="intro">Measure your pet from nose to base of tail when stretched out. Pick the next size up for comfort.</p>
+      <table class="lullpet-sz-table">
+        <thead>
+          <tr><th>Size</th><th>Inner Diameter</th><th>Pet Weight</th><th>Common Breeds</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>S</td><td>18"</td><td>5–15 lbs</td><td>Most cats, small dogs (chihuahuas, yorkies)</td></tr>
+          <tr><td>M</td><td>24"</td><td>15–35 lbs</td><td>French bulldogs, beagles, terriers</td></tr>
+          <tr><td>L</td><td>30"</td><td>35–50 lbs</td><td>Labs, golden retrievers, pit mixes</td></tr>
+        </tbody>
+      </table>
+      <div class="lullpet-sz-tip">
+        <strong>When in doubt — size up.</strong> Pets love to curl with room to spare. The raised rim only calms if they can fully sink into it.
+      </div>
+    </div>
+  </section>
+
+  <section class="lullpet-sz-product alt">
+    <div class="narrow">
+      <span class="eyebrow">Anxiety Vest</span>
+      <h2 class="h2">Vest sizing <em>by chest girth.</em></h2>
+      <p class="intro">Measure your dog's chest at the widest point — just behind the front legs. The gentle pressure is what calms them, so a snug fit is essential.</p>
+      <table class="lullpet-sz-table">
+        <thead>
+          <tr><th>Size</th><th>Chest Girth</th><th>Common Breeds</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>XS</td><td>12–16"</td><td>Chihuahuas, toy breeds, small terriers</td></tr>
+          <tr><td>S</td><td>16–22"</td><td>Beagles, dachshunds, small spaniels</td></tr>
+          <tr><td>M</td><td>22–28"</td><td>Border collies, cocker spaniels, bulldogs</td></tr>
+          <tr><td>L</td><td>28–34"</td><td>Labs, golden retrievers, boxers</td></tr>
+          <tr><td>XL</td><td>34–40"</td><td>German shepherds, large mixes, mastiffs</td></tr>
+        </tbody>
+      </table>
+      <div class="lullpet-sz-tip">
+        <strong>Between sizes? Go smaller.</strong> The vest works through deep-pressure therapy — too loose and it won't deliver the calming effect.
+      </div>
+    </div>
+  </section>
+
+  <section class="lullpet-sz-help">
+    <div class="container">
+      <span class="eyebrow">Still unsure?</span>
+      <h2 class="h2">Send us a photo. <em>We'll size for you.</em></h2>
+      <p>Email a photo of your pet plus their breed and weight. We'll recommend the right size within 12 hours.</p>
+      <a href="mailto:hello@lullpet.com?subject=Sizing Help" class="lullpet-sz-help-btn">Email Us</a>
+    </div>
+  </section>
+
+</div>

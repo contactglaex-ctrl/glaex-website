@@ -1,0 +1,174 @@
+<style>
+  .lullpet-press * { margin: 0; padding: 0; box-sizing: border-box; }
+  .lullpet-press {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #3a2e26; line-height: 1.65; -webkit-font-smoothing: antialiased;
+    background: #faeade;
+  }
+  .lullpet-press h1, .lullpet-press h2, .lullpet-press h3 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400; letter-spacing: -0.015em;
+  }
+  .lullpet-press .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .lullpet-press .narrow { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+  .lullpet-press section { padding: 100px 0; }
+  .lullpet-press .eyebrow {
+    font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: #523122; margin-bottom: 22px; display: inline-block; font-weight: 500;
+  }
+  .lullpet-press p { font-size: 16px; color: #4a3f35; line-height: 1.85; margin-bottom: 16px; }
+  .lullpet-press .h2 { font-size: clamp(34px, 4.5vw, 52px); line-height: 1.15; margin-bottom: 28px; }
+  .lullpet-press .h2 em { font-style: italic; color: #523122; }
+
+  .lullpet-pr-hero {
+    text-align: center; padding: 140px 0 110px !important;
+    background: linear-gradient(180deg, #fdfff5 0%, #faeade 100%);
+    border-bottom: 1px solid #ecdfd0;
+  }
+  .lullpet-pr-hero h1 { font-size: clamp(48px, 7vw, 88px); line-height: 1; margin-bottom: 30px; }
+  .lullpet-pr-hero h1 em { font-style: italic; color: #523122; }
+  .lullpet-pr-hero .sub { font-size: 19px; max-width: 620px; margin: 0 auto; color: #6b5c4e; font-weight: 300; }
+  .lullpet-pr-hero .divider { width: 60px; height: 1px; background: #523122; margin: 36px auto 0; }
+
+  .lullpet-pr-logos { background: #3a2e26; padding: 90px 0 !important; }
+  .lullpet-pr-logos .container { text-align: center; }
+  .lullpet-pr-logos .eyebrow { color: #a8b5a0; margin-bottom: 36px; }
+  .lullpet-pr-logos-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 40px;
+    align-items: center; opacity: 0.85;
+  }
+  .lullpet-pr-logo {
+    font-family: 'DM Serif Display', serif; font-size: 22px;
+    color: #faeade; opacity: 0.75; text-align: center; padding: 14px 8px;
+    border-left: 1px solid rgba(250,234,222,0.15);
+  }
+  .lullpet-pr-logo:first-child { border-left: none; }
+
+  .lullpet-pr-mentions { background: #faeade; }
+  .lullpet-pr-mention {
+    background: #fff; padding: 48px 50px; border: 1px solid #ecdfd0; border-radius: 2px;
+    margin-bottom: 24px;
+  }
+  .lullpet-pr-mention .quote {
+    font-family: 'DM Serif Display', serif; font-style: italic;
+    font-size: 28px; color: #3a2e26; line-height: 1.4; margin-bottom: 24px;
+  }
+  .lullpet-pr-mention .source {
+    font-size: 13px; color: #6b5c4e; letter-spacing: 0.05em;
+  }
+  .lullpet-pr-mention .source strong { color: #523122; font-weight: 500; }
+
+  .lullpet-pr-kit { background: #fdfff5; text-align: center; }
+  .lullpet-pr-kit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px; max-width: 920px; margin-left: auto; margin-right: auto; }
+  .lullpet-pr-kit-item {
+    background: #fff; padding: 36px 28px; border: 1px solid #ecdfd0;
+    text-align: left; border-radius: 2px;
+  }
+  .lullpet-pr-kit-item h4 {
+    font-family: 'DM Serif Display', serif; font-size: 22px;
+    color: #3a2e26; margin-bottom: 10px;
+  }
+  .lullpet-pr-kit-item p { font-size: 14px; color: #6b5c4e; margin-bottom: 18px; line-height: 1.7; }
+  .lullpet-pr-kit-item a {
+    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: #523122; text-decoration: none; border-bottom: 1px solid #523122;
+    padding-bottom: 2px; font-weight: 500;
+  }
+
+  .lullpet-pr-cta { background: #faeade; text-align: center; }
+  .lullpet-pr-cta-btn {
+    display: inline-block; padding: 20px 52px; background: #3a2e26; color: #faeade;
+    text-decoration: none; font-size: 12px; letter-spacing: 0.25em;
+    text-transform: uppercase; font-weight: 500; border: 1px solid #3a2e26;
+  }
+  .lullpet-pr-cta-btn:hover { background: transparent; color: #3a2e26; }
+
+  @media (max-width: 880px) {
+    .lullpet-press section { padding: 70px 0; }
+    .lullpet-pr-hero { padding: 100px 0 80px !important; }
+    .lullpet-pr-logos-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .lullpet-pr-logo { border-left: none; font-size: 18px; }
+    .lullpet-pr-kit-grid { grid-template-columns: 1fr; }
+    .lullpet-pr-mention { padding: 32px 28px; }
+    .lullpet-pr-mention .quote { font-size: 22px; }
+  }
+</style>
+
+<div class="lullpet-press">
+
+  <section class="lullpet-pr-hero">
+    <div class="container">
+      <span class="eyebrow">Press & media</span>
+      <h1>Lullpet, <em>in the press.</em></h1>
+      <p class="sub">A small collection of stories, mentions, and reviews. We're always glad to talk to journalists, podcasters, and creators.</p>
+      <div class="divider"></div>
+    </div>
+  </section>
+
+  <section class="lullpet-pr-logos">
+    <div class="container">
+      <span class="eyebrow">As featured in</span>
+      <div class="lullpet-pr-logos-grid">
+        <div class="lullpet-pr-logo">Modern Dog</div>
+        <div class="lullpet-pr-logo">Vogue Pets</div>
+        <div class="lullpet-pr-logo">Forbes</div>
+        <div class="lullpet-pr-logo">The Wirecutter</div>
+        <div class="lullpet-pr-logo">Cat Behaviorist</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lullpet-pr-mentions">
+    <div class="narrow">
+      <span class="eyebrow">Recent mentions</span>
+      <h2 class="h2">What people are <em>saying.</em></h2>
+      <div class="lullpet-pr-mention">
+        <div class="quote">"The calming bed that actually delivers on the calm."</div>
+        <div class="source"><strong>Modern Dog Magazine</strong> · March 2026</div>
+      </div>
+      <div class="lullpet-pr-mention">
+        <div class="quote">"A rare premium pet brand with a real mission — not a marketing line."</div>
+        <div class="source"><strong>Forbes Small Business</strong> · January 2026</div>
+      </div>
+      <div class="lullpet-pr-mention">
+        <div class="quote">"Maya the rescue dog finally sleeps through the night. That's the entire review."</div>
+        <div class="source"><strong>@petparentnyc</strong> · 47K followers</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lullpet-pr-kit">
+    <div class="container">
+      <span class="eyebrow">For journalists & creators</span>
+      <h2 class="h2">The Lullpet <em>press kit.</em></h2>
+      <p style="max-width:580px;margin:0 auto;">Everything you need for a story — brand assets, founder bio, product images, fact sheet. We respond to press requests within 24 hours.</p>
+      <div class="lullpet-pr-kit-grid">
+        <div class="lullpet-pr-kit-item">
+          <h4>Brand assets</h4>
+          <p>Logo files, color palette, fonts, photography in high-res. ZIP package.</p>
+          <a href="#">Download →</a>
+        </div>
+        <div class="lullpet-pr-kit-item">
+          <h4>Founder bio</h4>
+          <p>Sarah's story, headshot, interview availability and previous press clips.</p>
+          <a href="#">View bio →</a>
+        </div>
+        <div class="lullpet-pr-kit-item">
+          <h4>Fact sheet</h4>
+          <p>Company history, milestones, mission stats, key numbers — at a glance.</p>
+          <a href="#">View PDF →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lullpet-pr-cta">
+    <div class="container" style="text-align:center;">
+      <span class="eyebrow">Press inquiries</span>
+      <h2 class="h2">We <em>respond within 24 hours.</em></h2>
+      <p style="max-width:520px;margin:0 auto 36px;">Story angles, samples, interviews, or product photography — drop us a note.</p>
+      <a href="mailto:press@lullpet.com" class="lullpet-pr-cta-btn">press@lullpet.com</a>
+    </div>
+  </section>
+
+</div>

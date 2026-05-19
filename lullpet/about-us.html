@@ -1,0 +1,194 @@
+<style>
+  .lullpet-about * { margin: 0; padding: 0; box-sizing: border-box; }
+  .lullpet-about {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    color: #3a2e26;
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    background: #faeade;
+  }
+  .lullpet-about h1, .lullpet-about h2, .lullpet-about h3 {
+    font-family: 'DM Serif Display', 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+  }
+  .lullpet-about .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .lullpet-about .narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+  .lullpet-about section { padding: 110px 0; }
+  .lullpet-about .eyebrow {
+    font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: #523122; margin-bottom: 22px; display: inline-block; font-weight: 500;
+  }
+  .lullpet-about p {
+    font-size: 17px; color: #4a3f35; line-height: 1.85;
+    font-weight: 400;
+  }
+  .lullpet-about .lead { font-size: 19px; line-height: 1.8; color: #3a2e26; }
+
+  /* HERO */
+  .lullpet-about-hero {
+    text-align: center; padding: 150px 0 120px !important;
+    background: linear-gradient(180deg, #fdfff5 0%, #faeade 100%);
+    border-bottom: 1px solid #ecdfd0;
+  }
+  .lullpet-about-hero h1 {
+    font-size: clamp(48px, 7vw, 92px); line-height: 1.02;
+    margin-bottom: 32px; color: #3a2e26;
+  }
+  .lullpet-about-hero h1 em { font-style: italic; color: #523122; }
+  .lullpet-about-hero .sub {
+    font-size: 20px; max-width: 640px; margin: 0 auto;
+    color: #6b5c4e; font-weight: 300; line-height: 1.7;
+  }
+  .lullpet-about-hero .divider { width: 60px; height: 1px; background: #523122; margin: 40px auto 0; }
+
+  /* STORY */
+  .lullpet-about-story { background: #faeade; }
+  .lullpet-about-story h2 { font-size: clamp(34px, 4.5vw, 52px); line-height: 1.15; margin-bottom: 36px; }
+  .lullpet-about-story p { margin-bottom: 22px; }
+  .lullpet-about-story p:last-child { margin-bottom: 0; }
+  .lullpet-about-story .signature {
+    margin-top: 60px; padding-top: 36px; border-top: 1px solid #e8dcc8;
+    font-family: 'DM Serif Display', serif; font-style: italic;
+    font-size: 19px; color: #523122;
+  }
+  .lullpet-about-story .signature span { display: block; font-size: 14px; color: #6b5c4e; font-style: normal; margin-top: 6px; }
+
+  /* PROMISES */
+  .lullpet-about-promises { background: #3a2e26; color: #faeade; }
+  .lullpet-about-promises h2 { color: #faeade; text-align: center; font-size: clamp(34px, 4.5vw, 52px); margin-bottom: 70px; }
+  .lullpet-about-promises .eyebrow { color: #a8b5a0; }
+  .lullpet-about-promises .header { text-align: center; margin-bottom: 70px; }
+  .lullpet-about-promises-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; }
+  .lullpet-about-promise { text-align: left; }
+  .lullpet-about-promise .num {
+    font-family: 'DM Serif Display', serif; font-size: 48px;
+    color: #a8b5a0; line-height: 1; margin-bottom: 20px;
+  }
+  .lullpet-about-promise h3 {
+    font-size: 22px; color: #faeade; margin-bottom: 16px; line-height: 1.3;
+  }
+  .lullpet-about-promise p { color: rgba(250,234,222,0.75); font-size: 15px; line-height: 1.75; }
+
+  /* IMPACT */
+  .lullpet-about-impact { background: #fdfff5; text-align: center; }
+  .lullpet-about-impact h2 { font-size: clamp(32px, 4vw, 46px); margin-bottom: 24px; }
+  .lullpet-about-impact h2 em { font-style: italic; color: #523122; }
+  .lullpet-about-impact .lead { max-width: 620px; margin: 0 auto 60px; }
+  .lullpet-about-impact-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 900px;
+    margin: 0 auto; padding-top: 50px; border-top: 1px solid #e8dcc8;
+  }
+  .lullpet-about-impact-stat .n {
+    font-family: 'DM Serif Display', serif; font-size: 56px;
+    color: #523122; line-height: 1; margin-bottom: 10px;
+  }
+  .lullpet-about-impact-stat .l {
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: #6b5c4e; font-weight: 500;
+  }
+
+  /* CTA */
+  .lullpet-about-cta { background: #faeade; text-align: center; padding: 130px 0 !important; }
+  .lullpet-about-cta h2 { font-size: clamp(36px, 5vw, 60px); margin-bottom: 24px; }
+  .lullpet-about-cta h2 em { font-style: italic; color: #523122; }
+  .lullpet-about-cta p { font-size: 18px; max-width: 540px; margin: 0 auto 44px; color: #6b5c4e; }
+  .lullpet-about-cta-btn {
+    display: inline-block; padding: 20px 52px; background: #3a2e26; color: #faeade;
+    text-decoration: none; font-size: 12px; letter-spacing: 0.25em;
+    text-transform: uppercase; font-weight: 500; border: 1px solid #3a2e26;
+    transition: all 0.2s ease;
+  }
+  .lullpet-about-cta-btn:hover { background: transparent; color: #3a2e26; }
+
+  @media (max-width: 880px) {
+    .lullpet-about section { padding: 70px 0; }
+    .lullpet-about-hero { padding: 100px 0 80px !important; }
+    .lullpet-about-promises-grid,
+    .lullpet-about-impact-stats { grid-template-columns: 1fr; gap: 40px; }
+  }
+</style>
+
+<div class="lullpet-about">
+
+  <section class="lullpet-about-hero">
+    <div class="container">
+      <span class="eyebrow">About Lullpet</span>
+      <h1>We started Lullpet for the pets who couldn't <em>tell us they were hurting.</em></h1>
+      <p class="sub">A small story about an anxious rescue, a market full of empty promises, and the calm we built instead.</p>
+      <div class="divider"></div>
+    </div>
+  </section>
+
+  <section class="lullpet-about-story">
+    <div class="narrow">
+      <h2>It began on a Tuesday night in Brooklyn.</h2>
+      <p>My rescue, Maya, had been pacing the apartment for three hours. She'd done it every night since I adopted her — pacing, panting, never settling. I tried everything I could find: training, supplements, even prescriptions. Nothing fully worked.</p>
+      <p>I went looking for help — really looking — and what I found was a market flooded with cheap, generic "calming" products that were mostly marketing. Hollow promises wrapped in fluffy faux fur.</p>
+      <p>So I started building what I wished existed.</p>
+      <p>Lullpet is calming essentials for cats and dogs, designed with veterinary input and tested in real homes with real anxious pets. No cheap fillers. No empty claims. Just thoughtful products that help pets rest — because every pet deserves a quiet day.</p>
+      <div class="signature">
+        — Sarah, Founder
+        <span>Brooklyn, New York</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="lullpet-about-promises">
+    <div class="container">
+      <div class="header">
+        <span class="eyebrow">Three promises</span>
+        <h2>What we never compromise on.</h2>
+      </div>
+      <div class="lullpet-about-promises-grid">
+        <div class="lullpet-about-promise">
+          <div class="num">01</div>
+          <h3>Vet-approved, always.</h3>
+          <p>Every Lullpet product is reviewed by a panel of certified veterinary behaviorists before it ever ships. If they wouldn't recommend it to their clients, we don't list it.</p>
+        </div>
+        <div class="lullpet-about-promise">
+          <div class="num">02</div>
+          <h3>US warehouse. 24h dispatch.</h3>
+          <p>Our fulfillment runs out of Ohio. Orders ship within 24 hours, delivered in 3–5 business days. No surprise customs. No three-week overseas waits.</p>
+        </div>
+        <div class="lullpet-about-promise">
+          <div class="num">03</div>
+          <h3>1% to shelters. Every order.</h3>
+          <p>One percent of every order goes to vetted animal shelters and rescues. Not "up to". Not "sometimes". Every single order. Every single time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lullpet-about-impact">
+    <div class="container">
+      <span class="eyebrow">Our impact</span>
+      <h2>4,000+ pet parents. All 50 <em>states.</em></h2>
+      <p class="lead">Today Lullpet serves pet parents across the U.S. Maya finally sleeps through the night. We wake up every morning trying to do the same for yours.</p>
+      <div class="lullpet-about-impact-stats">
+        <div class="lullpet-about-impact-stat">
+          <div class="n">4,247</div>
+          <div class="l">Pet parents served</div>
+        </div>
+        <div class="lullpet-about-impact-stat">
+          <div class="n">$12,400</div>
+          <div class="l">Donated to shelters</div>
+        </div>
+        <div class="lullpet-about-impact-stat">
+          <div class="n">4.8</div>
+          <div class="l">Average review stars</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lullpet-about-cta">
+    <div class="container">
+      <h2>Give them their <em>quietest year yet.</em></h2>
+      <p>Start with our most-loved calming essentials — backed by the 30-day calm guarantee.</p>
+      <a href="/collections/bestsellers" class="lullpet-about-cta-btn">Shop Bestsellers</a>
+    </div>
+  </section>
+
+</div>

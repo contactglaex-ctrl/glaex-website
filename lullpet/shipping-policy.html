@@ -1,0 +1,174 @@
+<style>
+  .lullpet-ship * { margin: 0; padding: 0; box-sizing: border-box; }
+  .lullpet-ship {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #3a2e26; line-height: 1.65; -webkit-font-smoothing: antialiased;
+    background: #faeade;
+  }
+  .lullpet-ship h1, .lullpet-ship h2, .lullpet-ship h3 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400; letter-spacing: -0.015em;
+  }
+  .lullpet-ship .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .lullpet-ship .narrow { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+  .lullpet-ship section { padding: 100px 0; }
+  .lullpet-ship .eyebrow {
+    font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: #523122; margin-bottom: 20px; display: inline-block; font-weight: 500;
+  }
+  .lullpet-ship p { font-size: 16px; color: #4a3f35; line-height: 1.85; margin-bottom: 16px; }
+  .lullpet-ship .h2 { font-size: clamp(34px, 4.5vw, 52px); line-height: 1.15; margin-bottom: 28px; }
+  .lullpet-ship .h2 em { font-style: italic; color: #523122; }
+  .lullpet-ship .h3 { font-size: 24px; margin-bottom: 16px; color: #3a2e26; }
+
+  .lullpet-ship-hero {
+    text-align: center; padding: 140px 0 110px !important;
+    background: linear-gradient(180deg, #fdfff5 0%, #faeade 100%);
+    border-bottom: 1px solid #ecdfd0;
+  }
+  .lullpet-ship-hero h1 { font-size: clamp(48px, 7vw, 88px); line-height: 1; margin-bottom: 30px; }
+  .lullpet-ship-hero h1 em { font-style: italic; color: #523122; }
+  .lullpet-ship-hero .sub { font-size: 19px; max-width: 620px; margin: 0 auto; color: #6b5c4e; font-weight: 300; }
+  .lullpet-ship-hero .divider { width: 60px; height: 1px; background: #523122; margin: 36px auto 0; }
+
+  .lullpet-ship-block { background: #faeade; }
+  .lullpet-ship-block.alt { background: #fdfff5; }
+  .lullpet-ship-card {
+    background: #fff; border: 1px solid #ecdfd0; padding: 40px 44px;
+    margin-bottom: 22px; border-radius: 2px;
+  }
+  .lullpet-ship-card h3 {
+    font-family: 'DM Serif Display', serif; font-size: 26px;
+    margin-bottom: 18px; color: #3a2e26;
+  }
+  .lullpet-ship-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 0; border-bottom: 1px solid #f0e4d4;
+    font-size: 16px;
+  }
+  .lullpet-ship-row:last-child { border-bottom: none; }
+  .lullpet-ship-row .l { color: #6b5c4e; }
+  .lullpet-ship-row .r { color: #3a2e26; font-weight: 500; }
+
+  .lullpet-ship-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+  .lullpet-ship-stat {
+    background: #fff; padding: 36px 28px; border: 1px solid #ecdfd0;
+    text-align: center; border-radius: 2px;
+  }
+  .lullpet-ship-stat .icon {
+    font-family: 'DM Serif Display', serif; font-style: italic;
+    font-size: 30px; color: #523122; margin-bottom: 14px; display: block;
+  }
+  .lullpet-ship-stat .num {
+    font-family: 'DM Serif Display', serif; font-size: 42px;
+    color: #3a2e26; margin-bottom: 10px; line-height: 1;
+  }
+  .lullpet-ship-stat .l {
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #6b5c4e;
+  }
+
+  .lullpet-ship-cta { background: #3a2e26; color: #faeade; text-align: center; }
+  .lullpet-ship-cta .eyebrow { color: #a8b5a0; }
+  .lullpet-ship-cta h2 { color: #faeade; }
+  .lullpet-ship-cta p { color: rgba(250,234,222,0.75); max-width: 580px; margin: 0 auto 36px; font-size: 17px; }
+  .lullpet-ship-cta-btn {
+    display: inline-block; padding: 18px 48px; background: #faeade; color: #3a2e26;
+    text-decoration: none; font-size: 12px; letter-spacing: 0.25em;
+    text-transform: uppercase; font-weight: 500;
+  }
+  .lullpet-ship-cta-btn:hover { background: transparent; color: #faeade; border: 1px solid #faeade; }
+
+  @media (max-width: 880px) {
+    .lullpet-ship section { padding: 70px 0; }
+    .lullpet-ship-hero { padding: 100px 0 80px !important; }
+    .lullpet-ship-grid { grid-template-columns: 1fr; }
+    .lullpet-ship-card { padding: 30px 24px; }
+  }
+</style>
+
+<div class="lullpet-ship">
+
+  <section class="lullpet-ship-hero">
+    <div class="container">
+      <span class="eyebrow">Shipping & delivery</span>
+      <h1>Fast, free, <em>fully tracked.</em></h1>
+      <p class="sub">We ship from Ohio. Free on $50+. Delivered in 3–5 business days. No surprises, no overseas waits.</p>
+      <div class="divider"></div>
+    </div>
+  </section>
+
+  <section class="lullpet-ship-block">
+    <div class="narrow">
+      <span class="eyebrow">Delivery times</span>
+      <h2 class="h2">Where, when, <em>how fast.</em></h2>
+      <div class="lullpet-ship-card">
+        <h3>Standard delivery</h3>
+        <div class="lullpet-ship-row"><span class="l">Continental US</span><span class="r">3–5 business days</span></div>
+        <div class="lullpet-ship-row"><span class="l">Alaska & Hawaii</span><span class="r">5–7 business days</span></div>
+        <div class="lullpet-ship-row"><span class="l">International</span><span class="r">Coming late 2026</span></div>
+      </div>
+      <div class="lullpet-ship-card">
+        <h3>Shipping costs</h3>
+        <div class="lullpet-ship-row"><span class="l">Orders $50+</span><span class="r">Free standard</span></div>
+        <div class="lullpet-ship-row"><span class="l">Orders under $50</span><span class="r">$5.95 flat</span></div>
+        <div class="lullpet-ship-row"><span class="l">Expedited (2-day)</span><span class="r">$14.95</span></div>
+      </div>
+      <p>All orders ship within 24 hours, Monday through Friday. Orders placed on weekends ship the next business day.</p>
+    </div>
+  </section>
+
+  <section class="lullpet-ship-block alt">
+    <div class="narrow">
+      <span class="eyebrow">The promise</span>
+      <h2 class="h2">We treat shipping the way we treat the <em>rest of Lullpet.</em></h2>
+      <p>Calm. Careful. On your side. Every package is hand-checked before it leaves the warehouse — because we know it's not just a product, it's the start of a calmer routine for someone you love.</p>
+      <div class="lullpet-ship-grid">
+        <div class="lullpet-ship-stat">
+          <span class="icon">i</span>
+          <div class="num">24h</div>
+          <div class="l">Dispatch time</div>
+        </div>
+        <div class="lullpet-ship-stat">
+          <span class="icon">ii</span>
+          <div class="num">3–5d</div>
+          <div class="l">US delivery</div>
+        </div>
+        <div class="lullpet-ship-stat">
+          <span class="icon">iii</span>
+          <div class="num">$50+</div>
+          <div class="l">Free shipping threshold</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lullpet-ship-block">
+    <div class="narrow">
+      <span class="eyebrow">Tracking & packaging</span>
+      <h2 class="h2">From <em>warehouse to welcome.</em></h2>
+      <div class="lullpet-ship-card">
+        <h3>Tracking</h3>
+        <p>You'll get a tracking email the moment your order ships. You can also check status anytime from Account → Orders.</p>
+      </div>
+      <div class="lullpet-ship-card">
+        <h3>Packaging</h3>
+        <p>We ship in branded, recyclable boxes printed with soy ink. Minimal plastic. Maximum unboxing joy.</p>
+        <p>Every box includes a hand-numbered thank-you card and a care guide for your new arrival.</p>
+      </div>
+      <div class="lullpet-ship-card">
+        <h3>Problems with your order?</h3>
+        <p>If your order is late, lost, or arrives damaged — email <a href="mailto:hello@lullpet.com" style="color:#523122;text-decoration:underline;">hello@lullpet.com</a> with your order number. We reply within 12 hours. Lost orders are replaced at no charge.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="lullpet-ship-cta">
+    <div class="container">
+      <span class="eyebrow">Need help?</span>
+      <h2 class="h2">Every email <em>gets a human.</em></h2>
+      <p>We answer within 12 hours — no chatbots, no scripts. Just our team in Brooklyn.</p>
+      <a href="mailto:hello@lullpet.com" class="lullpet-ship-cta-btn">Email Us</a>
+    </div>
+  </section>
+
+</div>

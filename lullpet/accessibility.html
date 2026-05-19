@@ -1,0 +1,121 @@
+<style>
+  .lullpet-acc * { margin: 0; padding: 0; box-sizing: border-box; }
+  .lullpet-acc {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #3a2e26; line-height: 1.65; -webkit-font-smoothing: antialiased;
+    background: #faeade;
+  }
+  .lullpet-acc h1, .lullpet-acc h2, .lullpet-acc h3 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400; letter-spacing: -0.015em;
+  }
+  .lullpet-acc .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .lullpet-acc .narrow { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+  .lullpet-acc section { padding: 90px 0; }
+  .lullpet-acc .eyebrow {
+    font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: #523122; margin-bottom: 22px; display: inline-block; font-weight: 500;
+  }
+  .lullpet-acc p { font-size: 16px; color: #4a3f35; line-height: 1.85; margin-bottom: 16px; }
+  .lullpet-acc h2 { font-size: clamp(28px, 3.5vw, 38px); margin-bottom: 22px; color: #3a2e26; line-height: 1.2; }
+  .lullpet-acc h2 em { font-style: italic; color: #523122; }
+  .lullpet-acc h3 { font-size: 22px; margin: 32px 0 14px; color: #3a2e26; }
+
+  .lullpet-acc-hero {
+    text-align: center; padding: 130px 0 100px !important;
+    background: linear-gradient(180deg, #fdfff5 0%, #faeade 100%);
+    border-bottom: 1px solid #ecdfd0;
+  }
+  .lullpet-acc-hero h1 { font-size: clamp(42px, 6vw, 72px); line-height: 1.05; margin-bottom: 28px; }
+  .lullpet-acc-hero h1 em { font-style: italic; color: #523122; }
+  .lullpet-acc-hero .sub { font-size: 18px; max-width: 620px; margin: 0 auto; color: #6b5c4e; font-weight: 300; }
+  .lullpet-acc-hero .updated { font-size: 12px; color: #8a7d6e; margin-top: 24px; letter-spacing: 0.15em; text-transform: uppercase; }
+  .lullpet-acc-hero .divider { width: 60px; height: 1px; background: #523122; margin: 32px auto 0; }
+
+  .lullpet-acc-block { background: #faeade; }
+  .lullpet-acc-block.alt { background: #fdfff5; }
+  .lullpet-acc-block ul { margin: 14px 0 14px 22px; }
+  .lullpet-acc-block li { font-size: 15px; color: #4a3f35; line-height: 1.85; margin-bottom: 8px; }
+
+  .lullpet-acc-cta { background: #3a2e26; color: #faeade; text-align: center; padding: 90px 0 !important; }
+  .lullpet-acc-cta .eyebrow { color: #a8b5a0; }
+  .lullpet-acc-cta h2 { color: #faeade; }
+  .lullpet-acc-cta h2 em { color: #a8b5a0; }
+  .lullpet-acc-cta p { color: rgba(250,234,222,0.8); max-width: 540px; margin: 0 auto 32px; }
+  .lullpet-acc-cta-btn {
+    display: inline-block; padding: 18px 48px; background: #faeade; color: #3a2e26;
+    text-decoration: none; font-size: 12px; letter-spacing: 0.25em;
+    text-transform: uppercase; font-weight: 500;
+  }
+  .lullpet-acc-cta-btn:hover { background: transparent; color: #faeade; border: 1px solid #faeade; }
+
+  @media (max-width: 880px) {
+    .lullpet-acc section { padding: 60px 0; }
+    .lullpet-acc-hero { padding: 90px 0 70px !important; }
+  }
+</style>
+
+<div class="lullpet-acc">
+
+  <section class="lullpet-acc-hero">
+    <div class="container">
+      <span class="eyebrow">Accessibility</span>
+      <h1>A site that works for <em>everyone.</em></h1>
+      <p class="sub">Lullpet is committed to ensuring digital accessibility for people of all abilities. We audit and improve continuously.</p>
+      <div class="divider"></div>
+      <div class="updated">Last updated · May 2026</div>
+    </div>
+  </section>
+
+  <section class="lullpet-acc-block">
+    <div class="narrow">
+      <span class="eyebrow">Our commitment</span>
+      <h2>Designed to <em>WCAG 2.1 AA.</em></h2>
+      <p>Lullpet's website is designed to conform to Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards. We work with accessibility specialists to audit our site quarterly and address gaps as they're found.</p>
+      <h3>Features we've implemented</h3>
+      <ul>
+        <li>Keyboard-friendly navigation throughout the site</li>
+        <li>Screen reader optimization with semantic HTML</li>
+        <li>Sufficient color contrast (WCAG AA minimum 4.5:1)</li>
+        <li>Descriptive alt text on all product and content images</li>
+        <li>Resizable text up to 200% without loss of function</li>
+        <li>Skip-to-content links on every page</li>
+        <li>ARIA labels on interactive elements (buttons, forms, accordions)</li>
+        <li>Focus-visible indicators on all interactive elements</li>
+        <li>Captions and transcripts on key video content</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="lullpet-acc-block alt">
+    <div class="narrow">
+      <span class="eyebrow">Ongoing work</span>
+      <h2>What we're <em>still improving.</em></h2>
+      <p>Accessibility isn't a one-time project. Below is what we're actively working on in the current quarter.</p>
+      <ul>
+        <li>Full third-party WCAG audit (planned Q3 2026)</li>
+        <li>Improved screen reader support for our reviews carousel</li>
+        <li>Audio descriptions for hero video content</li>
+        <li>Simplified language version of key support pages</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="lullpet-acc-block">
+    <div class="narrow">
+      <span class="eyebrow">Third-party content</span>
+      <h2>Where we depend on <em>others.</em></h2>
+      <p>Some third-party content on our site (embedded reviews, social media feeds, certain payment widgets) may not fully meet our accessibility standards. We're actively working with our partners to improve this and prioritize accessible vendors when we choose new tools.</p>
+    </div>
+  </section>
+
+  <section class="lullpet-acc-cta">
+    <div class="container">
+      <span class="eyebrow">Tell us what's not working</span>
+      <h2>We want <em>to fix it.</em></h2>
+      <p>If you experience any difficulty using our site, please contact us. We aim to respond within 12 hours and resolve any access issue within 5 business days.</p>
+      <a href="mailto:hello@lullpet.com?subject=Accessibility help" class="lullpet-acc-cta-btn">Email hello@lullpet.com</a>
+    </div>
+  </section>
+
+</div>

@@ -1,0 +1,200 @@
+<style>
+  .lullpet-contact * { margin: 0; padding: 0; box-sizing: border-box; }
+  .lullpet-contact {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #3a2e26; line-height: 1.65; -webkit-font-smoothing: antialiased;
+    background: #faeade;
+  }
+  .lullpet-contact h1, .lullpet-contact h2, .lullpet-contact h3 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400; letter-spacing: -0.015em;
+  }
+  .lullpet-contact .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .lullpet-contact .narrow { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+  .lullpet-contact section { padding: 100px 0; }
+  .lullpet-contact .eyebrow {
+    font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: #523122; margin-bottom: 20px; display: inline-block; font-weight: 500;
+  }
+  .lullpet-contact p { font-size: 16px; color: #4a3f35; line-height: 1.85; margin-bottom: 16px; }
+  .lullpet-contact .h2 { font-size: clamp(34px, 4.5vw, 52px); line-height: 1.15; margin-bottom: 28px; }
+  .lullpet-contact .h2 em { font-style: italic; color: #523122; }
+
+  .lullpet-c-hero {
+    text-align: center; padding: 140px 0 110px !important;
+    background: linear-gradient(180deg, #fdfff5 0%, #faeade 100%);
+    border-bottom: 1px solid #ecdfd0;
+  }
+  .lullpet-c-hero h1 { font-size: clamp(48px, 7vw, 88px); line-height: 1; margin-bottom: 30px; }
+  .lullpet-c-hero h1 em { font-style: italic; color: #523122; }
+  .lullpet-c-hero .sub { font-size: 19px; max-width: 620px; margin: 0 auto; color: #6b5c4e; font-weight: 300; }
+  .lullpet-c-hero .divider { width: 60px; height: 1px; background: #523122; margin: 36px auto 0; }
+
+  .lullpet-c-grid {
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: start;
+  }
+
+  .lullpet-c-channels { display: grid; gap: 28px; }
+  .lullpet-c-channel {
+    background: #fff; padding: 36px 32px; border: 1px solid #ecdfd0; border-radius: 2px;
+    transition: border-color 0.2s ease;
+  }
+  .lullpet-c-channel:hover { border-color: #523122; }
+  .lullpet-c-channel .label {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: #6b5c4e; margin-bottom: 12px; font-weight: 500;
+  }
+  .lullpet-c-channel h3 {
+    font-family: 'DM Serif Display', serif; font-size: 26px;
+    color: #3a2e26; margin-bottom: 10px;
+  }
+  .lullpet-c-channel a {
+    color: #523122; text-decoration: none; font-size: 17px;
+    border-bottom: 1px solid #523122; padding-bottom: 2px;
+  }
+  .lullpet-c-channel p { font-size: 14px; color: #6b5c4e; margin-top: 14px; margin-bottom: 0; }
+
+  .lullpet-c-form-wrap {
+    background: #fdfff5; border: 1px solid #ecdfd0; padding: 50px 44px; border-radius: 2px;
+  }
+  .lullpet-c-form-wrap h2 {
+    font-family: 'DM Serif Display', serif; font-size: 30px;
+    margin-bottom: 10px; color: #3a2e26;
+  }
+  .lullpet-c-form-wrap .sub { font-size: 14px; color: #6b5c4e; margin-bottom: 28px; }
+  .lullpet-c-field { margin-bottom: 22px; }
+  .lullpet-c-field label {
+    display: block; font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #6b5c4e; margin-bottom: 8px; font-weight: 500;
+  }
+  .lullpet-c-field input,
+  .lullpet-c-field textarea {
+    width: 100%; padding: 14px 16px; background: #fff;
+    border: 1px solid #ecdfd0; font-family: 'Inter', sans-serif;
+    font-size: 15px; color: #3a2e26; border-radius: 2px;
+  }
+  .lullpet-c-field textarea { min-height: 140px; resize: vertical; }
+  .lullpet-c-field input:focus,
+  .lullpet-c-field textarea:focus { outline: none; border-color: #523122; }
+  .lullpet-c-btn {
+    display: inline-block; padding: 16px 44px; background: #3a2e26; color: #faeade;
+    text-decoration: none; font-size: 12px; letter-spacing: 0.25em;
+    text-transform: uppercase; font-weight: 500; border: none;
+    cursor: pointer; transition: background 0.2s ease; font-family: 'Inter', sans-serif;
+  }
+  .lullpet-c-btn:hover { background: #523122; }
+
+  .lullpet-c-secondary { background: #3a2e26; color: #faeade; padding: 90px 0 !important; }
+  .lullpet-c-secondary .eyebrow { color: #a8b5a0; }
+  .lullpet-c-secondary h2 { color: #faeade; text-align: center; margin-bottom: 50px; }
+  .lullpet-c-secondary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+  .lullpet-c-secondary-item {
+    text-align: center; padding: 28px 20px;
+    border: 1px solid rgba(250,234,222,0.15); border-radius: 2px;
+  }
+  .lullpet-c-secondary-item .label {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: #a8b5a0; margin-bottom: 10px;
+  }
+  .lullpet-c-secondary-item a {
+    color: #faeade; text-decoration: none; font-size: 16px;
+    border-bottom: 1px solid rgba(250,234,222,0.4); padding-bottom: 2px;
+  }
+
+  .lullpet-c-address { background: #faeade; text-align: center; padding: 90px 0 !important; }
+  .lullpet-c-address h3 {
+    font-family: 'DM Serif Display', serif; font-size: 28px;
+    color: #3a2e26; margin-bottom: 18px;
+  }
+  .lullpet-c-address p { font-size: 16px; color: #6b5c4e; margin-bottom: 8px; }
+
+  @media (max-width: 880px) {
+    .lullpet-contact section { padding: 70px 0; }
+    .lullpet-c-hero { padding: 100px 0 80px !important; }
+    .lullpet-c-grid { grid-template-columns: 1fr; gap: 50px; }
+    .lullpet-c-form-wrap { padding: 36px 24px; }
+    .lullpet-c-secondary-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="lullpet-contact">
+
+  <section class="lullpet-c-hero">
+    <div class="container">
+      <span class="eyebrow">Contact</span>
+      <h1>We're real people. <em>We reply.</em></h1>
+      <p class="sub">Order help, product questions, returns, press, partnerships — or a photo of your pet on their bed. We answer every message within 12 hours.</p>
+      <div class="divider"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="lullpet-c-grid">
+        <div class="lullpet-c-channels">
+          <div class="lullpet-c-channel">
+            <div class="label">General & support</div>
+            <h3>Anything else, ask here.</h3>
+            <a href="mailto:hello@lullpet.com">hello@lullpet.com</a>
+            <p>Reply within 12 hours — every day, including weekends.</p>
+          </div>
+          <div class="lullpet-c-channel">
+            <div class="label">Order help</div>
+            <h3>Tracking, returns, refunds.</h3>
+            <a href="mailto:orders@lullpet.com">orders@lullpet.com</a>
+            <p>Have your order number ready for faster help.</p>
+          </div>
+          <div class="lullpet-c-channel">
+            <div class="label">Press & media</div>
+            <h3>Stories, interviews, samples.</h3>
+            <a href="mailto:press@lullpet.com">press@lullpet.com</a>
+            <p>Press kit + brand assets available on request.</p>
+          </div>
+          <div class="lullpet-c-channel">
+            <div class="label">Partnerships</div>
+            <h3>Creators, ambassadors, collabs.</h3>
+            <a href="mailto:partners@lullpet.com">partners@lullpet.com</a>
+            <p>We work with pet creators of all sizes — yes, even micro.</p>
+          </div>
+        </div>
+
+        <div class="lullpet-c-form-wrap">
+          <h2>Send us a note.</h2>
+          <div class="sub">Or use the email above. Either way, a human reads it.</div>
+          <form action="/contact#contact_form" method="post">
+            <input type="hidden" name="form_type" value="contact">
+            <input type="hidden" name="utf8" value="✓">
+            <div class="lullpet-c-field">
+              <label>Your name</label>
+              <input type="text" name="contact[name]" required>
+            </div>
+            <div class="lullpet-c-field">
+              <label>Email</label>
+              <input type="email" name="contact[email]" required>
+            </div>
+            <div class="lullpet-c-field">
+              <label>Order number <span style="text-transform:none;letter-spacing:0;font-size:11px;color:#999;">(optional)</span></label>
+              <input type="text" name="contact[order_number]">
+            </div>
+            <div class="lullpet-c-field">
+              <label>Message</label>
+              <textarea name="contact[body]" required></textarea>
+            </div>
+            <button type="submit" class="lullpet-c-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lullpet-c-address">
+    <div class="container">
+      <span class="eyebrow">Our offices</span>
+      <h3>Brooklyn, New York.</h3>
+      <p>Founder office in Brooklyn · Warehouse in Ohio</p>
+      <p>Monday–Friday · 9am–6pm ET</p>
+      <p style="font-size:14px;color:#8a7d6e;margin-top:14px;">Weekend replies within 24 hours.</p>
+    </div>
+  </section>
+
+</div>
