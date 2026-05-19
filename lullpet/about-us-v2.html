@@ -1,0 +1,470 @@
+<style>
+  .lp-about * { margin: 0; padding: 0; box-sizing: border-box; }
+  .lp-about {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    color: #1a1a1a;
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    background: #fafaf7;
+  }
+  .lp-about h1, .lp-about h2, .lp-about h3, .lp-about .serif {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .lp-about .container { max-width: 1400px; margin: 0 auto; padding: 0 32px; }
+  .lp-about .narrow { max-width: 920px; margin: 0 auto; padding: 0 32px; }
+  .lp-about .extra-narrow { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+  .lp-about section { padding: 120px 0; }
+  .lp-about .eyebrow {
+    font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase;
+    color: #87968a; margin-bottom: 22px; display: inline-block; font-weight: 600;
+  }
+  .lp-about p { font-size: 17px; color: #3a3a3a; line-height: 1.85; font-weight: 400; }
+  .lp-about .lead { font-size: 20px; line-height: 1.75; color: #1a1a1a; font-weight: 400; }
+  .lp-about .h2 { font-size: clamp(36px, 5vw, 60px); line-height: 1.1; color: #1a1a1a; }
+  .lp-about .h2 em { font-style: italic; color: #87968a; font-weight: 500; }
+
+  /* HERO */
+  .lp-about-hero {
+    text-align: center; padding: 160px 0 130px !important;
+    background: linear-gradient(180deg, #ffffff 0%, #fafaf7 100%);
+    border-bottom: 1px solid #ececea;
+  }
+  .lp-about-hero h1 {
+    font-size: clamp(54px, 8vw, 104px); line-height: 1; letter-spacing: -0.025em;
+    margin-bottom: 36px; color: #1a1a1a;
+  }
+  .lp-about-hero h1 em { font-style: italic; color: #87968a; font-weight: 500; }
+  .lp-about-hero .hero-sub {
+    font-size: 21px; max-width: 720px; margin: 0 auto;
+    color: #5a5a5a; font-weight: 300; line-height: 1.65;
+  }
+  .lp-about-hero .hero-divider { width: 60px; height: 1px; background: #87968a; margin: 44px auto 0; }
+  .lp-about-hero .badge {
+    display: inline-block; padding: 8px 18px; background: #fff;
+    border: 1px solid #ececea; border-radius: 100px;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: #87968a; margin-bottom: 30px; font-weight: 600;
+  }
+
+  /* INTRO TWO-COLUMN */
+  .lp-about-intro { background: #fafaf7; }
+  .lp-about-intro-grid {
+    display: grid; grid-template-columns: 1fr 1.3fr;
+    gap: 100px; align-items: center;
+  }
+  .lp-about-intro-image {
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, #e8ddd0 0%, #d4c4b0 100%);
+    position: relative; overflow: hidden; border-radius: 2px;
+  }
+  .lp-about-intro-image::after {
+    content: "[ FOUNDER PHOTO ]"; position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 0.3em;
+    color: rgba(26,26,26,0.4); text-transform: uppercase;
+  }
+  .lp-about-intro-text h2 { font-size: clamp(40px, 4.5vw, 56px); line-height: 1.1; margin-bottom: 36px; }
+  .lp-about-intro-text h2 em { font-style: italic; color: #87968a; }
+  .lp-about-intro-text p { margin-bottom: 22px; }
+  .lp-about-intro-text p:last-of-type { margin-bottom: 0; }
+  .lp-about-intro-text .signature {
+    margin-top: 44px; padding-top: 32px; border-top: 1px solid #ececea;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 20px; color: #1a1a1a;
+  }
+  .lp-about-intro-text .signature span {
+    display: block; font-family: 'Inter', sans-serif; font-style: normal;
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: #87968a; margin-top: 8px; font-weight: 600;
+  }
+
+  /* MANIFESTO QUOTE */
+  .lp-about-quote { background: #ffffff; text-align: center; padding: 140px 0 !important; }
+  .lp-about-quote .mark {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 96px; color: #87968a; line-height: 0.5; opacity: 0.5;
+    display: block; margin-bottom: 30px;
+  }
+  .lp-about-quote blockquote {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(28px, 3.5vw, 44px); line-height: 1.35;
+    color: #1a1a1a; max-width: 920px; margin: 0 auto 36px;
+    letter-spacing: -0.005em;
+  }
+  .lp-about-quote blockquote em { color: #87968a; font-style: italic; }
+  .lp-about-quote .attr {
+    font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: #87968a; font-weight: 600;
+  }
+
+  /* PROMISES TRIPLET — DARK SECTION */
+  .lp-about-promises { background: #1a1a1a; color: #fafaf7; }
+  .lp-about-promises .eyebrow { color: #b08968; }
+  .lp-about-promises .header { text-align: center; margin-bottom: 90px; }
+  .lp-about-promises h2 {
+    color: #fafaf7; margin-bottom: 24px;
+  }
+  .lp-about-promises h2 em { color: #b08968; font-style: italic; }
+  .lp-about-promises .header p { color: rgba(250,247,247,0.65); max-width: 580px; margin: 0 auto; font-size: 17px; }
+  .lp-about-promises-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .lp-about-promise {
+    padding: 50px 40px;
+    background: rgba(250,247,247,0.03);
+    border: 1px solid rgba(250,247,247,0.08);
+    border-radius: 2px;
+    transition: border-color 0.3s ease;
+  }
+  .lp-about-promise:hover { border-color: rgba(176,137,104,0.5); }
+  .lp-about-promise .num {
+    font-family: 'Cormorant Garamond', serif; font-size: 14px;
+    letter-spacing: 0.3em; color: #b08968; margin-bottom: 24px;
+    font-weight: 600;
+  }
+  .lp-about-promise h3 {
+    font-size: 28px; color: #fafaf7; margin-bottom: 18px;
+    line-height: 1.25; font-family: 'Cormorant Garamond', serif;
+  }
+  .lp-about-promise p {
+    color: rgba(250,247,247,0.72); font-size: 15px; line-height: 1.8;
+  }
+
+  /* TIMELINE */
+  .lp-about-timeline { background: #fafaf7; }
+  .lp-about-timeline .header { text-align: center; margin-bottom: 80px; max-width: 720px; margin-left: auto; margin-right: auto; }
+  .lp-about-timeline-grid { max-width: 900px; margin: 0 auto; }
+  .lp-about-timeline-item {
+    display: grid; grid-template-columns: 140px 1fr; gap: 60px;
+    padding: 36px 0; border-bottom: 1px solid #ececea;
+    align-items: baseline;
+  }
+  .lp-about-timeline-item:last-child { border-bottom: none; }
+  .lp-about-timeline-year {
+    font-family: 'Cormorant Garamond', serif; font-size: 40px;
+    color: #87968a; line-height: 1; font-style: italic;
+  }
+  .lp-about-timeline-text h4 {
+    font-family: 'Cormorant Garamond', serif; font-size: 24px;
+    color: #1a1a1a; margin-bottom: 8px; font-weight: 500;
+  }
+  .lp-about-timeline-text p { font-size: 16px; color: #5a5a5a; line-height: 1.75; margin: 0; }
+
+  /* STATS */
+  .lp-about-stats { background: #ffffff; text-align: center; padding: 130px 0 !important; }
+  .lp-about-stats .eyebrow { color: #87968a; }
+  .lp-about-stats h2 { margin-bottom: 18px; }
+  .lp-about-stats h2 em { color: #87968a; font-style: italic; }
+  .lp-about-stats .lead { max-width: 620px; margin: 0 auto 80px; }
+  .lp-about-stats-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .lp-about-stat {
+    padding: 50px 24px;
+    border-top: 1px solid #ececea;
+  }
+  .lp-about-stat .n {
+    font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 5vw, 68px);
+    color: #1a1a1a; line-height: 1; margin-bottom: 14px; font-weight: 500;
+  }
+  .lp-about-stat .n em { font-style: italic; color: #87968a; }
+  .lp-about-stat .l {
+    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: #87968a; font-weight: 600;
+  }
+  .lp-about-stat .desc {
+    font-size: 14px; color: #5a5a5a; margin-top: 12px; line-height: 1.65;
+  }
+
+  /* VALUES */
+  .lp-about-values { background: #fafaf7; }
+  .lp-about-values .header { text-align: center; margin-bottom: 70px; }
+  .lp-about-values-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+  }
+  .lp-about-value {
+    background: #ffffff; padding: 50px 44px;
+    border: 1px solid #ececea; border-radius: 2px;
+    transition: border-color 0.3s ease;
+  }
+  .lp-about-value:hover { border-color: #87968a; }
+  .lp-about-value .icon {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 32px; color: #87968a; margin-bottom: 22px;
+    display: inline-block; padding: 14px 20px;
+    border: 1px solid #ececea; border-radius: 100px;
+    line-height: 1;
+  }
+  .lp-about-value h3 {
+    font-size: 26px; color: #1a1a1a; margin-bottom: 14px;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .lp-about-value p { font-size: 16px; color: #5a5a5a; line-height: 1.75; }
+
+  /* PRESS STRIP */
+  .lp-about-press { background: #ffffff; padding: 80px 0 !important; border-top: 1px solid #ececea; border-bottom: 1px solid #ececea; }
+  .lp-about-press .label {
+    text-align: center; font-size: 11px; letter-spacing: 0.32em;
+    text-transform: uppercase; color: #87968a; margin-bottom: 36px; font-weight: 600;
+  }
+  .lp-about-press-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 40px;
+    align-items: center; opacity: 0.7;
+  }
+  .lp-about-press-name {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 22px; color: #1a1a1a; text-align: center;
+    font-weight: 500;
+  }
+
+  /* MISSION CTA */
+  .lp-about-mission {
+    background: #1a1a1a; color: #fafaf7; text-align: center;
+    padding: 150px 0 !important;
+  }
+  .lp-about-mission .eyebrow { color: #b08968; }
+  .lp-about-mission h2 {
+    color: #fafaf7; font-size: clamp(40px, 5.5vw, 68px); margin-bottom: 28px;
+  }
+  .lp-about-mission h2 em { color: #b08968; font-style: italic; }
+  .lp-about-mission p {
+    color: rgba(250,247,247,0.75); font-size: 19px;
+    max-width: 640px; margin: 0 auto 44px; line-height: 1.7;
+  }
+  .lp-about-mission-btn {
+    display: inline-block; padding: 20px 56px;
+    background: #fafaf7; color: #1a1a1a;
+    text-decoration: none; font-size: 12px; letter-spacing: 0.28em;
+    text-transform: uppercase; font-weight: 600;
+    border: 1px solid #fafaf7; transition: all 0.3s ease;
+  }
+  .lp-about-mission-btn:hover { background: transparent; color: #fafaf7; }
+  .lp-about-mission-btn.secondary {
+    background: transparent; color: #fafaf7;
+    border-color: rgba(250,247,247,0.3); margin-left: 14px;
+  }
+  .lp-about-mission-btn.secondary:hover { border-color: #fafaf7; background: rgba(250,247,247,0.05); }
+
+  /* RESPONSIVE */
+  @media (max-width: 980px) {
+    .lp-about section { padding: 80px 0; }
+    .lp-about-hero { padding: 110px 0 90px !important; }
+    .lp-about-intro-grid { grid-template-columns: 1fr; gap: 50px; }
+    .lp-about-promises-grid { grid-template-columns: 1fr; }
+    .lp-about-stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .lp-about-values-grid { grid-template-columns: 1fr; }
+    .lp-about-press-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .lp-about-timeline-item { grid-template-columns: 80px 1fr; gap: 30px; }
+    .lp-about-timeline-year { font-size: 28px; }
+    .lp-about-quote { padding: 90px 0 !important; }
+    .lp-about-mission { padding: 100px 0 !important; }
+    .lp-about-mission-btn.secondary { margin-left: 0; margin-top: 14px; }
+  }
+  @media (max-width: 540px) {
+    .lp-about-stats-grid { grid-template-columns: 1fr; }
+    .lp-about-value { padding: 36px 28px; }
+  }
+</style>
+
+<div class="lp-about">
+
+  <!-- HERO -->
+  <section class="lp-about-hero">
+    <div class="container">
+      <span class="badge">— Our story —</span>
+      <h1>We started Lullpet<br>for the pets who couldn't <em>tell us they were hurting.</em></h1>
+      <p class="hero-sub">A small story about an anxious rescue, a market full of empty promises, and the calm we built instead.</p>
+      <div class="hero-divider"></div>
+    </div>
+  </section>
+
+  <!-- INTRO TWO COLUMN -->
+  <section class="lp-about-intro">
+    <div class="container">
+      <div class="lp-about-intro-grid">
+        <div class="lp-about-intro-image"></div>
+        <div class="lp-about-intro-text">
+          <span class="eyebrow">How it began</span>
+          <h2>It started on a Tuesday night <em>in Brooklyn.</em></h2>
+          <p>My rescue, Maya, had been pacing the apartment for three hours. She'd done it every night since I adopted her — pacing, panting, never settling. I tried everything I could find: training, supplements, even prescriptions. Nothing fully worked.</p>
+          <p>I went looking for help — really looking — and what I found was a market flooded with cheap, generic "calming" products that were mostly marketing. Hollow promises wrapped in fluffy faux fur.</p>
+          <p>So I started building what I wished existed.</p>
+          <div class="signature">
+            "Every pet deserves a quiet day."
+            <span>— Sarah, Founder · Brooklyn, NY</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO QUOTE -->
+  <section class="lp-about-quote">
+    <div class="extra-narrow">
+      <span class="mark">"</span>
+      <blockquote>Lullpet is calming essentials designed with veterinary input, tested in real homes, with <em>real anxious pets.</em> No cheap fillers. No empty claims. Just thoughtful products that help pets rest.</blockquote>
+      <div class="attr">— The Lullpet promise</div>
+    </div>
+  </section>
+
+  <!-- PROMISES (DARK) -->
+  <section class="lp-about-promises">
+    <div class="container">
+      <div class="header">
+        <span class="eyebrow">Three promises</span>
+        <h2 class="h2">What we <em>never compromise on.</em></h2>
+        <p>The principles we built Lullpet around — and the ones we hold ourselves to, every single day.</p>
+      </div>
+      <div class="lp-about-promises-grid">
+        <div class="lp-about-promise">
+          <div class="num">— No. 01</div>
+          <h3>Vet-approved,<br>always.</h3>
+          <p>Every Lullpet product is reviewed by certified veterinary behaviorists before it ever ships. If they wouldn't recommend it to their own clients, we don't list it. No exceptions.</p>
+        </div>
+        <div class="lp-about-promise">
+          <div class="num">— No. 02</div>
+          <h3>US warehouse.<br>24-hour dispatch.</h3>
+          <p>Our fulfillment runs out of Ohio. Orders ship within 24 hours, delivered in 3–5 business days. No surprise customs. No three-week overseas waits. Real US shipping.</p>
+        </div>
+        <div class="lp-about-promise">
+          <div class="num">— No. 03</div>
+          <h3>1% to shelters.<br>Every order.</h3>
+          <p>One percent of every order — of revenue, not profit — goes to vetted animal shelters and rescues. Not "up to". Not "sometimes". Every single order. Every single time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="lp-about-timeline">
+    <div class="container">
+      <div class="header">
+        <span class="eyebrow">A short timeline</span>
+        <h2 class="h2">From one anxious dog <em>to four thousand calm ones.</em></h2>
+      </div>
+      <div class="lp-about-timeline-grid">
+        <div class="lp-about-timeline-item">
+          <div class="lp-about-timeline-year">2023</div>
+          <div class="lp-about-timeline-text">
+            <h4>Maya enters the story</h4>
+            <p>Sarah adopts Maya, a four-year-old rescue with severe separation anxiety. Months of trial and error begin — training, supplements, medication, none of it fully works.</p>
+          </div>
+        </div>
+        <div class="lp-about-timeline-item">
+          <div class="lp-about-timeline-year">2024</div>
+          <div class="lp-about-timeline-text">
+            <h4>The first prototype</h4>
+            <p>After a year of research and three veterinary consultations, the first version of the Calming Cuddler Bed is built and tested with twelve rescue pets in Brooklyn. The results are immediate.</p>
+          </div>
+        </div>
+        <div class="lp-about-timeline-item">
+          <div class="lp-about-timeline-year">2025</div>
+          <div class="lp-about-timeline-text">
+            <h4>Lullpet launches</h4>
+            <p>The brand opens to the public with three core products and a single promise: vet-approved or it doesn't ship. The first 1,000 orders sell out in eleven weeks.</p>
+          </div>
+        </div>
+        <div class="lp-about-timeline-item">
+          <div class="lp-about-timeline-year">2026</div>
+          <div class="lp-about-timeline-text">
+            <h4>Four thousand calm pets</h4>
+            <p>Lullpet now serves pet parents across all fifty US states. $12,400+ donated to shelters. A growing line of calming essentials, all backed by the same thirty-day guarantee.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="lp-about-stats">
+    <div class="container">
+      <span class="eyebrow">Our impact, in numbers</span>
+      <h2 class="h2">Four thousand pet parents. <em>All fifty states.</em></h2>
+      <p class="lead">What we've built together with the pet parents who trust us — one calmer evening at a time.</p>
+      <div class="lp-about-stats-grid">
+        <div class="lp-about-stat">
+          <div class="n">4,247</div>
+          <div class="l">Pet parents served</div>
+          <div class="desc">Across all fifty US states, since launch in 2025.</div>
+        </div>
+        <div class="lp-about-stat">
+          <div class="n">$12,400</div>
+          <div class="l">Donated to shelters</div>
+          <div class="desc">1% of every order, transparent annual reports.</div>
+        </div>
+        <div class="lp-about-stat">
+          <div class="n">4.8<em>/5</em></div>
+          <div class="l">Average review</div>
+          <div class="desc">From 4,247 verified buyers on our products.</div>
+        </div>
+        <div class="lp-about-stat">
+          <div class="n">94<em>%</em></div>
+          <div class="l">Would buy again</div>
+          <div class="desc">Per our 2025 customer satisfaction survey.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="lp-about-values">
+    <div class="container">
+      <div class="header">
+        <span class="eyebrow">What we believe</span>
+        <h2 class="h2">A small set of <em>quiet principles.</em></h2>
+      </div>
+      <div class="lp-about-values-grid">
+        <div class="lp-about-value">
+          <span class="icon">i</span>
+          <h3>Science over marketing</h3>
+          <p>If we can't point to research or a vet endorsement, we don't make the claim. The pet wellness market needs less noise — not more.</p>
+        </div>
+        <div class="lp-about-value">
+          <span class="icon">ii</span>
+          <h3>Calm is built, not given</h3>
+          <p>The best products work with your pet, not on them. Real calm takes consistency — a routine, a den, a sense of safety. We design for that.</p>
+        </div>
+        <div class="lp-about-value">
+          <span class="icon">iii</span>
+          <h3>Honesty over hype</h3>
+          <p>We don't say "100% guaranteed" or "miracle results." We say what we can prove — and we publish our impact, our sustainability work, and our limitations every January.</p>
+        </div>
+        <div class="lp-about-value">
+          <span class="icon">iv</span>
+          <h3>Quiet is a luxury</h3>
+          <p>Modern life is loud. Anxious pets sense that. We make products that bring stillness — beautiful enough to leave out, soft enough to sink into.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESS STRIP -->
+  <section class="lp-about-press">
+    <div class="container">
+      <div class="label">— As featured in —</div>
+      <div class="lp-about-press-grid">
+        <div class="lp-about-press-name">Modern Dog</div>
+        <div class="lp-about-press-name">Vogue Pets</div>
+        <div class="lp-about-press-name">Forbes</div>
+        <div class="lp-about-press-name">The Wirecutter</div>
+        <div class="lp-about-press-name">Cat Behaviorist</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION CTA -->
+  <section class="lp-about-mission">
+    <div class="container">
+      <span class="eyebrow">Ready when you are</span>
+      <h2>Give them their <em>quietest year yet.</em></h2>
+      <p>Start with our most-loved calming essentials — backed by the thirty-day calm guarantee, and the promise that 1% of your order goes to a shelter.</p>
+      <a href="/collections/bestsellers" class="lp-about-mission-btn">Shop Bestsellers</a>
+      <a href="/pages/shelter-donation" class="lp-about-mission-btn secondary">Read Our Mission</a>
+    </div>
+  </section>
+
+</div>
