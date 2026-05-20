@@ -1,0 +1,165 @@
+<style>
+  /* LULLPET — LEGAL PAGE · v13 pattern · scoped to .lp-legal */
+  .template-page .page__title,
+  .template-page .page-title,
+  .template-page .page__heading,
+  .page-template__title,
+  .main-page-title,
+  .section-page-title { display: none !important; }
+  #MainContent, .main-content, main#MainContent { background-color: #fafaf7 !important; }
+  .lp-legal, .lp-legal * { box-sizing: border-box; }
+  .lp-legal > *, .lp-legal > * > * { margin: 0; padding: 0; }
+
+  .lp-legal {
+    --c-bg: #fafaf7; --c-bg-white: #ffffff; --c-bg-dark: #1a1a1a;
+    --c-text: #1a1a1a; --c-text-soft: #3a3a3a; --c-text-muted: #5a5a5a;
+    --c-sage: #87968a; --c-taupe: #b08968; --c-border: #ececea; --c-border-soft: #e6dfd2;
+    --f-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --f-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --r: 2px;
+    font-family: var(--f-sans); color: var(--c-text); line-height: 1.65;
+    font-weight: 400; -webkit-font-smoothing: antialiased; background: var(--c-bg);
+    padding: 0; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+    margin-top: -60px; margin-bottom: 0;
+  }
+  .lp-legal h1, .lp-legal h2, .lp-legal h3 {
+    font-family: var(--f-serif); font-weight: 500; letter-spacing: -0.01em; margin: 0;
+  }
+  .lp-legal p { margin: 0; font-size: 16px; color: var(--c-text-soft); line-height: 1.85; }
+  .lp-legal .lp-wrap { max-width: 800px; margin: 0 auto; padding: 0 32px; }
+  .lp-legal section { padding: 0; margin: 0; }
+
+  .lp-legal-hero {
+    text-align: center; padding: 130px 0 70px;
+    background: linear-gradient(180deg, var(--c-bg-white) 0%, var(--c-bg) 100%);
+    border-bottom: 1px solid var(--c-border);
+  }
+  .lp-legal-hero .lp-badge {
+    display: inline-flex; align-items: center; gap: 10px; padding: 9px 20px;
+    background: var(--c-bg-white); border: 1px solid var(--c-border); border-radius: 100px;
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 28px; font-weight: 700;
+  }
+  .lp-legal-hero .lp-badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c-sage); }
+  .lp-legal-hero h1 {
+    font-size: clamp(40px, 6vw, 72px); line-height: 1.05; letter-spacing: -0.022em;
+    margin: 0 0 22px; color: var(--c-text);
+  }
+  .lp-legal-hero h1 em { font-style: italic; color: var(--c-sage); }
+  .lp-legal-hero .lp-updated {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--c-text-muted); font-weight: 600;
+  }
+
+  .lp-legal-body { padding: 70px 0 100px; }
+  .lp-legal-body .lp-intro {
+    font-size: 18px; line-height: 1.8; color: var(--c-text); margin-bottom: 16px;
+  }
+  .lp-legal-body h2 {
+    font-size: 26px; color: var(--c-text); margin: 44px 0 14px; line-height: 1.25;
+    padding-top: 28px; border-top: 1px solid var(--c-border);
+  }
+  .lp-legal-body h2:first-of-type { border-top: none; padding-top: 0; }
+  .lp-legal-body h2 .lp-num {
+    font-family: var(--f-sans); font-size: 13px; color: var(--c-sage);
+    font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: 6px;
+  }
+  .lp-legal-body h3 { font-size: 19px; color: var(--c-text); margin: 24px 0 10px; }
+  .lp-legal-body p { margin-bottom: 16px; }
+  .lp-legal-body ul { margin: 0 0 18px 22px; }
+  .lp-legal-body li { font-size: 16px; color: var(--c-text-soft); line-height: 1.8; margin-bottom: 8px; }
+  .lp-legal-body li strong, .lp-legal-body p strong { color: var(--c-text); font-weight: 600; }
+  .lp-legal-body a { color: var(--c-sage); text-decoration: underline; }
+
+  .lp-legal-contact {
+    background: var(--c-bg-white); border: 1px solid var(--c-border);
+    border-radius: var(--r); padding: 32px 36px; margin-top: 40px;
+  }
+  .lp-legal-contact .lp-c-label {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--c-sage); font-weight: 700; margin-bottom: 10px;
+  }
+  .lp-legal-contact p { margin: 0; font-size: 15px; }
+
+  @media (max-width: 980px) {
+    .lp-legal-hero { padding: 90px 0 56px; }
+    .lp-legal-body { padding: 50px 0 70px; }
+  }
+</style>
+
+<div class="lp-legal">
+
+  <section class="lp-legal-hero">
+    <div class="lp-wrap">
+      <span class="lp-badge">Legal</span>
+      <h1>Privacy <em>Policy</em></h1>
+      <div class="lp-updated">Last updated · May 2026</div>
+    </div>
+  </section>
+
+  <section class="lp-legal-body">
+    <div class="lp-wrap">
+
+      <p class="lp-intro">At Lullpet, we believe privacy should be simple and honest. This Privacy Policy explains what information we collect when you visit lullpet.com or place an order, how we use it, and the choices you have. By using our website, you agree to the practices described here.</p>
+
+      <h2><span class="lp-num">Section 01</span>Information we collect</h2>
+      <p>We collect information in three ways:</p>
+      <h3>Information you give us</h3>
+      <p>When you place an order, create an account, or contact us, you may provide your name, email address, shipping and billing address, phone number, and payment information. When you sign up for our newsletter, we collect your email address.</p>
+      <h3>Information collected automatically</h3>
+      <p>When you visit our site, we automatically collect certain device and usage data, including your IP address, browser type, pages viewed, and how you interact with our site. This is collected through cookies and similar technologies.</p>
+      <h3>Information from third parties</h3>
+      <p>We may receive information from service providers such as our payment processor, shipping carriers, and analytics and advertising partners.</p>
+
+      <h2><span class="lp-num">Section 02</span>How we use your information</h2>
+      <p>We use the information we collect to:</p>
+      <ul>
+        <li>Process, fulfill, and deliver your orders</li>
+        <li>Communicate with you about orders, returns, and support requests</li>
+        <li>Send marketing emails and SMS messages, where you have opted in</li>
+        <li>Improve our website, products, and customer experience</li>
+        <li>Detect, prevent, and address fraud or security issues</li>
+        <li>Comply with our legal obligations</li>
+      </ul>
+
+      <h2><span class="lp-num">Section 03</span>Payment information</h2>
+      <p>Payments are processed securely by Shopify and our payment providers. We do not store your full credit card number on our servers. All payment data is encrypted and handled in accordance with PCI-DSS standards.</p>
+
+      <h2><span class="lp-num">Section 04</span>How we share information</h2>
+      <p>We do not sell your personal information for money. We share information only as needed to run our business, including with:</p>
+      <ul>
+        <li><strong>Service providers</strong> — Shopify (our store platform), payment processors, shipping carriers, and email/SMS providers such as Klaviyo</li>
+        <li><strong>Analytics and advertising partners</strong> — such as Google and Meta, to measure performance and show relevant ads</li>
+        <li><strong>Legal authorities</strong> — when required by law, or to protect our rights and the safety of others</li>
+      </ul>
+
+      <h2><span class="lp-num">Section 05</span>Cookies and tracking</h2>
+      <p>We use cookies and similar technologies to operate our site, remember your preferences, analyze traffic, and deliver relevant advertising. You can manage your preferences through our cookie banner or your browser settings. For full details, see our <a href="/pages/cookie-policy">Cookie Policy</a>.</p>
+
+      <h2><span class="lp-num">Section 06</span>Your rights and choices</h2>
+      <p>Depending on where you live, you may have the right to access, correct, or delete the personal information we hold about you, to opt out of marketing, and to opt out of the sale or sharing of personal information.</p>
+      <p><strong>Marketing:</strong> you can unsubscribe from emails using the link in any message, or reply STOP to SMS.</p>
+      <p><strong>California residents (CCPA/CPRA):</strong> you have the right to know, delete, correct, and opt out of the sale or sharing of personal information. We do not sell personal information for money. To exercise these rights, see our <a href="/pages/do-not-sell">Do Not Sell My Personal Information</a> page or email us.</p>
+      <p><strong>EU/UK residents (GDPR):</strong> you have rights of access, rectification, erasure, restriction, portability, and objection. To exercise any of these, contact us using the details below.</p>
+
+      <h2><span class="lp-num">Section 07</span>Data retention</h2>
+      <p>We keep your information for as long as needed to provide our services, comply with legal obligations, resolve disputes, and enforce our agreements. Order records are typically retained for the period required by tax and accounting law.</p>
+
+      <h2><span class="lp-num">Section 08</span>Data security</h2>
+      <p>We use industry-standard safeguards to protect your information, including encryption in transit and access controls. No method of transmission over the internet is completely secure, but we work continuously to protect your data.</p>
+
+      <h2><span class="lp-num">Section 09</span>Children's privacy</h2>
+      <p>Our website is not directed to children under 16, and we do not knowingly collect personal information from them. If you believe a child has provided us information, please contact us and we will delete it.</p>
+
+      <h2><span class="lp-num">Section 10</span>Changes to this policy</h2>
+      <p>We may update this Privacy Policy from time to time. When we do, we will revise the "last updated" date at the top of this page. Significant changes will be communicated where appropriate.</p>
+
+      <div class="lp-legal-contact">
+        <div class="lp-c-label">Questions about your privacy?</div>
+        <p>Email us at <a href="mailto:privacy@lullpet.com">privacy@lullpet.com</a> — we respond within 12 hours. Lullpet, Brooklyn, New York, United States.</p>
+      </div>
+
+    </div>
+  </section>
+
+</div>

@@ -1,0 +1,178 @@
+<style>
+  /* LULLPET — LEGAL PAGE · v13 pattern · scoped to .lp-legal */
+  .template-page .page__title,
+  .template-page .page-title,
+  .template-page .page__heading,
+  .page-template__title,
+  .main-page-title,
+  .section-page-title { display: none !important; }
+  #MainContent, .main-content, main#MainContent { background-color: #fafaf7 !important; }
+  .lp-legal, .lp-legal * { box-sizing: border-box; }
+  .lp-legal > *, .lp-legal > * > * { margin: 0; padding: 0; }
+
+  .lp-legal {
+    --c-bg: #fafaf7; --c-bg-white: #ffffff; --c-bg-dark: #1a1a1a;
+    --c-text: #1a1a1a; --c-text-soft: #3a3a3a; --c-text-muted: #5a5a5a;
+    --c-sage: #87968a; --c-taupe: #b08968; --c-border: #ececea; --c-border-soft: #e6dfd2;
+    --f-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --f-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --r: 2px;
+    font-family: var(--f-sans); color: var(--c-text); line-height: 1.65;
+    font-weight: 400; -webkit-font-smoothing: antialiased; background: var(--c-bg);
+    padding: 0; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+    margin-top: -60px; margin-bottom: 0;
+  }
+  .lp-legal h1, .lp-legal h2, .lp-legal h3 {
+    font-family: var(--f-serif); font-weight: 500; letter-spacing: -0.01em; margin: 0;
+  }
+  .lp-legal p { margin: 0; font-size: 16px; color: var(--c-text-soft); line-height: 1.85; }
+  .lp-legal .lp-wrap { max-width: 800px; margin: 0 auto; padding: 0 32px; }
+  .lp-legal section { padding: 0; margin: 0; }
+
+  .lp-legal-hero {
+    text-align: center; padding: 130px 0 70px;
+    background: linear-gradient(180deg, var(--c-bg-white) 0%, var(--c-bg) 100%);
+    border-bottom: 1px solid var(--c-border);
+  }
+  .lp-legal-hero .lp-badge {
+    display: inline-flex; align-items: center; gap: 10px; padding: 9px 20px;
+    background: var(--c-bg-white); border: 1px solid var(--c-border); border-radius: 100px;
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 28px; font-weight: 700;
+  }
+  .lp-legal-hero .lp-badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c-sage); }
+  .lp-legal-hero h1 {
+    font-size: clamp(40px, 6vw, 72px); line-height: 1.05; letter-spacing: -0.022em;
+    margin: 0 0 22px; color: var(--c-text);
+  }
+  .lp-legal-hero h1 em { font-style: italic; color: var(--c-sage); }
+  .lp-legal-hero .lp-updated {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--c-text-muted); font-weight: 600;
+  }
+
+  .lp-legal-body { padding: 70px 0 100px; }
+  .lp-legal-body .lp-intro {
+    font-size: 18px; line-height: 1.8; color: var(--c-text); margin-bottom: 16px;
+  }
+  .lp-legal-body h2 {
+    font-size: 26px; color: var(--c-text); margin: 44px 0 14px; line-height: 1.25;
+    padding-top: 28px; border-top: 1px solid var(--c-border);
+  }
+  .lp-legal-body h2:first-of-type { border-top: none; padding-top: 0; }
+  .lp-legal-body h2 .lp-num {
+    font-family: var(--f-sans); font-size: 13px; color: var(--c-sage);
+    font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: 6px;
+  }
+  .lp-legal-body p { margin-bottom: 16px; }
+  .lp-legal-body ul { margin: 0 0 18px 22px; }
+  .lp-legal-body li { font-size: 16px; color: var(--c-text-soft); line-height: 1.8; margin-bottom: 8px; }
+  .lp-legal-body li strong, .lp-legal-body p strong { color: var(--c-text); font-weight: 600; }
+  .lp-legal-body a { color: var(--c-sage); text-decoration: underline; }
+
+  .lp-legal-table {
+    width: 100%; border-collapse: collapse; margin: 8px 0 24px;
+    border: 1px solid var(--c-border); border-radius: var(--r); overflow: hidden;
+  }
+  .lp-legal-table th {
+    background: var(--c-bg-dark); color: rgba(250,250,247,0.7);
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    font-weight: 600; padding: 14px 18px; text-align: left;
+  }
+  .lp-legal-table td {
+    padding: 16px 18px; font-size: 14px; color: var(--c-text-soft);
+    border-bottom: 1px solid var(--c-border); background: var(--c-bg-white);
+    vertical-align: top;
+  }
+  .lp-legal-table tr:last-child td { border-bottom: none; }
+  .lp-legal-table td:first-child {
+    font-family: var(--f-serif); font-size: 18px; color: var(--c-sage); font-weight: 500;
+  }
+
+  .lp-legal-contact {
+    background: var(--c-bg-white); border: 1px solid var(--c-border);
+    border-radius: var(--r); padding: 32px 36px; margin-top: 40px;
+  }
+  .lp-legal-contact .lp-c-label {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--c-sage); font-weight: 700; margin-bottom: 10px;
+  }
+  .lp-legal-contact p { margin: 0; font-size: 15px; }
+
+  @media (max-width: 980px) {
+    .lp-legal-hero { padding: 90px 0 56px; }
+    .lp-legal-body { padding: 50px 0 70px; }
+    .lp-legal-table th, .lp-legal-table td { padding: 12px; font-size: 13px; }
+  }
+</style>
+
+<div class="lp-legal">
+
+  <section class="lp-legal-hero">
+    <div class="lp-wrap">
+      <span class="lp-badge">Legal</span>
+      <h1>Cookie <em>Policy</em></h1>
+      <div class="lp-updated">Last updated · May 2026</div>
+    </div>
+  </section>
+
+  <section class="lp-legal-body">
+    <div class="lp-wrap">
+
+      <p class="lp-intro">This Cookie Policy explains what cookies are, how Lullpet uses them on lullpet.com, and the choices you have. It should be read alongside our <a href="/pages/privacy-policy">Privacy Policy</a>.</p>
+
+      <h2><span class="lp-num">Section 01</span>What are cookies?</h2>
+      <p>Cookies are small text files stored on your device when you visit a website. They help sites remember your actions and preferences — such as the items in your cart — and allow the site to function, improve, and personalize your experience. Similar technologies include pixels, tags, and local storage.</p>
+
+      <h2><span class="lp-num">Section 02</span>The types of cookies we use</h2>
+      <table class="lp-legal-table">
+        <thead>
+          <tr><th>Type</th><th>What it does</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Essential</td>
+            <td>Required for the site to function — shopping cart, secure checkout, login, and session security. These cannot be switched off.</td>
+          </tr>
+          <tr>
+            <td>Analytics</td>
+            <td>Help us understand how visitors use our site so we can improve it. We use Google Analytics with IP anonymization enabled.</td>
+          </tr>
+          <tr>
+            <td>Marketing</td>
+            <td>Let us show you relevant Lullpet ads on platforms such as Meta, TikTok, Pinterest, and Google, and measure their performance.</td>
+          </tr>
+          <tr>
+            <td>Preferences</td>
+            <td>Remember choices such as your region, recently viewed products, and whether you have dismissed the newsletter pop-up.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2><span class="lp-num">Section 03</span>Third-party cookies</h2>
+      <p>Some cookies are placed by third-party services we use, including Shopify (our store platform), Google (analytics and ads), Meta (advertising), and our email and reviews providers. These third parties may use cookies to collect information about your activity across different websites.</p>
+
+      <h2><span class="lp-num">Section 04</span>Your choices</h2>
+      <p>When you first visit our site, a cookie banner lets you accept or customize your preferences. You can also:</p>
+      <ul>
+        <li>Accept all cookies for the full experience</li>
+        <li>Customize which non-essential categories you allow</li>
+        <li>Withdraw or change consent anytime via the "Cookie settings" link in our footer</li>
+        <li>Block or delete cookies through your browser settings — note that some features may not work correctly without them</li>
+      </ul>
+
+      <h2><span class="lp-num">Section 05</span>Managing cookies in your browser</h2>
+      <p>Most browsers let you view, manage, and delete cookies through their settings menu. Refer to the help documentation for Chrome, Safari, Firefox, or Edge for specific instructions. You can also opt out of certain advertising cookies through industry tools such as the Digital Advertising Alliance.</p>
+
+      <h2><span class="lp-num">Section 06</span>Changes to this policy</h2>
+      <p>We may update this Cookie Policy as our practices or applicable laws change. The current version will always be posted here with a revised "last updated" date.</p>
+
+      <div class="lp-legal-contact">
+        <div class="lp-c-label">Questions about cookies?</div>
+        <p>Email us at <a href="mailto:privacy@lullpet.com">privacy@lullpet.com</a> — we respond within 12 hours. Lullpet, Brooklyn, New York, United States.</p>
+      </div>
+
+    </div>
+  </section>
+
+</div>
