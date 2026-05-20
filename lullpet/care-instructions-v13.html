@@ -1,0 +1,236 @@
+<style>
+  /* ===========================================
+     LULLPET — CARE INSTRUCTIONS · v13 pattern
+     Scoped to .lp-care
+     =========================================== */
+  .template-page .page__title,
+  .template-page .page-title,
+  .template-page .page__heading,
+  .page-template__title,
+  .main-page-title,
+  .section-page-title { display: none !important; }
+  #MainContent,
+  .main-content,
+  main#MainContent { background-color: #fafaf7 !important; }
+  .lp-care, .lp-care * { box-sizing: border-box; }
+  .lp-care > *, .lp-care > * > * { margin: 0; padding: 0; }
+
+  .lp-care {
+    --c-bg: #fafaf7; --c-bg-pearl: #f3ece0; --c-bg-white: #ffffff; --c-bg-dark: #1a1a1a;
+    --c-text: #1a1a1a; --c-text-soft: #3a3a3a; --c-text-muted: #5a5a5a;
+    --c-sage: #87968a; --c-taupe: #b08968; --c-border: #ececea; --c-border-soft: #e6dfd2;
+    --f-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --f-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --r: 2px; --t: cubic-bezier(0.16, 1, 0.3, 1);
+    font-family: var(--f-sans); color: var(--c-text); line-height: 1.65;
+    font-weight: 400; -webkit-font-smoothing: antialiased; background: var(--c-bg);
+    padding: 0; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+    margin-top: -60px; margin-bottom: 0;
+  }
+  .lp-care h1, .lp-care h2, .lp-care h3, .lp-care h4 {
+    font-family: var(--f-serif); font-weight: 500; letter-spacing: -0.01em; margin: 0;
+  }
+  .lp-care p { margin: 0; font-size: 16px; color: var(--c-text-soft); line-height: 1.8; }
+  .lp-care .lp-container { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+  .lp-care .lp-narrow { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+  .lp-care section { padding: 90px 0; position: relative; margin: 0; }
+  .lp-care .lp-eyebrow {
+    font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 18px; display: inline-block; font-weight: 600;
+  }
+  .lp-care .lp-h2 { font-size: clamp(32px, 4vw, 50px); line-height: 1.14; color: var(--c-text); }
+  .lp-care .lp-h2 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+
+  .lp-care-hero {
+    text-align: center; padding: 140px 0 90px !important;
+    background: linear-gradient(180deg, var(--c-bg-white) 0%, var(--c-bg) 100%);
+  }
+  .lp-care-hero .lp-hero-badge {
+    display: inline-flex; align-items: center; gap: 10px; padding: 9px 20px;
+    background: var(--c-bg-white); border: 1px solid var(--c-border); border-radius: 100px;
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 32px; font-weight: 700;
+  }
+  .lp-care-hero .lp-hero-badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c-sage); }
+  .lp-care-hero h1 {
+    font-size: clamp(46px, 7vw, 88px); line-height: 1.02; letter-spacing: -0.025em;
+    margin: 0 0 30px; color: var(--c-text);
+  }
+  .lp-care-hero h1 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+  .lp-care-hero .lp-hero-sub {
+    font-size: 19px; max-width: 620px; margin: 0 auto;
+    color: var(--c-text-muted); font-weight: 300; line-height: 1.65;
+  }
+  .lp-care-hero .lp-hero-divider { width: 60px; height: 1px; background: var(--c-sage); margin: 44px auto 0; opacity: 0.7; }
+
+  /* PRODUCT CARE BLOCKS */
+  .lp-care-block { background: var(--c-bg); }
+  .lp-care-block.alt { background: var(--c-bg-white); border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); }
+  .lp-care-grid {
+    display: grid; grid-template-columns: 280px 1fr; gap: 60px; align-items: start;
+  }
+  .lp-care-label h2 { font-size: clamp(28px, 3vw, 38px); line-height: 1.15; }
+  .lp-care-label h2 em { font-style: italic; color: var(--c-sage); }
+  .lp-care-label .lp-tag {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--c-sage); font-weight: 600; margin-top: 12px; display: inline-block;
+  }
+  .lp-care-steps { display: grid; gap: 14px; }
+  .lp-care-step {
+    background: var(--c-bg-white); border: 1px solid var(--c-border); border-radius: var(--r);
+    padding: 24px 30px; display: grid; grid-template-columns: 32px 1fr; gap: 18px; align-items: start;
+  }
+  .lp-care-block.alt .lp-care-step { background: var(--c-bg); }
+  .lp-care-step .lp-s-num {
+    font-family: var(--f-serif); font-size: 22px; font-style: italic;
+    color: var(--c-sage); line-height: 1.2;
+  }
+  .lp-care-step h3 {
+    font-family: var(--f-sans); font-size: 15px; font-weight: 600;
+    color: var(--c-text); margin: 0 0 4px;
+  }
+  .lp-care-step p { font-size: 14px; color: var(--c-text-muted); line-height: 1.7; }
+
+  /* GENERAL TIPS */
+  .lp-care-tips { background: var(--c-bg-dark); color: var(--c-bg); padding: 100px 0 !important; }
+  .lp-care-tips .lp-eyebrow { color: var(--c-taupe); }
+  .lp-care-tips h2 { color: var(--c-bg); }
+  .lp-care-tips h2 em { color: var(--c-taupe); font-style: italic; }
+  .lp-care-tips .lp-section-head { text-align: center; margin-bottom: 50px; }
+  .lp-care-tips-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .lp-care-tip {
+    padding: 34px 30px; border: 1px solid rgba(250,250,247,0.14); border-radius: var(--r);
+  }
+  .lp-care-tip h3 { font-size: 20px; color: var(--c-bg); margin: 0 0 10px; }
+  .lp-care-tip p { font-size: 14px; color: rgba(250,250,247,0.65); line-height: 1.7; }
+
+  /* CTA */
+  .lp-care-cta { background: var(--c-bg); text-align: center; padding: 110px 0 !important; }
+  .lp-care-cta h2 { font-size: clamp(34px, 4.5vw, 54px); margin: 0 0 20px; }
+  .lp-care-cta h2 em { color: var(--c-sage); font-style: italic; }
+  .lp-care-cta p { max-width: 540px; margin: 0 auto 40px; color: var(--c-text-muted); font-size: 18px; }
+  .lp-care a.lp-cta-btn {
+    display: inline-block !important; padding: 18px 48px !important;
+    background-color: #1a1a1a !important; color: #ffffff !important;
+    text-decoration: none !important; font-size: 12px !important;
+    letter-spacing: 0.28em !important; text-transform: uppercase !important;
+    font-weight: 600 !important; border: 1px solid #1a1a1a !important;
+    border-radius: 0 !important; transition: all 0.3s var(--t) !important;
+    font-family: 'Inter', sans-serif !important; line-height: 1 !important;
+  }
+  .lp-care a.lp-cta-btn:hover { background-color: transparent !important; color: #1a1a1a !important; }
+
+  @media (max-width: 980px) {
+    .lp-care .lp-container { padding: 0 24px; }
+    .lp-care .lp-narrow { padding: 0 24px; }
+    .lp-care section { padding: 60px 0; }
+    .lp-care-hero { padding: 90px 0 60px !important; }
+    .lp-care-grid { grid-template-columns: 1fr; gap: 30px; }
+    .lp-care-tips { padding: 70px 0 !important; }
+    .lp-care-tips-grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lp-care *, .lp-care *::before, .lp-care *::after { transition: none !important; }
+  }
+</style>
+
+<div class="lp-care">
+
+  <section class="lp-care-hero">
+    <div class="lp-container">
+      <span class="lp-hero-badge">Care Instructions</span>
+      <h1>Made to last. <em>Cared for simply.</em></h1>
+      <p class="lp-hero-sub">A little care keeps every Lullpet product soft, safe, and effective for years. Here's how, product by product.</p>
+      <div class="lp-hero-divider"></div>
+    </div>
+  </section>
+
+  <!-- CALMING BED -->
+  <section class="lp-care-block">
+    <div class="lp-narrow">
+      <div class="lp-care-grid">
+        <div class="lp-care-label">
+          <h2>Calming <em>Cuddler Bed</em></h2>
+          <span class="lp-tag">Faux fur · machine washable</span>
+        </div>
+        <div class="lp-care-steps">
+          <div class="lp-care-step"><div class="lp-s-num">i</div><div><h3>Machine wash cold</h3><p>Use a gentle cycle with mild, fragrance-free detergent. Wash separately the first time.</p></div></div>
+          <div class="lp-care-step"><div class="lp-s-num">ii</div><div><h3>Air dry only</h3><p>Lay flat or hang to dry. Avoid the dryer — high heat can flatten the faux fur over time.</p></div></div>
+          <div class="lp-care-step"><div class="lp-s-num">iii</div><div><h3>Fluff after drying</h3><p>Once dry, give the rim a gentle shake and fluff to restore its full, cozy shape.</p></div></div>
+          <div class="lp-care-step"><div class="lp-s-num">iv</div><div><h3>Wash every 2–3 weeks</h3><p>Regular washing keeps it hygienic and helps your pet associate it with comfort.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNTAIN -->
+  <section class="lp-care-block alt">
+    <div class="lp-narrow">
+      <div class="lp-care-grid">
+        <div class="lp-care-label">
+          <h2>Ceramic <em>Pet Fountain</em></h2>
+          <span class="lp-tag">Ceramic · dishwasher-safe top</span>
+        </div>
+        <div class="lp-care-steps">
+          <div class="lp-care-step"><div class="lp-s-num">i</div><div><h3>Rinse daily</h3><p>Empty and rinse the bowl each day to keep water fresh and inviting.</p></div></div>
+          <div class="lp-care-step"><div class="lp-s-num">ii</div><div><h3>Deep clean weekly</h3><p>Disassemble fully and wash with warm soapy water. The ceramic top is dishwasher-safe.</p></div></div>
+          <div class="lp-care-step"><div class="lp-s-num">iii</div><div><h3>Replace filter monthly</h3><p>Swap the charcoal filter every 3–4 weeks for clean, oxygenated water.</p></div></div>
+          <div class="lp-care-step"><div class="lp-s-num">iv</div><div><h3>Clean the pump</h3><p>Rinse the pump and clear the impeller monthly to keep it whisper-quiet.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPRAY & DIFFUSER -->
+  <section class="lp-care-block">
+    <div class="lp-narrow">
+      <div class="lp-care-grid">
+        <div class="lp-care-label">
+          <h2>Calming Spray <em>& Diffuser</em></h2>
+          <span class="lp-tag">Store cool · keep upright</span>
+        </div>
+        <div class="lp-care-steps">
+          <div class="lp-care-step"><div class="lp-s-num">i</div><div><h3>Store away from heat</h3><p>Keep the spray and diffuser refills in a cool, dark place to preserve the formula.</p></div></div>
+          <div class="lp-care-step"><div class="lp-s-num">ii</div><div><h3>Shake before use</h3><p>Give the calming spray a gentle shake to evenly blend the natural ingredients.</p></div></div>
+          <div class="lp-care-step"><div class="lp-s-num">iii</div><div><h3>Keep the diffuser upright</h3><p>Always plug in vertically so the refill flows correctly and lasts the full 30 days.</p></div></div>
+          <div class="lp-care-step"><div class="lp-s-num">iv</div><div><h3>Wipe the diffuser unit</h3><p>Before a new refill, wipe the plug-in unit with a dry cloth — never submerge it.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GENERAL TIPS -->
+  <section class="lp-care-tips">
+    <div class="lp-container">
+      <div class="lp-section-head">
+        <span class="lp-eyebrow">Good habits</span>
+        <h2 class="lp-h2">Three rules <em>for everything.</em></h2>
+      </div>
+      <div class="lp-care-tips-grid">
+        <div class="lp-care-tip">
+          <h3>Skip harsh chemicals</h3>
+          <p>Avoid bleach and strong fragrances — they can irritate sensitive pets and break down materials.</p>
+        </div>
+        <div class="lp-care-tip">
+          <h3>Inspect regularly</h3>
+          <p>Check for loose seams or worn parts every few months. Email us if anything needs attention.</p>
+        </div>
+        <div class="lp-care-tip">
+          <h3>Let it dry fully</h3>
+          <p>Always allow washed items to dry completely before returning them to your pet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="lp-care-cta">
+    <div class="lp-container">
+      <span class="lp-eyebrow">Need a hand?</span>
+      <h2>Questions about <em>caring for your product?</em></h2>
+      <p>Email us anytime — our team replies within 12 hours with practical, honest advice.</p>
+      <a href="mailto:hello@lullpet.com?subject=Care Question" class="lp-cta-btn">Email Us</a>
+    </div>
+  </section>
+
+</div>
