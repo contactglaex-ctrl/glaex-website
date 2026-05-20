@@ -1,0 +1,372 @@
+<style>
+  /* ===========================================
+     LULLPET — SUSTAINABILITY · v13 pattern
+     Scoped to .lp-sus
+     =========================================== */
+
+  /* (1) Hide Shopify's auto-rendered page title */
+  .template-page .page__title,
+  .template-page .page-title,
+  .template-page .page__heading,
+  .page-template__title,
+  .main-page-title,
+  .section-page-title { display: none !important; }
+
+  /* (2) Neutralise page-content wrapper background */
+  #MainContent,
+  .main-content,
+  main#MainContent { background-color: #fafaf7 !important; }
+
+  /* Reset scoped strictly inside .lp-sus */
+  .lp-sus, .lp-sus * { box-sizing: border-box; }
+  .lp-sus > *, .lp-sus > * > * { margin: 0; padding: 0; }
+
+  /* ===========================================
+     ROOT TOKENS
+     =========================================== */
+  .lp-sus {
+    --c-bg: #fafaf7;
+    --c-bg-pearl: #f3ece0;
+    --c-bg-white: #ffffff;
+    --c-bg-dark: #1a1a1a;
+    --c-text: #1a1a1a;
+    --c-text-soft: #3a3a3a;
+    --c-text-muted: #5a5a5a;
+    --c-sage: #87968a;
+    --c-taupe: #b08968;
+    --c-border: #ececea;
+    --c-border-soft: #e6dfd2;
+    --f-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --f-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    --r: 2px;
+    --t: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* ===========================================
+     BASE
+     =========================================== */
+  .lp-sus {
+    font-family: var(--f-sans);
+    color: var(--c-text);
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    background: var(--c-bg);
+    padding: 0;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: -60px;
+    margin-bottom: 0;
+  }
+  .lp-sus h1, .lp-sus h2, .lp-sus h3, .lp-sus h4 {
+    font-family: var(--f-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .lp-sus p { margin: 0; font-size: 16px; color: var(--c-text-soft); line-height: 1.8; }
+  .lp-sus .lp-container { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+  .lp-sus .lp-narrow { max-width: 860px; margin: 0 auto; padding: 0 40px; }
+  .lp-sus section { padding: 90px 0; position: relative; margin: 0; }
+  .lp-sus .lp-eyebrow {
+    font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 18px;
+    display: inline-block; font-weight: 600;
+  }
+  .lp-sus .lp-h2 { font-size: clamp(32px, 4vw, 52px); line-height: 1.13; color: var(--c-text); }
+  .lp-sus .lp-h2 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+
+  /* ===========================================
+     HERO
+     =========================================== */
+  .lp-sus-hero {
+    text-align: center;
+    padding: 140px 0 90px !important;
+    background: linear-gradient(180deg, var(--c-bg-white) 0%, var(--c-bg) 100%);
+  }
+  .lp-sus-hero .lp-hero-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 9px 20px; background: var(--c-bg-white);
+    border: 1px solid var(--c-border); border-radius: 100px;
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 32px; font-weight: 700;
+  }
+  .lp-sus-hero .lp-hero-badge::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c-sage);
+  }
+  .lp-sus-hero h1 {
+    font-size: clamp(46px, 7vw, 90px); line-height: 1.02;
+    letter-spacing: -0.025em; margin: 0 0 30px; color: var(--c-text);
+  }
+  .lp-sus-hero h1 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+  .lp-sus-hero .lp-hero-sub {
+    font-size: 19px; max-width: 660px; margin: 0 auto;
+    color: var(--c-text-muted); font-weight: 300; line-height: 1.65;
+  }
+  .lp-sus-hero .lp-hero-divider {
+    width: 60px; height: 1px; background: var(--c-sage);
+    margin: 44px auto 0; opacity: 0.7;
+  }
+
+  /* ===========================================
+     INTRO
+     =========================================== */
+  .lp-sus-intro { background: var(--c-bg); }
+  .lp-sus-intro p { font-size: 18px; line-height: 1.85; margin-bottom: 20px; }
+  .lp-sus-intro p:last-child { margin-bottom: 0; }
+  .lp-sus-intro .lp-quote {
+    font-family: var(--f-serif); font-style: italic;
+    font-size: clamp(24px, 2.8vw, 32px); color: var(--c-sage);
+    line-height: 1.4; padding: 32px 0; margin: 32px 0;
+    border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border);
+  }
+
+  /* ===========================================
+     TODAY — dark list
+     =========================================== */
+  .lp-sus-today {
+    background: var(--c-bg-dark); color: var(--c-bg);
+    padding: 110px 0 !important;
+  }
+  .lp-sus-today .lp-eyebrow { color: var(--c-taupe); }
+  .lp-sus-today h2 { color: var(--c-bg); margin-bottom: 50px; }
+  .lp-sus-today h2 em { color: var(--c-taupe); font-style: italic; }
+  .lp-sus-today-list { display: grid; gap: 16px; }
+  .lp-sus-today-item {
+    padding: 26px 32px;
+    border: 1px solid rgba(250,250,247,0.14); border-radius: var(--r);
+    display: grid; grid-template-columns: 40px 1fr; gap: 22px; align-items: start;
+  }
+  .lp-sus-today-item .lp-check {
+    font-family: var(--f-serif); font-size: 26px; font-style: italic;
+    color: var(--c-taupe); line-height: 1;
+  }
+  .lp-sus-today-item h3 {
+    font-family: var(--f-sans); font-size: 15px; font-weight: 600;
+    color: var(--c-bg); margin: 0 0 6px; letter-spacing: 0.02em;
+  }
+  .lp-sus-today-item p {
+    color: rgba(250,250,247,0.65); font-size: 14px; line-height: 1.7; margin: 0;
+  }
+
+  /* ===========================================
+     ROADMAP
+     =========================================== */
+  .lp-sus-roadmap { background: var(--c-bg); }
+  .lp-sus-roadmap .lp-section-head { text-align: center; margin-bottom: 50px; }
+  .lp-sus-roadmap-list { max-width: 760px; margin: 0 auto; }
+  .lp-sus-roadmap-item {
+    display: grid; grid-template-columns: 44px 1fr; gap: 20px;
+    padding: 26px 0; border-bottom: 1px solid var(--c-border); align-items: baseline;
+  }
+  .lp-sus-roadmap-item:last-child { border-bottom: none; }
+  .lp-sus-roadmap-item .lp-arrow {
+    font-family: var(--f-serif); font-size: 24px; font-style: italic;
+    color: var(--c-sage);
+  }
+  .lp-sus-roadmap-item .lp-rm-text { font-size: 17px; color: var(--c-text); line-height: 1.7; }
+  .lp-sus-roadmap-item .lp-rm-text strong { color: var(--c-sage); font-weight: 600; }
+
+  /* ===========================================
+     MATERIALS
+     =========================================== */
+  .lp-sus-materials { background: var(--c-bg-pearl); }
+  .lp-sus-materials .lp-section-head { text-align: center; margin-bottom: 50px; }
+  .lp-sus-materials-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px;
+    max-width: 1000px; margin: 0 auto;
+  }
+  .lp-sus-material {
+    background: var(--c-bg-white); border: 1px solid var(--c-border-soft);
+    border-radius: var(--r); padding: 38px 36px;
+  }
+  .lp-sus-material h4 {
+    font-size: 24px; color: var(--c-text); margin: 0 0 12px;
+  }
+  .lp-sus-material p { font-size: 14px; color: var(--c-text-muted); line-height: 1.75; margin: 0; }
+
+  /* ===========================================
+     REPORT CTA
+     =========================================== */
+  .lp-sus-report {
+    background: var(--c-sage); color: #ffffff;
+    text-align: center; padding: 110px 0 !important;
+  }
+  .lp-sus-report .lp-eyebrow { color: rgba(255,255,255,0.7); }
+  .lp-sus-report h2 { color: #ffffff; font-size: clamp(34px, 4.5vw, 54px); margin: 0 0 18px; }
+  .lp-sus-report h2 em { color: var(--c-bg-dark); font-style: italic; }
+  .lp-sus-report p { color: rgba(255,255,255,0.9); font-size: 17px; max-width: 540px; margin: 0 auto 40px; }
+  .lp-sus a.lp-cta-btn {
+    display: inline-block !important;
+    padding: 18px 48px !important;
+    background-color: #ffffff !important;
+    color: #1a1a1a !important;
+    text-decoration: none !important;
+    font-size: 12px !important;
+    letter-spacing: 0.28em !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 0 !important;
+    transition: all 0.3s var(--t) !important;
+    font-family: 'Inter', sans-serif !important;
+    line-height: 1 !important;
+  }
+  .lp-sus a.lp-cta-btn:hover {
+    background-color: transparent !important; color: #ffffff !important;
+  }
+
+  /* ===========================================
+     RESPONSIVE
+     =========================================== */
+  @media (max-width: 980px) {
+    .lp-sus .lp-container { padding: 0 24px; }
+    .lp-sus .lp-narrow { padding: 0 24px; }
+    .lp-sus section { padding: 60px 0; }
+    .lp-sus-hero { padding: 90px 0 60px !important; }
+    .lp-sus-today { padding: 80px 0 !important; }
+    .lp-sus-materials-grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lp-sus *, .lp-sus *::before, .lp-sus *::after {
+      transition: none !important; animation: none !important;
+    }
+  }
+</style>
+
+<div class="lp-sus">
+
+  <!-- HERO -->
+  <section class="lp-sus-hero">
+    <div class="lp-container">
+      <span class="lp-hero-badge">Sustainability</span>
+      <h1>Calm pets need a <em>calm planet.</em></h1>
+      <p class="lp-hero-sub">We don't claim to be perfectly sustainable. We claim to be honest about what we're doing — and what we're still working on.</p>
+      <div class="lp-hero-divider"></div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="lp-sus-intro">
+    <div class="lp-narrow">
+      <span class="lp-eyebrow">Where we stand</span>
+      <h2 class="lp-h2">Honest, not <em>performative.</em></h2>
+      <div style="height:28px;"></div>
+      <p>Sustainability has become a marketing checkbox for most pet brands — green leaf icons, vague "eco" language, recyclable claims with no infrastructure behind them. We try to do less of that.</p>
+      <div class="lp-quote">"Sustainability is a slow, deliberate practice we get better at year by year."</div>
+      <p>Below is what we actually do today — and what we're actively working on. Read it. Hold us to it. We publish a full progress report every January.</p>
+    </div>
+  </section>
+
+  <!-- TODAY -->
+  <section class="lp-sus-today">
+    <div class="lp-narrow">
+      <span class="lp-eyebrow">What we do today</span>
+      <h2 class="lp-h2">Five things <em>that aren't claims.</em></h2>
+      <div class="lp-sus-today-list">
+        <div class="lp-sus-today-item">
+          <div class="lp-check">✓</div>
+          <div>
+            <h3>Recyclable packaging</h3>
+            <p>Soy ink, no plastic windows, FSC-certified paper. Every box breaks down for curbside recycling.</p>
+          </div>
+        </div>
+        <div class="lp-sus-today-item">
+          <div class="lp-check">✓</div>
+          <div>
+            <h3>Carbon-neutral shipping</h3>
+            <p>We offset the emissions of every order automatically, at no cost to you, through a verified partner.</p>
+          </div>
+        </div>
+        <div class="lp-sus-today-item">
+          <div class="lp-check">✓</div>
+          <div>
+            <h3>Sustainable materials</h3>
+            <p>Faux fur instead of real. OEKO-TEX certified textiles. BPA-free components. No PFAS or fluorocarbons.</p>
+          </div>
+        </div>
+        <div class="lp-sus-today-item">
+          <div class="lp-check">✓</div>
+          <div>
+            <h3>US-based fulfillment</h3>
+            <p>Our warehouse is in Ohio. Fewer transcontinental flights means a lower carbon footprint per shipment.</p>
+          </div>
+        </div>
+        <div class="lp-sus-today-item">
+          <div class="lp-check">✓</div>
+          <div>
+            <h3>Refill program</h3>
+            <p>Buy refills instead of new diffusers and sprays — saving 60% on packaging waste and 20% on cost.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section class="lp-sus-roadmap">
+    <div class="lp-narrow">
+      <div class="lp-section-head">
+        <span class="lp-eyebrow">What we're working on</span>
+        <h2 class="lp-h2">Roadmap, <em>not promises.</em></h2>
+      </div>
+      <div class="lp-sus-roadmap-list">
+        <div class="lp-sus-roadmap-item">
+          <div class="lp-arrow">→</div>
+          <div class="lp-rm-text"><strong>Plastic-free bed filling</strong> by Q4 2026 — currently sourcing recycled wool alternatives.</div>
+        </div>
+        <div class="lp-sus-roadmap-item">
+          <div class="lp-arrow">→</div>
+          <div class="lp-rm-text"><strong>Take-back program</strong> for end-of-life products, launching 2027.</div>
+        </div>
+        <div class="lp-sus-roadmap-item">
+          <div class="lp-arrow">→</div>
+          <div class="lp-rm-text"><strong>Third-party sustainability audit</strong> conducted annually, starting 2026.</div>
+        </div>
+        <div class="lp-sus-roadmap-item">
+          <div class="lp-arrow">→</div>
+          <div class="lp-rm-text"><strong>B Corp certification</strong> — application submitted Q1 2026.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIALS -->
+  <section class="lp-sus-materials">
+    <div class="lp-container">
+      <div class="lp-section-head">
+        <span class="lp-eyebrow">Our materials</span>
+        <h2 class="lp-h2">What goes into <em>every product.</em></h2>
+      </div>
+      <div class="lp-sus-materials-grid">
+        <div class="lp-sus-material">
+          <h4>Beds</h4>
+          <p>Faux fur (vegan, plush, non-shedding) outer. Self-warming recycled PP cotton fill. Anti-slip cotton blend base.</p>
+        </div>
+        <div class="lp-sus-material">
+          <h4>Fountains</h4>
+          <p>Premium ceramic, fully recyclable. BPA-free pump components. Triple-stage filtration: charcoal, foam, cotton.</p>
+        </div>
+        <div class="lp-sus-material">
+          <h4>Sprays</h4>
+          <p>Glass bottles. Aluminum caps. Biodegradable formulas with lavender oil and chamomile extract.</p>
+        </div>
+        <div class="lp-sus-material">
+          <h4>Packaging</h4>
+          <p>100% recycled cardboard. Soy-based ink. Zero plastic film. Hand-numbered thank-you cards on FSC paper.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORT -->
+  <section class="lp-sus-report">
+    <div class="lp-container">
+      <span class="lp-eyebrow">Transparency</span>
+      <h2>Read the 2025 <em>sustainability report.</em></h2>
+      <p>Materials sourced, emissions offset, packaging reduced — and what's next for 2026.</p>
+      <a href="#" class="lp-cta-btn">Download PDF</a>
+    </div>
+  </section>
+
+</div>
