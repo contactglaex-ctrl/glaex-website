@@ -1,0 +1,364 @@
+<style>
+  /* ===========================================
+     LULLPET — CONTACT · v13 pattern
+     Scoped to .lp-con
+     =========================================== */
+
+  /* (1) Hide Shopify's auto-rendered page title */
+  .template-page .page__title,
+  .template-page .page-title,
+  .template-page .page__heading,
+  .page-template__title,
+  .main-page-title,
+  .section-page-title { display: none !important; }
+
+  /* (2) Neutralise page-content wrapper background */
+  #MainContent,
+  .main-content,
+  main#MainContent { background-color: #fafaf7 !important; }
+
+  /* Reset scoped strictly inside .lp-con */
+  .lp-con, .lp-con * { box-sizing: border-box; }
+  .lp-con > *, .lp-con > * > * { margin: 0; padding: 0; }
+
+  /* ===========================================
+     ROOT TOKENS
+     =========================================== */
+  .lp-con {
+    --c-bg: #fafaf7;
+    --c-bg-pearl: #f3ece0;
+    --c-bg-white: #ffffff;
+    --c-bg-dark: #1a1a1a;
+    --c-text: #1a1a1a;
+    --c-text-soft: #3a3a3a;
+    --c-text-muted: #5a5a5a;
+    --c-sage: #87968a;
+    --c-taupe: #b08968;
+    --c-border: #ececea;
+    --c-border-soft: #e6dfd2;
+    --f-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --f-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    --r: 2px;
+    --t: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* ===========================================
+     BASE
+     =========================================== */
+  .lp-con {
+    font-family: var(--f-sans);
+    color: var(--c-text);
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    background: var(--c-bg);
+    padding: 0;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: -60px;
+    margin-bottom: 0;
+  }
+  .lp-con h1, .lp-con h2, .lp-con h3, .lp-con h4 {
+    font-family: var(--f-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .lp-con p { margin: 0; font-size: 16px; color: var(--c-text-soft); line-height: 1.8; }
+  .lp-con .lp-container { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+  .lp-con section { padding: 90px 0; position: relative; margin: 0; }
+  .lp-con .lp-eyebrow {
+    font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 18px;
+    display: inline-block; font-weight: 600;
+  }
+  .lp-con .lp-h2 { font-size: clamp(32px, 4vw, 50px); line-height: 1.14; color: var(--c-text); }
+  .lp-con .lp-h2 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+
+  /* ===========================================
+     HERO
+     =========================================== */
+  .lp-con-hero {
+    text-align: center;
+    padding: 140px 0 90px !important;
+    background: linear-gradient(180deg, var(--c-bg-white) 0%, var(--c-bg) 100%);
+  }
+  .lp-con-hero .lp-hero-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 9px 20px; background: var(--c-bg-white);
+    border: 1px solid var(--c-border); border-radius: 100px;
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 32px; font-weight: 700;
+  }
+  .lp-con-hero .lp-hero-badge::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c-sage);
+  }
+  .lp-con-hero h1 {
+    font-size: clamp(46px, 7vw, 88px); line-height: 1.02;
+    letter-spacing: -0.025em; margin: 0 0 30px; color: var(--c-text);
+  }
+  .lp-con-hero h1 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+  .lp-con-hero .lp-hero-sub {
+    font-size: 19px; max-width: 620px; margin: 0 auto;
+    color: var(--c-text-muted); font-weight: 300; line-height: 1.65;
+  }
+  .lp-con-hero .lp-hero-divider {
+    width: 60px; height: 1px; background: var(--c-sage);
+    margin: 44px auto 0; opacity: 0.7;
+  }
+
+  /* ===========================================
+     MAIN — channels + form
+     =========================================== */
+  .lp-con-main { background: var(--c-bg); }
+  .lp-con-grid {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 70px; align-items: start;
+  }
+
+  /* channels */
+  .lp-con-channels { display: grid; gap: 18px; }
+  .lp-con-channel {
+    background: var(--c-bg-white); border: 1px solid var(--c-border);
+    border-radius: var(--r); padding: 32px 34px;
+    transition: border-color 0.4s var(--t);
+  }
+  .lp-con-channel:hover { border-color: var(--c-sage); }
+  .lp-con-channel .lp-ch-label {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--c-text-muted); margin-bottom: 10px; font-weight: 600;
+  }
+  .lp-con-channel h3 {
+    font-size: 24px; color: var(--c-text); margin: 0 0 10px; line-height: 1.3;
+  }
+  .lp-con-channel a {
+    color: var(--c-sage); text-decoration: none; font-size: 16px;
+    border-bottom: 1px solid var(--c-sage); padding-bottom: 2px;
+  }
+  .lp-con-channel p { font-size: 13px; color: var(--c-text-muted); margin-top: 14px; }
+
+  /* form */
+  .lp-con-form-wrap {
+    background: var(--c-bg-white); border: 1px solid var(--c-border);
+    border-radius: var(--r); padding: 50px 46px;
+  }
+  .lp-con-form-wrap h2 {
+    font-size: 30px; color: var(--c-text); margin: 0 0 8px;
+  }
+  .lp-con-form-wrap .lp-form-sub {
+    font-size: 14px; color: var(--c-text-muted); margin-bottom: 30px;
+  }
+  .lp-con-field { margin-bottom: 22px; }
+  .lp-con-field label {
+    display: block; font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--c-text-muted);
+    margin-bottom: 8px; font-weight: 600;
+  }
+  .lp-con-field label .lp-opt { text-transform: none; letter-spacing: 0; color: #aaa; font-size: 11px; }
+  .lp-con-field input,
+  .lp-con-field textarea {
+    width: 100%; padding: 14px 16px; background: var(--c-bg);
+    border: 1px solid var(--c-border); border-radius: var(--r);
+    font-family: var(--f-sans); font-size: 15px; color: var(--c-text);
+  }
+  .lp-con-field textarea { min-height: 150px; resize: vertical; }
+  .lp-con-field input:focus,
+  .lp-con-field textarea:focus { outline: none; border-color: var(--c-sage); }
+  .lp-con button.lp-form-btn {
+    display: inline-block;
+    padding: 16px 44px; background-color: #1a1a1a; color: #ffffff;
+    font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase;
+    font-weight: 600; border: 1px solid #1a1a1a; cursor: pointer;
+    transition: background 0.3s var(--t); font-family: var(--f-sans);
+  }
+  .lp-con button.lp-form-btn:hover { background-color: var(--c-sage); border-color: var(--c-sage); }
+
+  /* ===========================================
+     EXTRA CHANNELS — strip
+     =========================================== */
+  .lp-con-extra {
+    background: var(--c-bg-dark); color: var(--c-bg);
+    padding: 90px 0 !important;
+  }
+  .lp-con-extra .lp-eyebrow { color: var(--c-taupe); }
+  .lp-con-extra .lp-section-head { text-align: center; margin-bottom: 50px; }
+  .lp-con-extra h2 { color: var(--c-bg); }
+  .lp-con-extra h2 em { color: var(--c-taupe); font-style: italic; }
+  .lp-con-extra-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .lp-con-extra-card {
+    text-align: center; padding: 36px 28px;
+    border: 1px solid rgba(250,250,247,0.14); border-radius: var(--r);
+  }
+  .lp-con-extra-card .lp-ec-label {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--c-taupe); margin-bottom: 12px; font-weight: 600;
+  }
+  .lp-con-extra-card h3 { font-size: 21px; color: var(--c-bg); margin: 0 0 12px; }
+  .lp-con-extra-card a {
+    color: var(--c-bg); text-decoration: none; font-size: 15px;
+    border-bottom: 1px solid rgba(250,250,247,0.4); padding-bottom: 2px;
+  }
+
+  /* ===========================================
+     ADDRESS
+     =========================================== */
+  .lp-con-address { background: var(--c-bg-pearl); text-align: center; }
+  .lp-con-address h2 { font-size: clamp(30px, 3.6vw, 42px); margin: 0 0 20px; }
+  .lp-con-address h2 em { font-style: italic; color: var(--c-sage); }
+  .lp-con-address-info {
+    display: inline-flex; gap: 0; margin-top: 20px;
+    border: 1px solid var(--c-border-soft); border-radius: var(--r);
+    background: var(--c-bg-white); overflow: hidden;
+  }
+  .lp-con-address-info div {
+    padding: 28px 44px; border-right: 1px solid var(--c-border-soft);
+  }
+  .lp-con-address-info div:last-child { border-right: none; }
+  .lp-con-address-info .lp-ai-label {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--c-sage); font-weight: 600; margin-bottom: 8px;
+  }
+  .lp-con-address-info .lp-ai-value {
+    font-family: var(--f-serif); font-size: 20px; color: var(--c-text);
+  }
+
+  /* ===========================================
+     RESPONSIVE
+     =========================================== */
+  @media (max-width: 980px) {
+    .lp-con .lp-container { padding: 0 24px; }
+    .lp-con section { padding: 60px 0; }
+    .lp-con-hero { padding: 90px 0 60px !important; }
+    .lp-con-grid { grid-template-columns: 1fr; gap: 40px; }
+    .lp-con-form-wrap { padding: 36px 26px; }
+    .lp-con-extra-grid { grid-template-columns: 1fr; }
+    .lp-con-address-info { flex-direction: column; }
+    .lp-con-address-info div { border-right: none; border-bottom: 1px solid var(--c-border-soft); }
+    .lp-con-address-info div:last-child { border-bottom: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lp-con *, .lp-con *::before, .lp-con *::after {
+      transition: none !important; animation: none !important;
+    }
+  }
+</style>
+
+<div class="lp-con">
+
+  <!-- HERO -->
+  <section class="lp-con-hero">
+    <div class="lp-container">
+      <span class="lp-hero-badge">Contact</span>
+      <h1>We're real people. <em>We reply.</em></h1>
+      <p class="lp-hero-sub">Order help, product questions, returns, press, or a photo of your pet on their bed — every message gets a human within 12 hours.</p>
+      <div class="lp-hero-divider"></div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <section class="lp-con-main">
+    <div class="lp-container">
+      <div class="lp-con-grid">
+
+        <div class="lp-con-channels">
+          <div class="lp-con-channel">
+            <div class="lp-ch-label">General &amp; support</div>
+            <h3>Anything else, ask here.</h3>
+            <a href="mailto:hello@lullpet.com">hello@lullpet.com</a>
+            <p>Reply within 12 hours — every day, including weekends.</p>
+          </div>
+          <div class="lp-con-channel">
+            <div class="lp-ch-label">Order help</div>
+            <h3>Tracking, returns, refunds.</h3>
+            <a href="mailto:orders@lullpet.com">orders@lullpet.com</a>
+            <p>Have your order number ready for the fastest help.</p>
+          </div>
+          <div class="lp-con-channel">
+            <div class="lp-ch-label">Customer care hours</div>
+            <h3>When we're at our desks.</h3>
+            <a href="mailto:hello@lullpet.com">Monday–Friday · 9am–6pm ET</a>
+            <p>Weekend messages are answered within 24 hours.</p>
+          </div>
+        </div>
+
+        <div class="lp-con-form-wrap">
+          <h2>Send us a note.</h2>
+          <div class="lp-form-sub">Or use the emails on the left. Either way, a human reads it.</div>
+          <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8">
+            <input type="hidden" name="form_type" value="contact">
+            <input type="hidden" name="utf8" value="✓">
+            <div class="lp-con-field">
+              <label for="lp-c-name">Your name</label>
+              <input type="text" id="lp-c-name" name="contact[name]" required>
+            </div>
+            <div class="lp-con-field">
+              <label for="lp-c-email">Email</label>
+              <input type="email" id="lp-c-email" name="contact[email]" required>
+            </div>
+            <div class="lp-con-field">
+              <label for="lp-c-order">Order number <span class="lp-opt">(optional)</span></label>
+              <input type="text" id="lp-c-order" name="contact[order_number]">
+            </div>
+            <div class="lp-con-field">
+              <label for="lp-c-body">Message</label>
+              <textarea id="lp-c-body" name="contact[body]" required></textarea>
+            </div>
+            <button type="submit" class="lp-form-btn">Send Message</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXTRA CHANNELS -->
+  <section class="lp-con-extra">
+    <div class="lp-container">
+      <div class="lp-section-head">
+        <span class="lp-eyebrow">Other ways to reach us</span>
+        <h2 class="lp-h2">For press &amp; <em>partnerships.</em></h2>
+      </div>
+      <div class="lp-con-extra-grid">
+        <div class="lp-con-extra-card">
+          <div class="lp-ec-label">Press &amp; media</div>
+          <h3>Stories &amp; interviews</h3>
+          <a href="mailto:press@lullpet.com">press@lullpet.com</a>
+        </div>
+        <div class="lp-con-extra-card">
+          <div class="lp-ec-label">Partnerships</div>
+          <h3>Creators &amp; collabs</h3>
+          <a href="mailto:partners@lullpet.com">partners@lullpet.com</a>
+        </div>
+        <div class="lp-con-extra-card">
+          <div class="lp-ec-label">Wholesale</div>
+          <h3>Retail &amp; stockists</h3>
+          <a href="mailto:wholesale@lullpet.com">wholesale@lullpet.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADDRESS -->
+  <section class="lp-con-address">
+    <div class="lp-container">
+      <span class="lp-eyebrow">Our offices</span>
+      <h2>Brooklyn, <em>New York.</em></h2>
+      <div class="lp-con-address-info">
+        <div>
+          <div class="lp-ai-label">Founder office</div>
+          <div class="lp-ai-value">Brooklyn, NY</div>
+        </div>
+        <div>
+          <div class="lp-ai-label">Fulfillment</div>
+          <div class="lp-ai-value">Ohio, USA</div>
+        </div>
+        <div>
+          <div class="lp-ai-label">Support hours</div>
+          <div class="lp-ai-value">Mon–Fri 9–6 ET</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
