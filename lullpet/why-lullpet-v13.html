@@ -1,0 +1,584 @@
+<style>
+  /* ===========================================
+     LULLPET — WHY LULLPET · v13 pattern (validated)
+     All page styles scoped to .lp-why
+     Theme-level rules: hide title + neutralise page bg only.
+     =========================================== */
+
+  /* (1) Hide Shopify's auto-rendered page title */
+  .template-page .page__title,
+  .template-page .page-title,
+  .template-page .page__heading,
+  .page-template__title,
+  .main-page-title,
+  .section-page-title { display: none !important; }
+
+  /* (2) Neutralise page-content wrapper background (kills peach strip) */
+  #MainContent,
+  .main-content,
+  main#MainContent { background-color: #fafaf7 !important; }
+
+  /* Reset scoped strictly inside .lp-why */
+  .lp-why, .lp-why * { box-sizing: border-box; }
+  .lp-why > *, .lp-why > * > * { margin: 0; padding: 0; }
+
+  /* ===========================================
+     ROOT TOKENS — scoped to .lp-why
+     =========================================== */
+  .lp-why {
+    --c-bg: #fafaf7;
+    --c-bg-pearl: #f3ece0;
+    --c-bg-white: #ffffff;
+    --c-bg-dark: #1a1a1a;
+    --c-text: #1a1a1a;
+    --c-text-soft: #3a3a3a;
+    --c-text-muted: #5a5a5a;
+    --c-sage: #87968a;
+    --c-taupe: #b08968;
+    --c-border: #ececea;
+    --c-border-soft: #e6dfd2;
+    --f-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --f-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    --r: 2px;
+    --t: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* ===========================================
+     BASE — full viewport bleed (calc method)
+     =========================================== */
+  .lp-why {
+    font-family: var(--f-sans);
+    color: var(--c-text);
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    background: var(--c-bg);
+    padding: 0;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: -60px;
+    margin-bottom: 0;
+  }
+  .lp-why h1, .lp-why h2, .lp-why h3, .lp-why h4 {
+    font-family: var(--f-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .lp-why p { margin: 0; font-size: 16px; color: var(--c-text-soft); line-height: 1.8; }
+  .lp-why .lp-container { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+  .lp-why section { padding: 90px 0; position: relative; margin: 0; }
+  .lp-why .lp-eyebrow {
+    font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 18px;
+    display: inline-block; font-weight: 600;
+  }
+  .lp-why .lp-h2 { font-size: clamp(34px, 4.5vw, 54px); line-height: 1.12; color: var(--c-text); }
+  .lp-why .lp-h2 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+
+  /* ===========================================
+     HERO
+     =========================================== */
+  .lp-why-hero {
+    text-align: center;
+    padding: 140px 0 90px !important;
+    background: linear-gradient(180deg, var(--c-bg-white) 0%, var(--c-bg) 100%);
+  }
+  .lp-why-hero .lp-hero-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 9px 20px; background: var(--c-bg-white);
+    border: 1px solid var(--c-border); border-radius: 100px;
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 32px; font-weight: 700;
+  }
+  .lp-why-hero .lp-hero-badge::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c-sage);
+  }
+  .lp-why-hero h1 {
+    font-size: clamp(46px, 7vw, 92px); line-height: 1.02;
+    letter-spacing: -0.025em; margin: 0 0 30px; color: var(--c-text);
+  }
+  .lp-why-hero h1 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+  .lp-why-hero .lp-hero-sub {
+    font-size: 19px; max-width: 660px; margin: 0 auto;
+    color: var(--c-text-muted); font-weight: 300; line-height: 1.65;
+  }
+  .lp-why-hero .lp-hero-divider {
+    width: 60px; height: 1px; background: var(--c-sage);
+    margin: 44px auto 0; opacity: 0.7;
+  }
+
+  /* ===========================================
+     QUICK GRID — at-a-glance 4 cards
+     =========================================== */
+  .lp-why-glance { background: var(--c-bg); padding-top: 0 !important; }
+  .lp-why-glance-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+  }
+  .lp-why-glance-card {
+    background: var(--c-bg-white); border: 1px solid var(--c-border);
+    border-radius: var(--r); padding: 32px 26px;
+    transition: border-color 0.4s var(--t), transform 0.4s var(--t);
+  }
+  .lp-why-glance-card:hover { border-color: var(--c-sage); transform: translateY(-3px); }
+  .lp-why-glance-card .lp-glance-icon {
+    width: 38px; height: 38px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--c-sage); border-radius: 50%;
+    margin-bottom: 18px;
+    font-family: var(--f-serif); font-style: italic;
+    font-size: 16px; color: var(--c-sage); font-weight: 500;
+  }
+  .lp-why-glance-card h3 {
+    font-size: 21px; color: var(--c-text); margin: 0 0 8px; line-height: 1.25;
+  }
+  .lp-why-glance-card p { font-size: 13px; color: var(--c-text-muted); line-height: 1.6; }
+
+  /* ===========================================
+     REASONS — alternating numbered rows
+     =========================================== */
+  .lp-why-reason {
+    padding: 80px 0 !important;
+    border-bottom: 1px solid var(--c-border);
+  }
+  .lp-why-reason:nth-child(even) { background: var(--c-bg-white); }
+  .lp-why-reason:nth-child(odd) { background: var(--c-bg); }
+  .lp-why-reason-grid {
+    display: grid; grid-template-columns: 220px 1fr; gap: 70px; align-items: center;
+  }
+  .lp-why-reason.flip .lp-why-reason-grid {
+    grid-template-columns: 1fr 220px;
+  }
+  .lp-why-reason.flip .lp-why-reason-num { order: 2; }
+  .lp-why-reason.flip .lp-why-reason-text { order: 1; }
+  .lp-why-reason-num {
+    font-family: var(--f-serif); font-size: clamp(90px, 11vw, 150px);
+    color: var(--c-sage); line-height: 0.85; font-style: italic;
+    text-align: center; opacity: 0.9;
+  }
+  .lp-why-reason-num span {
+    display: block; font-family: var(--f-sans); font-style: normal;
+    font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--c-taupe); margin-top: 16px; font-weight: 600;
+  }
+  .lp-why-reason-text h2 {
+    font-size: clamp(30px, 3.6vw, 44px); margin: 0 0 20px; line-height: 1.15;
+  }
+  .lp-why-reason-text h2 em { font-style: italic; color: var(--c-sage); }
+  .lp-why-reason-text p { font-size: 17px; line-height: 1.85; max-width: 640px; }
+  .lp-why-reason-text .lp-reason-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 22px;
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--c-sage); font-weight: 600;
+  }
+  .lp-why-reason-text .lp-reason-tag::before {
+    content: "✓"; display: inline-flex; align-items: center; justify-content: center;
+    width: 18px; height: 18px; border: 1px solid var(--c-sage); border-radius: 50%;
+    font-size: 9px;
+  }
+
+  /* ===========================================
+     COMPARISON
+     =========================================== */
+  .lp-why-compare { background: var(--c-bg-pearl); }
+  .lp-why-compare .lp-section-header { text-align: center; margin-bottom: 56px; }
+  .lp-why-compare-table {
+    background: var(--c-bg-white); border: 1px solid var(--c-border);
+    border-radius: var(--r); overflow: hidden; max-width: 980px; margin: 0 auto;
+  }
+  .lp-why-compare-row {
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    border-bottom: 1px solid var(--c-border);
+  }
+  .lp-why-compare-row:last-child { border-bottom: none; }
+  .lp-why-compare-row.head {
+    background: var(--c-bg-dark);
+  }
+  .lp-why-compare-row.head > div {
+    padding: 22px 24px; font-family: var(--f-sans);
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    font-weight: 600; color: rgba(250,250,247,0.6);
+  }
+  .lp-why-compare-row.head > div.brand { color: var(--c-taupe); }
+  .lp-why-compare-row > div {
+    padding: 20px 24px; font-size: 15px; display: flex; align-items: center;
+  }
+  .lp-why-compare-row .lp-compare-feature { color: var(--c-text); font-weight: 500; }
+  .lp-why-compare-row .lp-compare-us {
+    background: rgba(135,150,138,0.07); color: var(--c-sage);
+    font-weight: 600; justify-content: center; font-size: 18px;
+  }
+  .lp-why-compare-row .lp-compare-them {
+    color: var(--c-text-muted); justify-content: center; font-size: 18px;
+  }
+
+  /* ===========================================
+     REVIEWS
+     =========================================== */
+  .lp-why-reviews { background: var(--c-bg-white); border-top: 1px solid var(--c-border); }
+  .lp-why-reviews .lp-section-header { text-align: center; margin-bottom: 56px; }
+  .lp-why-reviews-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .lp-why-review {
+    background: var(--c-bg); padding: 36px 32px;
+    border: 1px solid var(--c-border); border-radius: var(--r);
+    display: flex; flex-direction: column;
+    transition: border-color 0.4s var(--t), transform 0.4s var(--t);
+  }
+  .lp-why-review:hover { border-color: var(--c-sage); transform: translateY(-3px); }
+  .lp-why-review .lp-stars {
+    color: var(--c-taupe); font-size: 14px; letter-spacing: 3px; margin-bottom: 18px;
+  }
+  .lp-why-review .lp-quote {
+    font-family: var(--f-serif); font-size: 19px; line-height: 1.55;
+    color: var(--c-text); margin-bottom: 22px; flex-grow: 1;
+    letter-spacing: -0.003em;
+  }
+  .lp-why-review .lp-reviewer {
+    display: flex; align-items: center; gap: 14px;
+    padding-top: 22px; border-top: 1px solid var(--c-border);
+  }
+  .lp-why-review .lp-avatar {
+    width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;
+    background: linear-gradient(135deg, #c9a98a 0%, var(--c-sage) 100%);
+  }
+  .lp-why-review .lp-avatar.two { background: linear-gradient(135deg, var(--c-taupe) 0%, #c9a98a 100%); }
+  .lp-why-review .lp-avatar.three { background: linear-gradient(135deg, var(--c-sage) 0%, var(--c-taupe) 100%); }
+  .lp-why-review .lp-meta { flex-grow: 1; min-width: 0; }
+  .lp-why-review .lp-meta .lp-name {
+    font-size: 14px; color: var(--c-text); font-weight: 600; line-height: 1.3;
+  }
+  .lp-why-review .lp-meta .lp-loc {
+    font-size: 11px; color: var(--c-text-muted); margin-top: 3px;
+  }
+  .lp-why-review .lp-verified {
+    font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--c-sage); font-weight: 600;
+    padding: 4px 8px; background: var(--c-bg-white);
+    border: 1px solid var(--c-border); border-radius: var(--r); flex-shrink: 0;
+  }
+
+  /* ===========================================
+     GUARANTEE
+     =========================================== */
+  .lp-why-guarantee {
+    background: var(--c-bg-dark); color: var(--c-bg);
+    text-align: center; padding: 90px 0 !important;
+  }
+  .lp-why-guarantee .lp-seal {
+    width: 96px; height: 96px; margin: 0 auto 24px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--c-taupe); border-radius: 50%;
+    font-family: var(--f-serif); font-style: italic;
+    color: var(--c-taupe); line-height: 1.1; font-size: 14px; text-align: center;
+  }
+  .lp-why-guarantee h2 {
+    color: var(--c-bg); font-size: clamp(28px, 3.5vw, 42px); margin: 0 0 16px;
+  }
+  .lp-why-guarantee h2 em { color: var(--c-taupe); font-style: italic; }
+  .lp-why-guarantee p {
+    color: rgba(250,250,247,0.7); font-size: 16px;
+    max-width: 580px; margin: 0 auto;
+  }
+
+  /* ===========================================
+     CTA
+     =========================================== */
+  .lp-why-cta { background: var(--c-bg); text-align: center; padding: 110px 0 110px !important; }
+  .lp-why-cta h2 { font-size: clamp(36px, 5vw, 60px); margin: 0 0 22px; }
+  .lp-why-cta h2 em { color: var(--c-sage); font-style: italic; }
+  .lp-why-cta p { max-width: 560px; margin: 0 auto 40px; color: var(--c-text-muted); font-size: 18px; }
+  .lp-why a.lp-cta-btn {
+    display: inline-block !important;
+    padding: 18px 48px !important;
+    background-color: #1a1a1a !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 12px !important;
+    letter-spacing: 0.28em !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    border: 1px solid #1a1a1a !important;
+    border-radius: 0 !important;
+    transition: all 0.3s var(--t) !important;
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    line-height: 1 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+  .lp-why a.lp-cta-btn:hover {
+    background-color: transparent !important;
+    color: #1a1a1a !important;
+  }
+  .lp-why a.lp-cta-btn.lp-secondary {
+    background-color: transparent !important;
+    color: #1a1a1a !important;
+    border-color: #1a1a1a !important;
+    margin-left: 12px;
+  }
+  .lp-why a.lp-cta-btn.lp-secondary:hover {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+  }
+
+  /* ===========================================
+     RESPONSIVE
+     =========================================== */
+  @media (max-width: 980px) {
+    .lp-why .lp-container { padding: 0 24px; }
+    .lp-why section { padding: 60px 0; }
+    .lp-why-hero { padding: 90px 0 60px !important; }
+    .lp-why-glance-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .lp-why-glance-card { padding: 24px 20px; }
+    .lp-why-reason { padding: 56px 0 !important; }
+    .lp-why-reason-grid,
+    .lp-why-reason.flip .lp-why-reason-grid { grid-template-columns: 1fr; gap: 28px; }
+    .lp-why-reason.flip .lp-why-reason-num { order: 0; }
+    .lp-why-reason.flip .lp-why-reason-text { order: 0; }
+    .lp-why-reason-num { text-align: left; }
+    .lp-why-reviews-grid { grid-template-columns: 1fr; }
+    .lp-why-compare-row { grid-template-columns: 1.6fr 1fr 1fr; }
+    .lp-why-compare-row > div { padding: 16px 14px; font-size: 13px; }
+    .lp-why-compare-row.head > div { padding: 16px 14px; }
+    .lp-why a.lp-cta-btn.lp-secondary { margin-left: 0; margin-top: 12px; }
+  }
+  @media (max-width: 540px) {
+    .lp-why-glance-grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lp-why *, .lp-why *::before, .lp-why *::after {
+      transition: none !important; animation: none !important;
+    }
+  }
+</style>
+
+<div class="lp-why">
+
+  <!-- HERO -->
+  <section class="lp-why-hero">
+    <div class="lp-container">
+      <span class="lp-hero-badge">Why Lullpet</span>
+      <h1>Five reasons pet parents <em>trust us.</em></h1>
+      <p class="lp-hero-sub">No buzzwords. No empty claims. Just the things we actually do — and the ones we never will.</p>
+      <div class="lp-hero-divider"></div>
+    </div>
+  </section>
+
+  <!-- QUICK GLANCE -->
+  <section class="lp-why-glance">
+    <div class="lp-container">
+      <div class="lp-why-glance-grid">
+        <div class="lp-why-glance-card">
+          <div class="lp-glance-icon">i</div>
+          <h3>Vet-approved</h3>
+          <p>Every product reviewed by certified veterinary behaviorists.</p>
+        </div>
+        <div class="lp-why-glance-card">
+          <div class="lp-glance-icon">ii</div>
+          <h3>Fast US shipping</h3>
+          <p>Dispatched within 24 hours from our Ohio warehouse.</p>
+        </div>
+        <div class="lp-why-glance-card">
+          <div class="lp-glance-icon">iii</div>
+          <h3>30-day guarantee</h3>
+          <p>Full refund if your pet doesn't love it. No questions.</p>
+        </div>
+        <div class="lp-why-glance-card">
+          <div class="lp-glance-icon">iv</div>
+          <h3>1% to shelters</h3>
+          <p>One percent of every order supports rescues nationwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REASON 01 -->
+  <section class="lp-why-reason">
+    <div class="lp-container">
+      <div class="lp-why-reason-grid">
+        <div class="lp-why-reason-num">01<span>The standard</span></div>
+        <div class="lp-why-reason-text">
+          <h2>Every product is <em>vet-approved.</em></h2>
+          <p>We don't sell what we can't stand behind. Every Lullpet product is reviewed by a panel of certified veterinary behaviorists before it ever ships. If they wouldn't recommend it to their own clients, we don't list it. No exceptions, no shortcuts.</p>
+          <div class="lp-reason-tag">Independently reviewed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REASON 02 -->
+  <section class="lp-why-reason flip">
+    <div class="lp-container">
+      <div class="lp-why-reason-grid">
+        <div class="lp-why-reason-text">
+          <h2>We ship from the US — <em>fast.</em></h2>
+          <p>Our warehouse is in Ohio. Orders ship within 24 hours, delivered in 3–5 business days. Free US shipping on $50+. No surprise customs fees. No three-week overseas waits while your anxious pet keeps pacing.</p>
+          <div class="lp-reason-tag">Tracked & insured</div>
+        </div>
+        <div class="lp-why-reason-num">02<span>The speed</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REASON 03 -->
+  <section class="lp-why-reason">
+    <div class="lp-container">
+      <div class="lp-why-reason-grid">
+        <div class="lp-why-reason-num">03<span>The promise</span></div>
+        <div class="lp-why-reason-text">
+          <h2>The 30-day <em>calm guarantee.</em></h2>
+          <p>You have thirty full days to see if your pet loves it. If they don't, send it back for a full refund — no restocking fees, no questions, no guilt. Pets shouldn't be a gamble, and neither should the products you buy for them.</p>
+          <div class="lp-reason-tag">Risk-free trial</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REASON 04 -->
+  <section class="lp-why-reason flip">
+    <div class="lp-container">
+      <div class="lp-why-reason-grid">
+        <div class="lp-why-reason-text">
+          <h2>Thoughtful, <em>recyclable packaging.</em></h2>
+          <p>Our packaging is plastic-minimal, fully recyclable, and printed with soy ink. We ship in branded boxes that feel like a gift — not a warehouse drop. Every order includes a hand-numbered thank-you card and a pet care guide.</p>
+          <div class="lp-reason-tag">Soy ink · FSC paper</div>
+        </div>
+        <div class="lp-why-reason-num">04<span>The detail</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REASON 05 -->
+  <section class="lp-why-reason">
+    <div class="lp-container">
+      <div class="lp-why-reason-grid">
+        <div class="lp-why-reason-num">05<span>The mission</span></div>
+        <div class="lp-why-reason-text">
+          <h2>1% of every order — <em>to shelters.</em></h2>
+          <p>Every order you place sends one percent — of revenue, not profit — to vetted shelters and rescues across the United States. Always. Every time. No "up to", no "sometimes". We publish a full impact report every January.</p>
+          <div class="lp-reason-tag">Annual impact report</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="lp-why-compare">
+    <div class="lp-container">
+      <div class="lp-section-header">
+        <span class="lp-eyebrow">An honest comparison</span>
+        <h2 class="lp-h2">How we measure <em>against the rest.</em></h2>
+      </div>
+      <div class="lp-why-compare-table">
+        <div class="lp-why-compare-row head">
+          <div>What matters</div>
+          <div class="brand">Lullpet</div>
+          <div>Typical store</div>
+        </div>
+        <div class="lp-why-compare-row">
+          <div class="lp-compare-feature">Vet-approved formulas</div>
+          <div class="lp-compare-us">✓</div>
+          <div class="lp-compare-them">—</div>
+        </div>
+        <div class="lp-why-compare-row">
+          <div class="lp-compare-feature">US warehouse, 24h dispatch</div>
+          <div class="lp-compare-us">✓</div>
+          <div class="lp-compare-them">—</div>
+        </div>
+        <div class="lp-why-compare-row">
+          <div class="lp-compare-feature">30-day full-refund guarantee</div>
+          <div class="lp-compare-us">✓</div>
+          <div class="lp-compare-them">14 days</div>
+        </div>
+        <div class="lp-why-compare-row">
+          <div class="lp-compare-feature">Recyclable, branded packaging</div>
+          <div class="lp-compare-us">✓</div>
+          <div class="lp-compare-them">—</div>
+        </div>
+        <div class="lp-why-compare-row">
+          <div class="lp-compare-feature">Gives back to shelters</div>
+          <div class="lp-compare-us">✓</div>
+          <div class="lp-compare-them">—</div>
+        </div>
+        <div class="lp-why-compare-row">
+          <div class="lp-compare-feature">Built specifically for anxiety</div>
+          <div class="lp-compare-us">✓</div>
+          <div class="lp-compare-them">—</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="lp-why-reviews">
+    <div class="lp-container">
+      <div class="lp-section-header">
+        <span class="lp-eyebrow">4,247 verified reviews</span>
+        <h2 class="lp-h2">Trusted by pet parents <em>across all fifty states.</em></h2>
+      </div>
+      <div class="lp-why-reviews-grid">
+        <div class="lp-why-review">
+          <div class="lp-stars">★★★★★</div>
+          <div class="lp-quote">"I've tried five other beds for my anxious rescue. Lullpet is the only one that actually worked — and it arrived in four days."</div>
+          <div class="lp-reviewer">
+            <div class="lp-avatar"></div>
+            <div class="lp-meta">
+              <div class="lp-name">Sarah K.</div>
+              <div class="lp-loc">New York, NY</div>
+            </div>
+            <div class="lp-verified">✓ Verified</div>
+          </div>
+        </div>
+        <div class="lp-why-review">
+          <div class="lp-stars">★★★★★</div>
+          <div class="lp-quote">"The packaging felt like a gift, the product works, and 1% went to a shelter. This is how a pet brand should be run."</div>
+          <div class="lp-reviewer">
+            <div class="lp-avatar two"></div>
+            <div class="lp-meta">
+              <div class="lp-name">Mike & Luna</div>
+              <div class="lp-loc">San Francisco, CA</div>
+            </div>
+            <div class="lp-verified">✓ Verified</div>
+          </div>
+        </div>
+        <div class="lp-why-review">
+          <div class="lp-quote">"I emailed a question and a real person replied in two hours. The 30-day guarantee made trying it completely risk-free."</div>
+          <div class="lp-stars">★★★★★</div>
+          <div class="lp-reviewer">
+            <div class="lp-avatar three"></div>
+            <div class="lp-meta">
+              <div class="lp-name">Jenna R.</div>
+              <div class="lp-loc">Austin, TX</div>
+            </div>
+            <div class="lp-verified">✓ Verified</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="lp-why-guarantee">
+    <div class="lp-container">
+      <div class="lp-seal">30-Day<br>Guarantee</div>
+      <h2>Try Lullpet for thirty days. <em>If they don't love it, we don't keep your money.</em></h2>
+      <p>Full refund. No restocking fees. No questions. Pets shouldn't be a gamble.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="lp-why-cta">
+    <div class="lp-container">
+      <span class="lp-eyebrow">Ready when you are</span>
+      <h2>Calm starts <em>at home.</em></h2>
+      <p>Start with our most-loved calming essentials — backed by every promise on this page.</p>
+      <a href="/collections/bestsellers" class="lp-cta-btn">Shop Bestsellers</a>
+      <a href="/pages/our-story" class="lp-cta-btn lp-secondary">Read Our Story</a>
+    </div>
+  </section>
+
+</div>
