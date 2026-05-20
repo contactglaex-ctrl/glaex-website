@@ -1,0 +1,192 @@
+<style>
+  /* ===========================================
+     LULLPET — TRACK YOUR ORDER · v13 pattern
+     Scoped to .lp-trk
+     =========================================== */
+  .template-page .page__title,
+  .template-page .page-title,
+  .template-page .page__heading,
+  .page-template__title,
+  .main-page-title,
+  .section-page-title { display: none !important; }
+  #MainContent,
+  .main-content,
+  main#MainContent { background-color: #fafaf7 !important; }
+  .lp-trk, .lp-trk * { box-sizing: border-box; }
+  .lp-trk > *, .lp-trk > * > * { margin: 0; padding: 0; }
+
+  .lp-trk {
+    --c-bg: #fafaf7; --c-bg-pearl: #f3ece0; --c-bg-white: #ffffff; --c-bg-dark: #1a1a1a;
+    --c-text: #1a1a1a; --c-text-soft: #3a3a3a; --c-text-muted: #5a5a5a;
+    --c-sage: #87968a; --c-taupe: #b08968; --c-border: #ececea; --c-border-soft: #e6dfd2;
+    --f-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --f-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --r: 2px; --t: cubic-bezier(0.16, 1, 0.3, 1);
+    font-family: var(--f-sans); color: var(--c-text); line-height: 1.65;
+    font-weight: 400; -webkit-font-smoothing: antialiased; background: var(--c-bg);
+    padding: 0; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+    margin-top: -60px; margin-bottom: 0;
+  }
+  .lp-trk h1, .lp-trk h2, .lp-trk h3 {
+    font-family: var(--f-serif); font-weight: 500; letter-spacing: -0.01em; margin: 0;
+  }
+  .lp-trk p { margin: 0; font-size: 16px; color: var(--c-text-soft); line-height: 1.8; }
+  .lp-trk .lp-container { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+  .lp-trk .lp-narrow { max-width: 720px; margin: 0 auto; padding: 0 40px; }
+  .lp-trk section { padding: 90px 0; position: relative; margin: 0; }
+  .lp-trk .lp-eyebrow {
+    font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 18px; display: inline-block; font-weight: 600;
+  }
+  .lp-trk .lp-h2 { font-size: clamp(30px, 3.6vw, 44px); line-height: 1.15; color: var(--c-text); }
+  .lp-trk .lp-h2 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+
+  .lp-trk-hero {
+    text-align: center; padding: 140px 0 90px !important;
+    background: linear-gradient(180deg, var(--c-bg-white) 0%, var(--c-bg) 100%);
+  }
+  .lp-trk-hero .lp-hero-badge {
+    display: inline-flex; align-items: center; gap: 10px; padding: 9px 20px;
+    background: var(--c-bg-white); border: 1px solid var(--c-border); border-radius: 100px;
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 32px; font-weight: 700;
+  }
+  .lp-trk-hero .lp-hero-badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c-sage); }
+  .lp-trk-hero h1 {
+    font-size: clamp(44px, 6.5vw, 84px); line-height: 1.03; letter-spacing: -0.024em;
+    margin: 0 0 30px; color: var(--c-text);
+  }
+  .lp-trk-hero h1 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+  .lp-trk-hero .lp-hero-sub {
+    font-size: 19px; max-width: 600px; margin: 0 auto;
+    color: var(--c-text-muted); font-weight: 300; line-height: 1.65;
+  }
+  .lp-trk-hero .lp-hero-divider { width: 60px; height: 1px; background: var(--c-sage); margin: 44px auto 0; opacity: 0.7; }
+
+  /* TRACK CARD */
+  .lp-trk-main { background: var(--c-bg); }
+  .lp-trk-card {
+    background: var(--c-bg-white); border: 1px solid var(--c-border); border-radius: var(--r);
+    padding: 56px 54px; text-align: center;
+  }
+  .lp-trk-card h2 { font-size: 28px; color: var(--c-text); margin: 0 0 10px; }
+  .lp-trk-card .lp-card-sub { font-size: 14px; color: var(--c-text-muted); margin-bottom: 32px; }
+  .lp-trk-card .lp-trk-btn {
+    display: inline-block; padding: 18px 48px;
+    background-color: #1a1a1a; color: #ffffff;
+    text-decoration: none; font-size: 12px; letter-spacing: 0.25em;
+    text-transform: uppercase; font-weight: 600; border: 1px solid #1a1a1a;
+    transition: all 0.3s var(--t); font-family: var(--f-sans);
+  }
+  .lp-trk-card .lp-trk-btn:hover { background-color: transparent; color: #1a1a1a; }
+  .lp-trk-card .lp-card-note {
+    margin-top: 24px; font-size: 13px; color: var(--c-text-muted);
+  }
+  .lp-trk-card .lp-card-note a { color: var(--c-sage); text-decoration: underline; }
+
+  /* STEPS */
+  .lp-trk-steps { background: var(--c-bg-white); border-top: 1px solid var(--c-border); }
+  .lp-trk-steps .lp-section-head { text-align: center; margin-bottom: 50px; }
+  .lp-trk-steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .lp-trk-step {
+    background: var(--c-bg); border: 1px solid var(--c-border); border-radius: var(--r);
+    padding: 40px 32px;
+  }
+  .lp-trk-step .lp-step-n {
+    font-family: var(--f-serif); font-size: 46px; font-style: italic;
+    color: var(--c-sage); line-height: 1; margin-bottom: 16px;
+  }
+  .lp-trk-step h3 { font-size: 21px; color: var(--c-text); margin: 0 0 10px; }
+  .lp-trk-step p { font-size: 14px; color: var(--c-text-muted); line-height: 1.7; }
+
+  /* HELP CTA */
+  .lp-trk-cta {
+    background: var(--c-bg-dark); color: var(--c-bg);
+    text-align: center; padding: 100px 0 !important;
+  }
+  .lp-trk-cta .lp-eyebrow { color: var(--c-taupe); }
+  .lp-trk-cta h2 { color: var(--c-bg); font-size: clamp(30px, 4vw, 46px); margin: 0 0 18px; }
+  .lp-trk-cta h2 em { color: var(--c-taupe); font-style: italic; }
+  .lp-trk-cta p { color: rgba(250,250,247,0.72); font-size: 16px; max-width: 520px; margin: 0 auto 36px; }
+  .lp-trk a.lp-cta-btn {
+    display: inline-block !important; padding: 18px 48px !important;
+    background-color: #fafaf7 !important; color: #1a1a1a !important;
+    text-decoration: none !important; font-size: 12px !important;
+    letter-spacing: 0.28em !important; text-transform: uppercase !important;
+    font-weight: 600 !important; border: 1px solid #fafaf7 !important;
+    border-radius: 0 !important; transition: all 0.3s var(--t) !important;
+    font-family: 'Inter', sans-serif !important; line-height: 1 !important;
+  }
+  .lp-trk a.lp-cta-btn:hover { background-color: transparent !important; color: #fafaf7 !important; }
+
+  @media (max-width: 980px) {
+    .lp-trk .lp-container { padding: 0 24px; }
+    .lp-trk .lp-narrow { padding: 0 24px; }
+    .lp-trk section { padding: 60px 0; }
+    .lp-trk-hero { padding: 90px 0 60px !important; }
+    .lp-trk-card { padding: 40px 28px; }
+    .lp-trk-steps-grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lp-trk *, .lp-trk *::before, .lp-trk *::after { transition: none !important; }
+  }
+</style>
+
+<div class="lp-trk">
+
+  <section class="lp-trk-hero">
+    <div class="lp-container">
+      <span class="lp-hero-badge">Track Your Order</span>
+      <h1>Always know where <em>your calm is.</em></h1>
+      <p class="lp-hero-sub">Every Lullpet order is tracked from our warehouse to your door. Here's how to follow it.</p>
+      <div class="lp-hero-divider"></div>
+    </div>
+  </section>
+
+  <section class="lp-trk-main">
+    <div class="lp-narrow">
+      <div class="lp-trk-card">
+        <h2>Track in your account</h2>
+        <div class="lp-card-sub">Sign in to view live status, carrier updates, and tracking numbers for every order.</div>
+        <a href="/account" class="lp-trk-btn">Go to My Account</a>
+        <div class="lp-card-note">No account yet? Use the tracking link in your shipping confirmation email, or <a href="mailto:hello@lullpet.com">email us</a> and we'll track it for you.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-trk-steps">
+    <div class="lp-container">
+      <div class="lp-section-head">
+        <span class="lp-eyebrow">How tracking works</span>
+        <h2 class="lp-h2">Three ways to <em>find your order.</em></h2>
+      </div>
+      <div class="lp-trk-steps-grid">
+        <div class="lp-trk-step">
+          <div class="lp-step-n">01</div>
+          <h3>Check your email</h3>
+          <p>When your order ships, we send a confirmation with a live tracking link. Subject line: "Your Lullpet order is on its way."</p>
+        </div>
+        <div class="lp-trk-step">
+          <div class="lp-step-n">02</div>
+          <h3>Sign in to your account</h3>
+          <p>Visit My Account → Orders to see real-time status, carrier, and estimated delivery for every purchase.</p>
+        </div>
+        <div class="lp-trk-step">
+          <div class="lp-step-n">03</div>
+          <h3>Ask us directly</h3>
+          <p>Email hello@lullpet.com with your order number. We reply within 12 hours and track it down for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-trk-cta">
+    <div class="lp-container">
+      <span class="lp-eyebrow">Can't find your order?</span>
+      <h2>We'll <em>locate it for you.</em></h2>
+      <p>Send us your order number — or just the email you ordered with — and our team will find it within 12 hours.</p>
+      <a href="mailto:hello@lullpet.com?subject=Order Tracking Help" class="lp-cta-btn">Email Us</a>
+    </div>
+  </section>
+
+</div>

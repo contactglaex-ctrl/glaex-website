@@ -1,0 +1,303 @@
+<style>
+  /* ===========================================
+     LULLPET — PET CARE GUIDE (blog hub) · v13 pattern
+     Scoped to .lp-guide
+     =========================================== */
+  .template-page .page__title,
+  .template-page .page-title,
+  .template-page .page__heading,
+  .page-template__title,
+  .main-page-title,
+  .section-page-title { display: none !important; }
+  #MainContent,
+  .main-content,
+  main#MainContent { background-color: #fafaf7 !important; }
+  .lp-guide, .lp-guide * { box-sizing: border-box; }
+  .lp-guide > *, .lp-guide > * > * { margin: 0; padding: 0; }
+
+  .lp-guide {
+    --c-bg: #fafaf7; --c-bg-pearl: #f3ece0; --c-bg-white: #ffffff; --c-bg-dark: #1a1a1a;
+    --c-text: #1a1a1a; --c-text-soft: #3a3a3a; --c-text-muted: #5a5a5a;
+    --c-sage: #87968a; --c-taupe: #b08968; --c-border: #ececea; --c-border-soft: #e6dfd2;
+    --f-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --f-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --r: 2px; --t: cubic-bezier(0.16, 1, 0.3, 1);
+    font-family: var(--f-sans); color: var(--c-text); line-height: 1.65;
+    font-weight: 400; -webkit-font-smoothing: antialiased; background: var(--c-bg);
+    padding: 0; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+    margin-top: -60px; margin-bottom: 0;
+  }
+  .lp-guide h1, .lp-guide h2, .lp-guide h3, .lp-guide h4 {
+    font-family: var(--f-serif); font-weight: 500; letter-spacing: -0.01em; margin: 0;
+  }
+  .lp-guide p { margin: 0; font-size: 16px; color: var(--c-text-soft); line-height: 1.8; }
+  .lp-guide .lp-container { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+  .lp-guide section { padding: 90px 0; position: relative; margin: 0; }
+  .lp-guide .lp-eyebrow {
+    font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 18px; display: inline-block; font-weight: 600;
+  }
+  .lp-guide .lp-h2 { font-size: clamp(32px, 4vw, 50px); line-height: 1.14; color: var(--c-text); }
+  .lp-guide .lp-h2 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+
+  .lp-guide-hero {
+    text-align: center; padding: 140px 0 90px !important;
+    background: linear-gradient(180deg, var(--c-bg-white) 0%, var(--c-bg) 100%);
+  }
+  .lp-guide-hero .lp-hero-badge {
+    display: inline-flex; align-items: center; gap: 10px; padding: 9px 20px;
+    background: var(--c-bg-white); border: 1px solid var(--c-border); border-radius: 100px;
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 32px; font-weight: 700;
+  }
+  .lp-guide-hero .lp-hero-badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c-sage); }
+  .lp-guide-hero h1 {
+    font-size: clamp(46px, 7vw, 88px); line-height: 1.02; letter-spacing: -0.025em;
+    margin: 0 0 30px; color: var(--c-text);
+  }
+  .lp-guide-hero h1 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+  .lp-guide-hero .lp-hero-sub {
+    font-size: 19px; max-width: 640px; margin: 0 auto;
+    color: var(--c-text-muted); font-weight: 300; line-height: 1.65;
+  }
+  .lp-guide-hero .lp-hero-divider { width: 60px; height: 1px; background: var(--c-sage); margin: 44px auto 0; opacity: 0.7; }
+
+  /* FEATURED ARTICLE */
+  .lp-guide-featured { background: var(--c-bg); padding-top: 0 !important; }
+  .lp-guide-feat-card {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    background: var(--c-bg-white); border: 1px solid var(--c-border);
+    border-radius: var(--r); overflow: hidden;
+  }
+  .lp-guide-feat-visual {
+    background: linear-gradient(135deg, #e8d8c0 0%, #c9a98a 100%);
+    min-height: 360px; display: flex; align-items: center; justify-content: center;
+  }
+  .lp-guide-feat-visual span {
+    font-family: var(--f-serif); font-style: italic; font-size: 28px;
+    color: rgba(26,26,26,0.4);
+  }
+  .lp-guide-feat-text { padding: 56px 54px; display: flex; flex-direction: column; justify-content: center; }
+  .lp-guide-feat-text .lp-feat-tag {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--c-sage); font-weight: 600; margin-bottom: 16px;
+  }
+  .lp-guide-feat-text h2 { font-size: clamp(28px, 3vw, 38px); line-height: 1.2; margin-bottom: 16px; }
+  .lp-guide-feat-text p { font-size: 15px; color: var(--c-text-muted); margin-bottom: 24px; }
+  .lp-guide-feat-text a {
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--c-text); text-decoration: none; font-weight: 600;
+    border-bottom: 1px solid var(--c-sage); padding-bottom: 4px; align-self: flex-start;
+  }
+
+  /* ARTICLE GRID */
+  .lp-guide-list { background: var(--c-bg-white); border-top: 1px solid var(--c-border); }
+  .lp-guide-list .lp-section-head { text-align: center; margin-bottom: 54px; }
+  .lp-guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .lp-guide-article {
+    background: var(--c-bg); border: 1px solid var(--c-border); border-radius: var(--r);
+    overflow: hidden; display: flex; flex-direction: column;
+    transition: border-color 0.4s var(--t), transform 0.4s var(--t);
+  }
+  .lp-guide-article:hover { border-color: var(--c-sage); transform: translateY(-3px); }
+  .lp-guide-article .lp-art-visual {
+    height: 180px; display: flex; align-items: center; justify-content: center;
+    font-family: var(--f-serif); font-style: italic; font-size: 40px;
+    color: rgba(26,26,26,0.22);
+  }
+  .lp-guide-article .lp-art-visual.a1 { background: linear-gradient(135deg, #e8d8c0, #d4c0a0); }
+  .lp-guide-article .lp-art-visual.a2 { background: linear-gradient(135deg, #d6ddd4, #b8c4b4); }
+  .lp-guide-article .lp-art-visual.a3 { background: linear-gradient(135deg, #e3d3c3, #c9a98a); }
+  .lp-guide-article .lp-art-visual.a4 { background: linear-gradient(135deg, #dcdcd6, #c2c2b8); }
+  .lp-guide-article .lp-art-visual.a5 { background: linear-gradient(135deg, #e8ddc8, #cdbb9c); }
+  .lp-guide-article .lp-art-visual.a6 { background: linear-gradient(135deg, #d4ddd8, #aebcb2); }
+  .lp-guide-article .lp-art-body { padding: 28px 28px 32px; display: flex; flex-direction: column; flex-grow: 1; }
+  .lp-guide-article .lp-art-cat {
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--c-sage); font-weight: 600; margin-bottom: 12px;
+  }
+  .lp-guide-article h3 { font-size: 22px; color: var(--c-text); line-height: 1.3; margin-bottom: 10px; }
+  .lp-guide-article p { font-size: 14px; color: var(--c-text-muted); line-height: 1.7; flex-grow: 1; }
+  .lp-guide-article .lp-art-read {
+    margin-top: 18px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--c-text); font-weight: 600;
+  }
+
+  /* CATEGORIES */
+  .lp-guide-cats { background: var(--c-bg-pearl); }
+  .lp-guide-cats .lp-section-head { text-align: center; margin-bottom: 44px; }
+  .lp-guide-cats-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+  .lp-guide-cat {
+    background: var(--c-bg-white); border: 1px solid var(--c-border-soft); border-radius: var(--r);
+    padding: 24px 16px; text-align: center; text-decoration: none;
+    transition: border-color 0.3s var(--t);
+  }
+  .lp-guide-cat:hover { border-color: var(--c-sage); }
+  .lp-guide-cat span {
+    font-family: var(--f-serif); font-style: italic; font-size: 13px;
+    color: var(--c-text); display: block;
+  }
+
+  /* CTA */
+  .lp-guide-cta {
+    background: var(--c-bg-dark); color: var(--c-bg);
+    text-align: center; padding: 100px 0 !important;
+  }
+  .lp-guide-cta .lp-eyebrow { color: var(--c-taupe); }
+  .lp-guide-cta h2 { color: var(--c-bg); font-size: clamp(32px, 4vw, 48px); margin: 0 0 18px; }
+  .lp-guide-cta h2 em { color: var(--c-taupe); font-style: italic; }
+  .lp-guide-cta p { color: rgba(250,250,247,0.72); font-size: 16px; max-width: 520px; margin: 0 auto 36px; }
+  .lp-guide a.lp-cta-btn {
+    display: inline-block !important; padding: 18px 48px !important;
+    background-color: #fafaf7 !important; color: #1a1a1a !important;
+    text-decoration: none !important; font-size: 12px !important;
+    letter-spacing: 0.28em !important; text-transform: uppercase !important;
+    font-weight: 600 !important; border: 1px solid #fafaf7 !important;
+    border-radius: 0 !important; transition: all 0.3s var(--t) !important;
+    font-family: 'Inter', sans-serif !important; line-height: 1 !important;
+  }
+  .lp-guide a.lp-cta-btn:hover { background-color: transparent !important; color: #fafaf7 !important; }
+
+  @media (max-width: 980px) {
+    .lp-guide .lp-container { padding: 0 24px; }
+    .lp-guide section { padding: 60px 0; }
+    .lp-guide-hero { padding: 90px 0 60px !important; }
+    .lp-guide-feat-card { grid-template-columns: 1fr; }
+    .lp-guide-feat-visual { min-height: 220px; }
+    .lp-guide-feat-text { padding: 36px 28px; }
+    .lp-guide-grid { grid-template-columns: 1fr; }
+    .lp-guide-cats-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lp-guide *, .lp-guide *::before, .lp-guide *::after { transition: none !important; }
+  }
+</style>
+
+<div class="lp-guide">
+
+  <section class="lp-guide-hero">
+    <div class="lp-container">
+      <span class="lp-hero-badge">Pet Care Guide</span>
+      <h1>Calm, <em>explained.</em></h1>
+      <p class="lp-hero-sub">Practical, vet-reviewed guides for pet parents who want to do better — not just buy more. No fluff, no clickbait.</p>
+      <div class="lp-hero-divider"></div>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="lp-guide-featured">
+    <div class="lp-container">
+      <div class="lp-guide-feat-card">
+        <div class="lp-guide-feat-visual"><span>Featured Guide</span></div>
+        <div class="lp-guide-feat-text">
+          <div class="lp-feat-tag">Anxiety & Calm · 8 min read</div>
+          <h2>Why your dog has separation anxiety — and 7 ways to help</h2>
+          <p>The science behind why pets panic when you leave, and the calm, practical routines that actually make a difference.</p>
+          <a href="/blogs/pet-care-guide">Read the guide →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE GRID -->
+  <section class="lp-guide-list">
+    <div class="lp-container">
+      <div class="lp-section-head">
+        <span class="lp-eyebrow">Latest guides</span>
+        <h2 class="lp-h2">Read the <em>journal.</em></h2>
+      </div>
+      <div class="lp-guide-grid">
+
+        <a href="/blogs/pet-care-guide" class="lp-guide-article" style="text-decoration:none;">
+          <div class="lp-art-visual a1">i</div>
+          <div class="lp-art-body">
+            <div class="lp-art-cat">Cat Wellness</div>
+            <h3>5 signs of stress in cats most owners miss</h3>
+            <p>Cats hide discomfort by instinct. Here are the subtle behaviors that signal anxiety.</p>
+            <div class="lp-art-read">Read →</div>
+          </div>
+        </a>
+
+        <a href="/blogs/pet-care-guide" class="lp-guide-article" style="text-decoration:none;">
+          <div class="lp-art-visual a2">ii</div>
+          <div class="lp-art-body">
+            <div class="lp-art-cat">Sleep & Rest</div>
+            <h3>Do calming beds actually work? The science explained</h3>
+            <p>What touch therapy and the den instinct really do for an anxious pet's nervous system.</p>
+            <div class="lp-art-read">Read →</div>
+          </div>
+        </a>
+
+        <a href="/blogs/pet-care-guide" class="lp-guide-article" style="text-decoration:none;">
+          <div class="lp-art-visual a3">iii</div>
+          <div class="lp-art-body">
+            <div class="lp-art-cat">Behavior Basics</div>
+            <h3>Thunderstorms & fireworks: a calm-down checklist</h3>
+            <p>A simple, step-by-step plan to prepare your pet before the next loud night.</p>
+            <div class="lp-art-read">Read →</div>
+          </div>
+        </a>
+
+        <a href="/blogs/pet-care-guide" class="lp-guide-article" style="text-decoration:none;">
+          <div class="lp-art-visual a4">iv</div>
+          <div class="lp-art-body">
+            <div class="lp-art-cat">Cat Wellness</div>
+            <h3>Why your cat ignores their water bowl</h3>
+            <p>The wild instinct behind picky drinking — and how to keep your cat hydrated.</p>
+            <div class="lp-art-read">Read →</div>
+          </div>
+        </a>
+
+        <a href="/blogs/pet-care-guide" class="lp-guide-article" style="text-decoration:none;">
+          <div class="lp-art-visual a5">v</div>
+          <div class="lp-art-body">
+            <div class="lp-art-cat">Senior Pet Care</div>
+            <h3>Helping an older pet sleep more comfortably</h3>
+            <p>Joint support, warmth, and routine — small changes that ease aging bodies.</p>
+            <div class="lp-art-read">Read →</div>
+          </div>
+        </a>
+
+        <a href="/blogs/pet-care-guide" class="lp-guide-article" style="text-decoration:none;">
+          <div class="lp-art-visual a6">vi</div>
+          <div class="lp-art-body">
+            <div class="lp-art-cat">Behavior Basics</div>
+            <h3>Bringing home a rescue: the first 30 days</h3>
+            <p>A week-by-week guide to building trust and calm with a newly adopted pet.</p>
+            <div class="lp-art-read">Read →</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="lp-guide-cats">
+    <div class="lp-container">
+      <div class="lp-section-head">
+        <span class="lp-eyebrow">Browse by topic</span>
+        <h2 class="lp-h2">Find what <em>you need.</em></h2>
+      </div>
+      <div class="lp-guide-cats-grid">
+        <a href="/blogs/pet-care-guide/tagged/anxiety" class="lp-guide-cat"><span>Anxiety &amp; Calm</span></a>
+        <a href="/blogs/pet-care-guide/tagged/sleep" class="lp-guide-cat"><span>Sleep &amp; Rest</span></a>
+        <a href="/blogs/pet-care-guide/tagged/behavior" class="lp-guide-cat"><span>Behavior Basics</span></a>
+        <a href="/blogs/pet-care-guide/tagged/cats" class="lp-guide-cat"><span>Cat Wellness</span></a>
+        <a href="/blogs/pet-care-guide/tagged/dogs" class="lp-guide-cat"><span>Dog Wellness</span></a>
+        <a href="/blogs/pet-care-guide/tagged/senior" class="lp-guide-cat"><span>Senior Pet Care</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="lp-guide-cta">
+    <div class="lp-container">
+      <span class="lp-eyebrow">Calm starts here</span>
+      <h2>Ready to put it <em>into practice?</em></h2>
+      <p>Explore our vet-approved calming essentials — built on the same science behind these guides.</p>
+      <a href="/collections/bestsellers" class="lp-cta-btn">Shop Bestsellers</a>
+    </div>
+  </section>
+
+</div>
