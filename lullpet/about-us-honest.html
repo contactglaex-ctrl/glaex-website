@@ -1,0 +1,377 @@
+<style>
+  /* ===========================================
+     LULLPET — OUR STORY · honest edition
+     Scoped to .lp-about — premium, accurate, publish-ready
+     =========================================== */
+  .template-page .page__title,
+  .template-page .page-title,
+  .template-page .page__heading,
+  .page-template__title,
+  .main-page-title,
+  .section-page-title { display: none !important; }
+  #MainContent, .main-content, main#MainContent { background-color: #fafaf7 !important; }
+  .lp-about, .lp-about * { box-sizing: border-box; }
+  .lp-about > *, .lp-about > * > * { margin: 0; padding: 0; }
+
+  .lp-about {
+    --c-bg: #fafaf7; --c-bg-pearl: #f3ece0; --c-bg-white: #ffffff; --c-bg-dark: #1a1a1a;
+    --c-text: #1a1a1a; --c-text-soft: #3a3a3a; --c-text-muted: #5a5a5a;
+    --c-sage: #87968a; --c-taupe: #b08968; --c-border: #ececea; --c-border-soft: #e6dfd2;
+    --f-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --f-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    --r: 2px; --t: cubic-bezier(0.16, 1, 0.3, 1);
+    font-family: var(--f-sans); color: var(--c-text); line-height: 1.65;
+    font-weight: 400; -webkit-font-smoothing: antialiased; background: var(--c-bg);
+    padding: 0; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+    margin-top: -60px; margin-bottom: 0;
+  }
+  .lp-about h1, .lp-about h2, .lp-about h3, .lp-about h4 {
+    font-family: var(--f-serif); font-weight: 500; letter-spacing: -0.01em; margin: 0;
+  }
+  .lp-about p { margin: 0; font-size: 16px; color: var(--c-text-soft); line-height: 1.8; }
+  .lp-about .lp-container { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+  .lp-about .lp-narrow { max-width: 760px; margin: 0 auto; padding: 0 40px; }
+  .lp-about section { padding: 90px 0; position: relative; margin: 0; }
+  .lp-about .lp-eyebrow {
+    font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 18px; display: inline-block; font-weight: 600;
+  }
+  .lp-about .lp-h2 { font-size: clamp(34px, 4.5vw, 54px); line-height: 1.12; color: var(--c-text); }
+  .lp-about .lp-h2 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+
+  /* TRUST BAR */
+  .lp-about-trust-bar {
+    background: var(--c-bg-dark); color: var(--c-bg); padding: 14px 0 !important;
+    border-bottom: 1px solid #2a2a28;
+  }
+  .lp-about-trust-bar .lp-container {
+    display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+    font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(250,250,247,0.85);
+  }
+  .lp-about-trust-bar span:before { content: "—"; margin-right: 10px; color: var(--c-taupe); }
+
+  /* HERO */
+  .lp-about-hero {
+    text-align: center; padding: 120px 0 100px !important;
+    background: linear-gradient(180deg, var(--c-bg-white) 0%, var(--c-bg) 100%);
+    border-bottom: 1px solid var(--c-border);
+  }
+  .lp-about-hero .lp-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 18px; background: var(--c-bg-white);
+    border: 1px solid var(--c-border); border-radius: 100px;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 30px; font-weight: 600;
+  }
+  .lp-about-hero .lp-badge::before { content: "●"; color: var(--c-sage); font-size: 9px; }
+  .lp-about-hero h1 {
+    font-size: clamp(46px, 7vw, 88px); line-height: 1.04; letter-spacing: -0.022em;
+    margin: 0 0 28px; color: var(--c-text);
+  }
+  .lp-about-hero h1 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+  .lp-about-hero .lp-hero-sub {
+    font-size: 19px; max-width: 660px; margin: 0 auto;
+    color: var(--c-text-muted); font-weight: 300; line-height: 1.65;
+  }
+  .lp-about-hero .lp-hero-divider {
+    width: 60px; height: 1px; background: var(--c-sage); margin: 40px auto 0; opacity: 0.7;
+  }
+
+  /* STORY */
+  .lp-about-story { background: var(--c-bg-pearl); border-bottom: 1px solid var(--c-border-soft); }
+  .lp-about-story-grid {
+    display: grid; grid-template-columns: 1fr 1.15fr; gap: 80px; align-items: center;
+  }
+  .lp-about-story-card {
+    aspect-ratio: 4/5; border-radius: var(--r); background: var(--c-bg-white);
+    border: 1px solid var(--c-border-soft);
+    box-shadow: 0 4px 24px rgba(26,26,26,0.05), 0 1px 3px rgba(26,26,26,0.04);
+    padding: 56px 48px; display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .lp-about-story-card .lp-sc-tag {
+    font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--c-sage); font-weight: 600;
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .lp-about-story-card .lp-sc-tag::before { content: ""; width: 30px; height: 1px; background: var(--c-sage); }
+  .lp-about-story-card .lp-sc-quote {
+    font-family: var(--f-serif); font-style: italic; font-weight: 500;
+    font-size: clamp(28px, 3.2vw, 40px); line-height: 1.22; color: var(--c-text);
+    letter-spacing: -0.01em; margin: 36px 0;
+  }
+  .lp-about-story-card .lp-sc-quote em { color: var(--c-sage); }
+  .lp-about-story-card .lp-sc-foot {
+    border-top: 1px solid var(--c-border); padding-top: 22px;
+    font-family: var(--f-serif); font-style: italic; font-size: 17px; color: var(--c-text);
+  }
+  .lp-about-story-card .lp-sc-foot span {
+    display: block; font-family: var(--f-sans); font-style: normal;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--c-sage); margin-top: 6px; font-weight: 600;
+  }
+  .lp-about-story-text h2 {
+    font-size: clamp(36px, 4.5vw, 52px); line-height: 1.1; margin-bottom: 28px;
+  }
+  .lp-about-story-text h2 em { font-style: italic; color: var(--c-sage); }
+  .lp-about-story-text p { margin-bottom: 18px; font-size: 17px; color: var(--c-text-soft); }
+  .lp-about-story-text p:last-of-type { margin-bottom: 0; }
+  .lp-about-story-text .lp-pull {
+    font-family: var(--f-serif); font-style: italic; font-size: 22px;
+    color: var(--c-sage); line-height: 1.5; padding: 22px 0 22px 28px;
+    margin: 26px 0; border-left: 2px solid var(--c-sage);
+  }
+
+  /* MANIFESTO */
+  .lp-about-manifesto {
+    background: var(--c-bg-dark); color: var(--c-bg); text-align: center;
+    padding: 130px 0 !important; position: relative; overflow: hidden;
+  }
+  .lp-about-manifesto::before {
+    content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 200px; height: 1px; background: var(--c-taupe);
+  }
+  .lp-about-manifesto .lp-mark {
+    font-family: var(--f-serif); font-style: italic; font-size: 72px;
+    color: var(--c-taupe); line-height: 0.6; opacity: 0.7; display: block; margin-bottom: 24px;
+  }
+  .lp-about-manifesto blockquote {
+    font-family: var(--f-serif); font-weight: 400;
+    font-size: clamp(26px, 3vw, 40px); line-height: 1.35; color: var(--c-bg);
+    max-width: 920px; margin: 0 auto 32px; letter-spacing: -0.005em;
+  }
+  .lp-about-manifesto blockquote em { color: var(--c-taupe); font-style: italic; }
+  .lp-about-manifesto .lp-attr {
+    font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--c-taupe); font-weight: 600;
+  }
+
+  /* PROMISES */
+  .lp-about-promises { background: var(--c-bg); }
+  .lp-about-promises .lp-header { text-align: center; margin-bottom: 60px; max-width: 720px; margin-left: auto; margin-right: auto; }
+  .lp-about-promises-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .lp-about-promise {
+    padding: 46px 40px; background: var(--c-bg-white);
+    border: 1px solid var(--c-border); border-radius: var(--r);
+    transition: border-color 0.4s var(--t), transform 0.4s var(--t);
+  }
+  .lp-about-promise:hover { border-color: var(--c-sage); transform: translateY(-3px); }
+  .lp-about-promise .lp-num {
+    font-family: var(--f-serif); font-style: italic; font-size: 14px;
+    letter-spacing: 0.2em; color: var(--c-taupe); margin-bottom: 18px; font-weight: 600;
+  }
+  .lp-about-promise h3 { font-size: 26px; color: var(--c-text); margin: 0 0 14px; line-height: 1.25; }
+  .lp-about-promise p { color: var(--c-text-muted); font-size: 15px; line-height: 1.75; }
+
+  /* VALUES */
+  .lp-about-values { background: var(--c-bg-white); border-top: 1px solid var(--c-border); }
+  .lp-about-values .lp-header { text-align: center; margin-bottom: 60px; }
+  .lp-about-values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .lp-about-value {
+    padding: 36px 30px; background: var(--c-bg);
+    border: 1px solid var(--c-border); border-radius: var(--r);
+  }
+  .lp-about-value .lp-v-icon {
+    width: 40px; height: 40px; margin-bottom: 18px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--c-bg-dark); color: var(--c-bg);
+    font-family: var(--f-serif); font-style: italic; font-size: 18px;
+  }
+  .lp-about-value h3 { font-size: 20px; color: var(--c-text); margin: 0 0 10px; line-height: 1.3; }
+  .lp-about-value p { font-size: 14px; color: var(--c-text-muted); line-height: 1.7; }
+
+  /* GUARANTEE */
+  .lp-about-guarantee {
+    background: var(--c-bg-pearl); text-align: center; padding: 100px 0 !important;
+    border-top: 1px solid var(--c-border-soft);
+  }
+  .lp-about-guarantee .lp-seal {
+    width: 96px; height: 96px; margin: 0 auto 24px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--c-sage); border-radius: 50%;
+    font-family: var(--f-serif); font-style: italic; color: var(--c-sage);
+    line-height: 1.1; font-size: 14px; text-align: center;
+  }
+  .lp-about-guarantee h2 { font-size: clamp(30px, 4vw, 48px); margin: 0 0 16px; }
+  .lp-about-guarantee h2 em { color: var(--c-sage); font-style: italic; }
+  .lp-about-guarantee p { color: var(--c-text-muted); font-size: 17px; max-width: 580px; margin: 0 auto; }
+
+  /* CTA */
+  .lp-about-cta { background: var(--c-bg); text-align: center; padding: 110px 0 !important; }
+  .lp-about-cta h2 { font-size: clamp(36px, 5vw, 60px); margin: 0 0 22px; }
+  .lp-about-cta h2 em { color: var(--c-sage); font-style: italic; }
+  .lp-about-cta p { max-width: 560px; margin: 0 auto 40px; color: var(--c-text-muted); font-size: 18px; }
+  .lp-about a.lp-cta-btn {
+    display: inline-block !important; padding: 18px 48px !important;
+    background-color: #1a1a1a !important; background-image: none !important;
+    color: #ffffff !important; text-decoration: none !important;
+    font-size: 12px !important; letter-spacing: 0.28em !important;
+    text-transform: uppercase !important; font-weight: 600 !important;
+    border: 1px solid #1a1a1a !important; border-radius: 0 !important;
+    transition: all 0.3s var(--t) !important;
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    line-height: 1 !important; text-shadow: none !important; box-shadow: none !important;
+  }
+  .lp-about a.lp-cta-btn:hover { background-color: transparent !important; color: #1a1a1a !important; }
+  .lp-about a.lp-cta-btn.lp-secondary {
+    background-color: transparent !important; color: #1a1a1a !important;
+    border-color: #1a1a1a !important; margin-left: 12px;
+  }
+  .lp-about a.lp-cta-btn.lp-secondary:hover { background-color: #1a1a1a !important; color: #ffffff !important; }
+
+  @media (max-width: 980px) {
+    .lp-about .lp-container { padding: 0 24px; }
+    .lp-about .lp-narrow { padding: 0 24px; }
+    .lp-about section { padding: 60px 0; }
+    .lp-about-trust-bar .lp-container { gap: 18px; }
+    .lp-about-hero { padding: 80px 0 70px !important; }
+    .lp-about-story-grid { grid-template-columns: 1fr; gap: 40px; }
+    .lp-about-story-card { padding: 40px 32px; }
+    .lp-about-promises-grid { grid-template-columns: 1fr; }
+    .lp-about-values-grid { grid-template-columns: 1fr 1fr; }
+    .lp-about-manifesto { padding: 80px 0 !important; }
+    .lp-about a.lp-cta-btn.lp-secondary { margin-left: 0; margin-top: 12px; }
+  }
+  @media (max-width: 540px) {
+    .lp-about-values-grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lp-about *, .lp-about *::before, .lp-about *::after { transition: none !important; }
+  }
+</style>
+
+<div class="lp-about">
+
+  <!-- TRUST BAR -->
+  <section class="lp-about-trust-bar">
+    <div class="lp-container">
+      <span>Free US shipping over $50</span>
+      <span>30-day calm guarantee</span>
+      <span>1% to animal shelters</span>
+      <span>Real human support</span>
+    </div>
+  </section>
+
+  <!-- HERO -->
+  <section class="lp-about-hero">
+    <div class="lp-container">
+      <span class="lp-badge">Our Story</span>
+      <h1>We built Lullpet for the pets<br>who can't <em>tell us they're anxious.</em></h1>
+      <p class="lp-hero-sub">A calmer home for cats and dogs — through thoughtful, well-made essentials and a brand that keeps its promises.</p>
+      <div class="lp-hero-divider"></div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="lp-about-story">
+    <div class="lp-container">
+      <div class="lp-about-story-grid">
+        <div class="lp-about-story-card">
+          <div class="lp-sc-tag">Why we exist</div>
+          <div class="lp-sc-quote">"Anxious pets deserve more than <em>marketing.</em>"</div>
+          <div class="lp-sc-foot">
+            The idea behind Lullpet
+            <span>Calm, by design</span>
+          </div>
+        </div>
+        <div class="lp-about-story-text">
+          <span class="lp-eyebrow">How it began</span>
+          <h2>It started with a <em>simple frustration.</em></h2>
+          <p>Anyone who has lived with an anxious pet knows the feeling — the pacing, the hiding, the restless nights, the sense that your cat or dog is struggling and can't tell you why.</p>
+          <p>When we went looking for help, we found a market crowded with cheap, generic "calming" products and a lot of empty marketing. Plenty of promises. Very little care.</p>
+          <div class="lp-pull">So we set out to build something better.</div>
+          <p>Lullpet is a focused collection of calming essentials for cats and dogs — chosen and designed around how pets actually settle: enclosure, soft texture, warmth, and routine. No filler. No hollow claims. Just thoughtful products, honest information, and a brand that treats your pet's calm as seriously as you do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="lp-about-manifesto">
+    <div class="lp-container">
+      <span class="lp-mark">"</span>
+      <blockquote>The pet wellness aisle needs less noise — not more. We don't want to sell another calming product. <em>We want to make calm.</em></blockquote>
+      <div class="lp-attr">— The Lullpet promise</div>
+    </div>
+  </section>
+
+  <!-- PROMISES -->
+  <section class="lp-about-promises">
+    <div class="lp-container">
+      <div class="lp-header">
+        <span class="lp-eyebrow">Three promises</span>
+        <h2 class="lp-h2">What we <em>stand behind.</em></h2>
+      </div>
+      <div class="lp-about-promises-grid">
+        <div class="lp-about-promise">
+          <div class="lp-num">— No. 01</div>
+          <h3>Designed around<br>real calm.</h3>
+          <p>Every product is chosen for how it genuinely helps a pet settle — a den-like enclosure, soft touch comfort, gentle warmth. We focus on what works, not on buzzwords.</p>
+        </div>
+        <div class="lp-about-promise">
+          <div class="lp-num">— No. 02</div>
+          <h3>Fast US shipping,<br>honest timelines.</h3>
+          <p>Orders are fulfilled from within the United States, with delivery typically in 5–8 business days. Free US shipping over $50. We tell you the real timeline — never a fantasy one.</p>
+        </div>
+        <div class="lp-about-promise">
+          <div class="lp-num">— No. 03</div>
+          <h3>1% to shelters.<br>Every order.</h3>
+          <p>We set aside 1% of every order for vetted animal shelters and rescues. The calm we sell at home should reach pets who don't have one yet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="lp-about-values">
+    <div class="lp-container">
+      <div class="lp-header">
+        <span class="lp-eyebrow">What we believe</span>
+        <h2 class="lp-h2">A quiet set of <em>principles.</em></h2>
+      </div>
+      <div class="lp-about-values-grid">
+        <div class="lp-about-value">
+          <div class="lp-v-icon">i</div>
+          <h3>Substance over noise</h3>
+          <p>If we can't explain why something helps, we don't sell it and we don't claim it. Calm is built on real reasons.</p>
+        </div>
+        <div class="lp-about-value">
+          <div class="lp-v-icon">ii</div>
+          <h3>Calm is built, not given</h3>
+          <p>The best products work with your pet, not on them. Real calm takes a routine, a safe space, and a little patience.</p>
+        </div>
+        <div class="lp-about-value">
+          <div class="lp-v-icon">iii</div>
+          <h3>Honesty over hype</h3>
+          <p>No miracle promises, no invented numbers. We'd rather under-claim and over-deliver — and earn your trust the slow way.</p>
+        </div>
+        <div class="lp-about-value">
+          <div class="lp-v-icon">iv</div>
+          <h3>Quiet is a luxury</h3>
+          <p>Modern life is loud, and anxious pets feel it. We make essentials that bring stillness — beautiful enough to leave out, soft enough to sink into.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="lp-about-guarantee">
+    <div class="lp-container">
+      <div class="lp-seal">30-Day<br>Guarantee</div>
+      <h2>Try Lullpet for thirty days. <em>If they don't love it, we don't keep your money.</em></h2>
+      <p>A full refund within 30 days of delivery — no restocking fees, no difficult questions. Your pet's comfort shouldn't be a gamble.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="lp-about-cta">
+    <div class="lp-container">
+      <span class="lp-eyebrow">Ready when you are</span>
+      <h2>Give them their <em>quietest days yet.</em></h2>
+      <p>Start with our calming essentials — backed by the 30-day guarantee, and the promise that 1% of your order supports a shelter.</p>
+      <a href="/collections/all" class="lp-cta-btn">Shop Calming Essentials</a>
+      <a href="/pages/shelter-donation" class="lp-cta-btn lp-secondary">Our 1% Mission</a>
+    </div>
+  </section>
+
+</div>
