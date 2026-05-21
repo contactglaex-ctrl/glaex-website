@@ -1,0 +1,281 @@
+<style>
+  /* ===========================================
+     LULLPET — SUSTAINABILITY · honest edition
+     Scoped to .lp-sus
+     =========================================== */
+
+  /* (1) Hide Shopify's auto-rendered page title */
+  .template-page .page__title,
+  .template-page .page-title,
+  .template-page .page__heading,
+  .page-template__title,
+  .main-page-title,
+  .section-page-title { display: none !important; }
+
+  /* (2) Neutralise page-content wrapper background */
+  #MainContent,
+  .main-content,
+  main#MainContent { background-color: #fafaf7 !important; }
+
+  /* Reset scoped strictly inside .lp-sus */
+  .lp-sus, .lp-sus * { box-sizing: border-box; }
+  .lp-sus > *, .lp-sus > * > * { margin: 0; padding: 0; }
+
+  .lp-sus {
+    --c-bg: #fafaf7;
+    --c-bg-pearl: #f3ece0;
+    --c-bg-white: #ffffff;
+    --c-bg-dark: #1a1a1a;
+    --c-text: #1a1a1a;
+    --c-text-soft: #3a3a3a;
+    --c-text-muted: #5a5a5a;
+    --c-sage: #87968a;
+    --c-taupe: #b08968;
+    --c-border: #ececea;
+    --c-border-soft: #e6dfd2;
+    --f-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --f-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    --r: 2px;
+    --t: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .lp-sus {
+    font-family: var(--f-sans);
+    color: var(--c-text);
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    background: var(--c-bg);
+    padding: 0;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: -60px;
+    margin-bottom: 0;
+  }
+  .lp-sus h1, .lp-sus h2, .lp-sus h3, .lp-sus h4 {
+    font-family: var(--f-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .lp-sus p { margin: 0; font-size: 16px; color: var(--c-text-soft); line-height: 1.8; }
+  .lp-sus .lp-container { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+  .lp-sus .lp-narrow { max-width: 860px; margin: 0 auto; padding: 0 40px; }
+  .lp-sus section { padding: 90px 0; position: relative; margin: 0; }
+  .lp-sus .lp-eyebrow {
+    font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 18px;
+    display: inline-block; font-weight: 600;
+  }
+  .lp-sus .lp-h2 { font-size: clamp(32px, 4vw, 52px); line-height: 1.13; color: var(--c-text); }
+  .lp-sus .lp-h2 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+
+  /* HERO */
+  .lp-sus-hero {
+    text-align: center;
+    padding: 140px 0 90px !important;
+    background: linear-gradient(180deg, var(--c-bg-white) 0%, var(--c-bg) 100%);
+  }
+  .lp-sus-hero .lp-hero-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 9px 20px; background: var(--c-bg-white);
+    border: 1px solid var(--c-border); border-radius: 100px;
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 32px; font-weight: 700;
+  }
+  .lp-sus-hero .lp-hero-badge::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c-sage);
+  }
+  .lp-sus-hero h1 {
+    font-size: clamp(46px, 7vw, 90px); line-height: 1.02;
+    letter-spacing: -0.025em; margin: 0 0 30px; color: var(--c-text);
+  }
+  .lp-sus-hero h1 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+  .lp-sus-hero .lp-hero-sub {
+    font-size: 19px; max-width: 660px; margin: 0 auto;
+    color: var(--c-text-muted); font-weight: 300; line-height: 1.65;
+  }
+  .lp-sus-hero .lp-hero-divider {
+    width: 60px; height: 1px; background: var(--c-sage);
+    margin: 44px auto 0; opacity: 0.7;
+  }
+
+  /* INTRO */
+  .lp-sus-intro { background: var(--c-bg); }
+  .lp-sus-intro p { font-size: 18px; line-height: 1.85; margin-bottom: 20px; }
+  .lp-sus-intro p:last-child { margin-bottom: 0; }
+  .lp-sus-intro .lp-quote {
+    font-family: var(--f-serif); font-style: italic;
+    font-size: clamp(24px, 2.8vw, 32px); color: var(--c-sage);
+    line-height: 1.4; padding: 32px 0; margin: 32px 0;
+    border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border);
+  }
+
+  /* TODAY — dark list */
+  .lp-sus-today {
+    background: var(--c-bg-dark); color: var(--c-bg);
+    padding: 110px 0 !important;
+  }
+  .lp-sus-today .lp-eyebrow { color: var(--c-taupe); }
+  .lp-sus-today h2 { color: var(--c-bg); margin-bottom: 50px; }
+  .lp-sus-today h2 em { color: var(--c-taupe); font-style: italic; }
+  .lp-sus-today-list { display: grid; gap: 16px; }
+  .lp-sus-today-item {
+    padding: 26px 32px;
+    border: 1px solid rgba(250,250,247,0.14); border-radius: var(--r);
+    display: grid; grid-template-columns: 40px 1fr; gap: 22px; align-items: start;
+  }
+  .lp-sus-today-item .lp-check {
+    font-family: var(--f-serif); font-size: 26px; font-style: italic;
+    color: var(--c-taupe); line-height: 1;
+  }
+  .lp-sus-today-item h3 {
+    font-family: var(--f-sans); font-size: 15px; font-weight: 600;
+    color: var(--c-bg); margin: 0 0 6px; letter-spacing: 0.02em;
+  }
+  .lp-sus-today-item p {
+    color: rgba(250,250,247,0.65); font-size: 14px; line-height: 1.7; margin: 0;
+  }
+
+  /* ROADMAP */
+  .lp-sus-roadmap { background: var(--c-bg); }
+  .lp-sus-roadmap .lp-section-head { text-align: center; margin-bottom: 50px; }
+  .lp-sus-roadmap-list { max-width: 760px; margin: 0 auto; }
+  .lp-sus-roadmap-item {
+    display: grid; grid-template-columns: 44px 1fr; gap: 20px;
+    padding: 26px 0; border-bottom: 1px solid var(--c-border); align-items: baseline;
+  }
+  .lp-sus-roadmap-item:last-child { border-bottom: none; }
+  .lp-sus-roadmap-item .lp-arrow {
+    font-family: var(--f-serif); font-size: 24px; font-style: italic;
+    color: var(--c-sage);
+  }
+  .lp-sus-roadmap-item .lp-rm-text { font-size: 17px; color: var(--c-text); line-height: 1.7; }
+  .lp-sus-roadmap-item .lp-rm-text strong { color: var(--c-sage); font-weight: 600; }
+
+  /* CLOSING */
+  .lp-sus-close {
+    background: var(--c-sage); color: #ffffff;
+    text-align: center; padding: 110px 0 !important;
+  }
+  .lp-sus-close .lp-eyebrow { color: rgba(255,255,255,0.7); }
+  .lp-sus-close h2 { color: #ffffff; font-size: clamp(32px, 4.2vw, 50px); margin: 0 0 18px; }
+  .lp-sus-close h2 em { color: var(--c-bg-dark); font-style: italic; }
+  .lp-sus-close p { color: rgba(255,255,255,0.92); font-size: 17px; max-width: 560px; margin: 0 auto; }
+
+  /* RESPONSIVE */
+  @media (max-width: 980px) {
+    .lp-sus .lp-container { padding: 0 24px; }
+    .lp-sus .lp-narrow { padding: 0 24px; }
+    .lp-sus section { padding: 60px 0; }
+    .lp-sus-hero { padding: 90px 0 60px !important; }
+    .lp-sus-today { padding: 80px 0 !important; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lp-sus *, .lp-sus *::before, .lp-sus *::after {
+      transition: none !important; animation: none !important;
+    }
+  }
+</style>
+
+<div class="lp-sus">
+
+  <!-- HERO -->
+  <section class="lp-sus-hero">
+    <div class="lp-container">
+      <span class="lp-hero-badge">Sustainability</span>
+      <h1>An honest word <em>on sustainability.</em></h1>
+      <p class="lp-hero-sub">We won't pretend to be perfectly green. We'd rather tell you exactly where a small, young brand actually stands — and where it doesn't.</p>
+      <div class="lp-hero-divider"></div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="lp-sus-intro">
+    <div class="lp-narrow">
+      <span class="lp-eyebrow">Where we stand</span>
+      <h2 class="lp-h2">Honest, not <em>performative.</em></h2>
+      <div style="height:28px;"></div>
+      <p>Sustainability has become a marketing checkbox for most pet brands — green leaf icons, vague "eco" language, recyclable claims with no infrastructure behind them. We've chosen not to do that.</p>
+      <p>Lullpet is a new, small brand. We don't run our own factories or shipping fleet, so we won't claim certifications we haven't earned or carbon figures we can't prove. What we can do is be deliberate about the choices that are genuinely ours to make.</p>
+      <div class="lp-quote">"We'd rather earn a claim than print one."</div>
+      <p>Here's the honest version — what we actually do today, and what we genuinely want to get better at. No badges we haven't earned. No numbers we can't stand behind.</p>
+    </div>
+  </section>
+
+  <!-- TODAY -->
+  <section class="lp-sus-today">
+    <div class="lp-narrow">
+      <span class="lp-eyebrow">What we actually do</span>
+      <h2 class="lp-h2">The choices that are <em>genuinely ours.</em></h2>
+      <div class="lp-sus-today-list">
+        <div class="lp-sus-today-item">
+          <div class="lp-check">i</div>
+          <div>
+            <h3>A deliberately small range</h3>
+            <p>We sell a focused set of calming essentials — not an endless catalogue. Fewer products, chosen to be used and kept, not impulse-bought and discarded.</p>
+          </div>
+        </div>
+        <div class="lp-sus-today-item">
+          <div class="lp-check">ii</div>
+          <div>
+            <h3>Built to be kept</h3>
+            <p>We favour durable, washable, long-lasting pieces over disposable ones. The most sustainable product is simply the one you don't have to replace.</p>
+          </div>
+        </div>
+        <div class="lp-sus-today-item">
+          <div class="lp-check">iii</div>
+          <div>
+            <h3>A lean, online-only operation</h3>
+            <p>No retail floors, no chain of our own warehouses. A small online brand starts with a smaller footprint — and we'd like to keep it that way as we grow.</p>
+          </div>
+        </div>
+        <div class="lp-sus-today-item">
+          <div class="lp-check">iv</div>
+          <div>
+            <h3>No greenwashing</h3>
+            <p>We won't print a leaf on a box and call it eco. If we can't verify a claim ourselves, we don't make it — and we'd rather say "we're not there yet" than imply otherwise.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section class="lp-sus-roadmap">
+    <div class="lp-narrow">
+      <div class="lp-section-head">
+        <span class="lp-eyebrow">What we want to get better at</span>
+        <h2 class="lp-h2">Honest intentions, <em>not promises.</em></h2>
+      </div>
+      <div class="lp-sus-roadmap-list">
+        <div class="lp-sus-roadmap-item">
+          <div class="lp-arrow">→</div>
+          <div class="lp-rm-text"><strong>Know our supply chain better</strong> — so that, in time, we can speak about materials and sourcing with real knowledge rather than guesswork.</div>
+        </div>
+        <div class="lp-sus-roadmap-item">
+          <div class="lp-arrow">→</div>
+          <div class="lp-rm-text"><strong>Reduce packaging waste</strong> — as we gain more control over fulfilment, we want to push toward lower-waste, plastic-minimal packaging.</div>
+        </div>
+        <div class="lp-sus-roadmap-item">
+          <div class="lp-arrow">→</div>
+          <div class="lp-rm-text"><strong>Favour better-made products</strong> — as the range grows, we want durability and material quality to weigh as heavily as price.</div>
+        </div>
+        <div class="lp-sus-roadmap-item">
+          <div class="lp-arrow">→</div>
+          <div class="lp-rm-text"><strong>Share real figures one day</strong> — when we have data worth publishing, we will. Until then, we won't invent any.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="lp-sus-close">
+    <div class="lp-container">
+      <span class="lp-eyebrow">In short</span>
+      <h2>We're not a perfectly green brand. <em>We're an honest one.</em></h2>
+      <p>This page will grow as we do. If we ever earn a real certification or a real number, you'll see it here — and not a day before.</p>
+    </div>
+  </section>
+
+</div>
