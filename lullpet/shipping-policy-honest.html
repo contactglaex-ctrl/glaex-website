@@ -1,0 +1,358 @@
+<style>
+  /* ===========================================
+     LULLPET — SHIPPING & DELIVERY · honest edition
+     Scoped to .lp-ship
+     =========================================== */
+
+  /* (1) Hide Shopify's auto-rendered page title */
+  .template-page .page__title,
+  .template-page .page-title,
+  .template-page .page__heading,
+  .page-template__title,
+  .main-page-title,
+  .section-page-title { display: none !important; }
+
+  /* (2) Neutralise page-content wrapper background */
+  #MainContent,
+  .main-content,
+  main#MainContent { background-color: #fafaf7 !important; }
+
+  /* Reset scoped strictly inside .lp-ship */
+  .lp-ship, .lp-ship * { box-sizing: border-box; }
+  .lp-ship > *, .lp-ship > * > * { margin: 0; padding: 0; }
+
+  .lp-ship {
+    --c-bg: #fafaf7;
+    --c-bg-pearl: #f3ece0;
+    --c-bg-white: #ffffff;
+    --c-bg-dark: #1a1a1a;
+    --c-text: #1a1a1a;
+    --c-text-soft: #3a3a3a;
+    --c-text-muted: #5a5a5a;
+    --c-sage: #87968a;
+    --c-taupe: #b08968;
+    --c-border: #ececea;
+    --c-border-soft: #e6dfd2;
+    --f-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --f-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    --r: 2px;
+    --t: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .lp-ship {
+    font-family: var(--f-sans);
+    color: var(--c-text);
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    background: var(--c-bg);
+    padding: 0;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: -60px;
+    margin-bottom: 0;
+  }
+  .lp-ship h1, .lp-ship h2, .lp-ship h3, .lp-ship h4 {
+    font-family: var(--f-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .lp-ship p { margin: 0; font-size: 16px; color: var(--c-text-soft); line-height: 1.8; }
+  .lp-ship .lp-container { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+  .lp-ship .lp-narrow { max-width: 940px; margin: 0 auto; padding: 0 40px; }
+  .lp-ship section { padding: 90px 0; position: relative; margin: 0; }
+  .lp-ship .lp-eyebrow {
+    font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 18px;
+    display: inline-block; font-weight: 600;
+  }
+  .lp-ship .lp-h2 { font-size: clamp(32px, 4vw, 50px); line-height: 1.14; color: var(--c-text); }
+  .lp-ship .lp-h2 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+
+  /* HERO */
+  .lp-ship-hero {
+    text-align: center;
+    padding: 140px 0 90px !important;
+    background: linear-gradient(180deg, var(--c-bg-white) 0%, var(--c-bg) 100%);
+  }
+  .lp-ship-hero .lp-hero-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 9px 20px; background: var(--c-bg-white);
+    border: 1px solid var(--c-border); border-radius: 100px;
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 32px; font-weight: 700;
+  }
+  .lp-ship-hero .lp-hero-badge::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c-sage);
+  }
+  .lp-ship-hero h1 {
+    font-size: clamp(46px, 7vw, 88px); line-height: 1.02;
+    letter-spacing: -0.025em; margin: 0 0 30px; color: var(--c-text);
+  }
+  .lp-ship-hero h1 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+  .lp-ship-hero .lp-hero-sub {
+    font-size: 19px; max-width: 640px; margin: 0 auto;
+    color: var(--c-text-muted); font-weight: 300; line-height: 1.65;
+  }
+  .lp-ship-hero .lp-hero-divider {
+    width: 60px; height: 1px; background: var(--c-sage);
+    margin: 44px auto 0; opacity: 0.7;
+  }
+
+  /* QUICK STATS */
+  .lp-ship-stats { background: var(--c-bg); padding-top: 0 !important; }
+  .lp-ship-stats-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  }
+  .lp-ship-stat {
+    background: var(--c-bg-white); border: 1px solid var(--c-border);
+    border-radius: var(--r); padding: 40px 32px; text-align: center;
+    transition: border-color 0.4s var(--t), transform 0.4s var(--t);
+  }
+  .lp-ship-stat:hover { border-color: var(--c-sage); transform: translateY(-3px); }
+  .lp-ship-stat .lp-stat-n {
+    font-family: var(--f-serif); font-size: clamp(44px, 4.5vw, 60px);
+    color: var(--c-text); line-height: 1; margin-bottom: 12px; font-weight: 500;
+  }
+  .lp-ship-stat .lp-stat-n em { font-style: italic; color: var(--c-sage); }
+  .lp-ship-stat .lp-stat-l {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--c-sage); font-weight: 600; margin-bottom: 8px;
+  }
+  .lp-ship-stat .lp-stat-d { font-size: 13px; color: var(--c-text-muted); line-height: 1.6; }
+
+  /* INFO BLOCKS */
+  .lp-ship-block { background: var(--c-bg); }
+  .lp-ship-block.alt { background: var(--c-bg-white); border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); }
+  .lp-ship-block .lp-section-head { margin-bottom: 40px; }
+  .lp-ship-card {
+    background: var(--c-bg-white); border: 1px solid var(--c-border);
+    border-radius: var(--r); padding: 16px 40px;
+  }
+  .lp-ship-block.alt .lp-ship-card { background: var(--c-bg); }
+  .lp-ship-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 0; border-bottom: 1px solid var(--c-border); gap: 24px;
+  }
+  .lp-ship-row:last-child { border-bottom: none; }
+  .lp-ship-row .lp-row-l {
+    font-size: 16px; color: var(--c-text); font-weight: 500;
+  }
+  .lp-ship-row .lp-row-l span {
+    display: block; font-size: 13px; color: var(--c-text-muted);
+    font-weight: 400; margin-top: 3px;
+  }
+  .lp-ship-row .lp-row-r {
+    font-family: var(--f-serif); font-size: 22px; color: var(--c-sage);
+    font-style: italic; white-space: nowrap; text-align: right;
+  }
+
+  /* DETAIL CARDS */
+  .lp-ship-detail { background: var(--c-bg-pearl); }
+  .lp-ship-detail .lp-section-head { text-align: center; margin-bottom: 50px; }
+  .lp-ship-detail-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .lp-ship-detail-card {
+    background: var(--c-bg-white); border: 1px solid var(--c-border-soft);
+    border-radius: var(--r); padding: 44px 36px;
+  }
+  .lp-ship-detail-card .lp-detail-icon {
+    width: 44px; height: 44px; margin-bottom: 20px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--c-bg-dark); color: var(--c-bg);
+    font-family: var(--f-serif); font-style: italic; font-size: 20px;
+  }
+  .lp-ship-detail-card h3 {
+    font-size: 24px; color: var(--c-text); margin: 0 0 14px;
+  }
+  .lp-ship-detail-card p { font-size: 14px; color: var(--c-text-muted); line-height: 1.75; margin-bottom: 10px; }
+  .lp-ship-detail-card p:last-child { margin-bottom: 0; }
+  .lp-ship-detail-card a { color: var(--c-sage); text-decoration: underline; }
+
+  /* CTA */
+  .lp-ship-cta {
+    background: var(--c-bg-dark); color: var(--c-bg);
+    text-align: center; padding: 110px 0 !important;
+  }
+  .lp-ship-cta .lp-eyebrow { color: var(--c-taupe); }
+  .lp-ship-cta h2 { color: var(--c-bg); font-size: clamp(34px, 4.5vw, 54px); margin: 0 0 20px; }
+  .lp-ship-cta h2 em { color: var(--c-taupe); font-style: italic; }
+  .lp-ship-cta p { color: rgba(250,250,247,0.72); font-size: 17px; max-width: 540px; margin: 0 auto 40px; }
+  .lp-ship a.lp-cta-btn {
+    display: inline-block !important;
+    padding: 18px 48px !important;
+    background-color: #fafaf7 !important;
+    background-image: none !important;
+    color: #1a1a1a !important;
+    text-decoration: none !important;
+    font-size: 12px !important;
+    letter-spacing: 0.28em !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    border: 1px solid #fafaf7 !important;
+    border-radius: 0 !important;
+    transition: all 0.3s var(--t) !important;
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    line-height: 1 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+  .lp-ship a.lp-cta-btn:hover {
+    background-color: transparent !important;
+    color: #fafaf7 !important;
+  }
+  .lp-ship a.lp-cta-btn.lp-secondary {
+    background-color: transparent !important;
+    color: #fafaf7 !important;
+    border-color: rgba(250,250,247,0.4) !important;
+    margin-left: 12px;
+  }
+  .lp-ship a.lp-cta-btn.lp-secondary:hover {
+    background-color: #fafaf7 !important;
+    color: #1a1a1a !important;
+    border-color: #fafaf7 !important;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 980px) {
+    .lp-ship .lp-container { padding: 0 24px; }
+    .lp-ship .lp-narrow { padding: 0 24px; }
+    .lp-ship section { padding: 60px 0; }
+    .lp-ship-hero { padding: 90px 0 60px !important; }
+    .lp-ship-stats-grid { grid-template-columns: 1fr; }
+    .lp-ship-detail-grid { grid-template-columns: 1fr; }
+    .lp-ship-card { padding: 12px 24px; }
+    .lp-ship-row { padding: 18px 0; }
+    .lp-ship-row .lp-row-r { font-size: 19px; }
+    .lp-ship a.lp-cta-btn.lp-secondary { margin-left: 0; margin-top: 12px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lp-ship *, .lp-ship *::before, .lp-ship *::after {
+      transition: none !important; animation: none !important;
+    }
+  }
+</style>
+
+<div class="lp-ship">
+
+  <!-- HERO -->
+  <section class="lp-ship-hero">
+    <div class="lp-container">
+      <span class="lp-hero-badge">Shipping &amp; Delivery</span>
+      <h1>Shipping, <em>made clear.</em></h1>
+      <p class="lp-hero-sub">Fulfilled from within the US and fully tracked. Free shipping on orders over $50. Honest timelines — never a fantasy "next day".</p>
+      <div class="lp-hero-divider"></div>
+    </div>
+  </section>
+
+  <!-- QUICK STATS -->
+  <section class="lp-ship-stats">
+    <div class="lp-container">
+      <div class="lp-ship-stats-grid">
+        <div class="lp-ship-stat">
+          <div class="lp-stat-n">1&ndash;3<em>d</em></div>
+          <div class="lp-stat-l">Processing</div>
+          <div class="lp-stat-d">The time we take to prepare and dispatch your order.</div>
+        </div>
+        <div class="lp-ship-stat">
+          <div class="lp-stat-n">5&ndash;8<em>d</em></div>
+          <div class="lp-stat-l">US delivery</div>
+          <div class="lp-stat-d">Typical total time from order to doorstep across the US.</div>
+        </div>
+        <div class="lp-ship-stat">
+          <div class="lp-stat-n">$50<em>+</em></div>
+          <div class="lp-stat-l">Free shipping</div>
+          <div class="lp-stat-d">Free standard shipping on every order over fifty dollars.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELIVERY TIMES -->
+  <section class="lp-ship-block">
+    <div class="lp-narrow">
+      <div class="lp-section-head">
+        <span class="lp-eyebrow">Delivery times</span>
+        <h2 class="lp-h2">Where, when, <em>how long.</em></h2>
+      </div>
+      <div class="lp-ship-card">
+        <div class="lp-ship-row">
+          <div class="lp-row-l">Continental US<span>All 48 contiguous states</span></div>
+          <div class="lp-row-r">5&ndash;8 business days</div>
+        </div>
+        <div class="lp-ship-row">
+          <div class="lp-row-l">Alaska &amp; Hawaii<span>Standard carrier delivery</span></div>
+          <div class="lp-row-r">8&ndash;12 business days</div>
+        </div>
+        <div class="lp-ship-row">
+          <div class="lp-row-l">International<span>Outside the United States</span></div>
+          <div class="lp-row-r">Not available yet</div>
+        </div>
+      </div>
+      <p style="margin-top:24px;font-size:15px;color:var(--c-text-muted);">The ranges above are estimates for the total time from placing your order to delivery, including the 1&ndash;3 business days we take to process and dispatch it. They are not guarantees — carrier delays and busy periods can occasionally add a little time, and we'll always keep you posted if something is running slow.</p>
+    </div>
+  </section>
+
+  <!-- SHIPPING COSTS -->
+  <section class="lp-ship-block alt">
+    <div class="lp-narrow">
+      <div class="lp-section-head">
+        <span class="lp-eyebrow">Shipping costs</span>
+        <h2 class="lp-h2">Simple, <em>honest pricing.</em></h2>
+      </div>
+      <div class="lp-ship-card">
+        <div class="lp-ship-row">
+          <div class="lp-row-l">Orders $50 and over<span>Standard shipping</span></div>
+          <div class="lp-row-r">Free</div>
+        </div>
+        <div class="lp-ship-row">
+          <div class="lp-row-l">Orders under $50<span>Standard shipping, flat rate</span></div>
+          <div class="lp-row-r">$5.95</div>
+        </div>
+      </div>
+      <p style="margin-top:24px;font-size:15px;color:var(--c-text-muted);">The exact rate you pay is always shown at checkout before you confirm — no surprise fees added afterwards.</p>
+    </div>
+  </section>
+
+  <!-- DETAIL CARDS -->
+  <section class="lp-ship-detail">
+    <div class="lp-container">
+      <div class="lp-section-head">
+        <span class="lp-eyebrow">The details</span>
+        <h2 class="lp-h2">What to <em>expect.</em></h2>
+      </div>
+      <div class="lp-ship-detail-grid">
+        <div class="lp-ship-detail-card">
+          <div class="lp-detail-icon">i</div>
+          <h3>Tracking</h3>
+          <p>You'll receive a tracking link by email once your order ships, and you can also find it in your account under Orders.</p>
+          <p>Tracking can take a day or two to start updating after dispatch — that's normal, and it doesn't mean anything is wrong.</p>
+        </div>
+        <div class="lp-ship-detail-card">
+          <div class="lp-detail-icon">ii</div>
+          <h3>Packaging</h3>
+          <p>Your order is packed to travel safely and arrive in good condition. We're a young brand — our packaging is practical and protective rather than elaborate, and we'd rather put the care into the products themselves.</p>
+        </div>
+        <div class="lp-ship-detail-card">
+          <div class="lp-detail-icon">iii</div>
+          <h3>Problems?</h3>
+          <p>Late, lost, or damaged on arrival? Email <a href="mailto:hello@lullpet.com">hello@lullpet.com</a> with your order number. We reply within 24 hours and will make it right — including replacing genuinely lost orders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="lp-ship-cta">
+    <div class="lp-container">
+      <span class="lp-eyebrow">Need help?</span>
+      <h2>Every email <em>gets a human.</em></h2>
+      <p>We answer within 24 hours — no chatbots, no scripts. Just a real reply from our team.</p>
+      <a href="mailto:hello@lullpet.com" class="lp-cta-btn">Email Us</a>
+      <a href="/pages/faq" class="lp-cta-btn lp-secondary">Read the FAQ</a>
+    </div>
+  </section>
+
+</div>
