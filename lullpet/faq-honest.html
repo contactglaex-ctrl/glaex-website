@@ -1,0 +1,387 @@
+<style>
+  /* ===========================================
+     LULLPET — FAQ · honest edition
+     Scoped to .lp-faq
+     =========================================== */
+
+  /* (1) Hide Shopify's auto-rendered page title */
+  .template-page .page__title,
+  .template-page .page-title,
+  .template-page .page__heading,
+  .page-template__title,
+  .main-page-title,
+  .section-page-title { display: none !important; }
+
+  /* (2) Neutralise page-content wrapper background */
+  #MainContent,
+  .main-content,
+  main#MainContent { background-color: #fafaf7 !important; }
+
+  /* Reset scoped strictly inside .lp-faq */
+  .lp-faq, .lp-faq * { box-sizing: border-box; }
+  .lp-faq > *, .lp-faq > * > * { margin: 0; padding: 0; }
+
+  .lp-faq {
+    --c-bg: #fafaf7;
+    --c-bg-pearl: #f3ece0;
+    --c-bg-white: #ffffff;
+    --c-bg-dark: #1a1a1a;
+    --c-text: #1a1a1a;
+    --c-text-soft: #3a3a3a;
+    --c-text-muted: #5a5a5a;
+    --c-sage: #87968a;
+    --c-taupe: #b08968;
+    --c-border: #ececea;
+    --c-border-soft: #e6dfd2;
+    --f-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    --f-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    --r: 2px;
+    --t: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .lp-faq {
+    font-family: var(--f-sans);
+    color: var(--c-text);
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    background: var(--c-bg);
+    padding: 0;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: -60px;
+    margin-bottom: 0;
+  }
+  .lp-faq h1, .lp-faq h2, .lp-faq h3, .lp-faq h4 {
+    font-family: var(--f-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .lp-faq p { margin: 0; font-size: 16px; color: var(--c-text-soft); line-height: 1.8; }
+  .lp-faq .lp-container { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+  .lp-faq .lp-narrow { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+  .lp-faq section { padding: 90px 0; position: relative; margin: 0; }
+  .lp-faq .lp-eyebrow {
+    font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 18px;
+    display: inline-block; font-weight: 600;
+  }
+  .lp-faq .lp-h2 { font-size: clamp(32px, 4vw, 48px); line-height: 1.14; color: var(--c-text); }
+  .lp-faq .lp-h2 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+
+  /* HERO */
+  .lp-faq-hero {
+    text-align: center;
+    padding: 140px 0 90px !important;
+    background: linear-gradient(180deg, var(--c-bg-white) 0%, var(--c-bg) 100%);
+  }
+  .lp-faq-hero .lp-hero-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 9px 20px; background: var(--c-bg-white);
+    border: 1px solid var(--c-border); border-radius: 100px;
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--c-sage); margin-bottom: 32px; font-weight: 700;
+  }
+  .lp-faq-hero .lp-hero-badge::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c-sage);
+  }
+  .lp-faq-hero h1 {
+    font-size: clamp(46px, 7vw, 88px); line-height: 1.02;
+    letter-spacing: -0.025em; margin: 0 0 30px; color: var(--c-text);
+  }
+  .lp-faq-hero h1 em { font-style: italic; color: var(--c-sage); font-weight: 500; }
+  .lp-faq-hero .lp-hero-sub {
+    font-size: 19px; max-width: 620px; margin: 0 auto;
+    color: var(--c-text-muted); font-weight: 300; line-height: 1.65;
+  }
+  .lp-faq-hero .lp-hero-divider {
+    width: 60px; height: 1px; background: var(--c-sage);
+    margin: 44px auto 0; opacity: 0.7;
+  }
+
+  /* CATEGORY JUMP CARDS */
+  .lp-faq-jump { background: var(--c-bg); padding-top: 0 !important; }
+  .lp-faq-jump-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+  }
+  .lp-faq-jump-card {
+    background: var(--c-bg-white); border: 1px solid var(--c-border);
+    border-radius: var(--r); padding: 30px 26px; text-decoration: none;
+    display: block; transition: border-color 0.4s var(--t), transform 0.4s var(--t);
+  }
+  .lp-faq-jump-card:hover { border-color: var(--c-sage); transform: translateY(-3px); }
+  .lp-faq-jump-card .lp-jump-icon {
+    font-family: var(--f-serif); font-style: italic;
+    font-size: 24px; color: var(--c-sage); margin-bottom: 12px;
+    display: block; line-height: 1;
+  }
+  .lp-faq-jump-card h3 {
+    font-size: 20px; color: var(--c-text); margin: 0 0 4px;
+  }
+  .lp-faq-jump-card p { font-size: 12px; color: var(--c-text-muted); margin: 0; }
+
+  /* FAQ SECTIONS */
+  .lp-faq-section { background: var(--c-bg); }
+  .lp-faq-section.alt { background: var(--c-bg-white); border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); }
+  .lp-faq-section .lp-section-head { text-align: center; margin-bottom: 50px; }
+  .lp-faq-list { max-width: 860px; margin: 0 auto; }
+  .lp-faq-item {
+    background: var(--c-bg-white); border: 1px solid var(--c-border);
+    border-radius: var(--r); margin-bottom: 14px;
+    transition: border-color 0.3s var(--t);
+  }
+  .lp-faq-section.alt .lp-faq-item { background: var(--c-bg); }
+  .lp-faq-item:hover { border-color: var(--c-sage); }
+  .lp-faq-item summary {
+    padding: 26px 64px 26px 32px; cursor: pointer;
+    font-family: var(--f-serif); font-size: 22px; color: var(--c-text);
+    list-style: none; position: relative; line-height: 1.3;
+  }
+  .lp-faq-item summary::-webkit-details-marker { display: none; }
+  .lp-faq-item summary::after {
+    content: "+"; position: absolute; right: 30px; top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--f-serif); font-size: 30px; color: var(--c-sage);
+    line-height: 0; transition: transform 0.3s var(--t);
+  }
+  .lp-faq-item[open] summary::after { content: "−"; }
+  .lp-faq-item-body { padding: 0 32px 28px; }
+  .lp-faq-item-body p { font-size: 15px; color: var(--c-text-soft); line-height: 1.85; margin-bottom: 12px; }
+  .lp-faq-item-body p:last-child { margin-bottom: 0; }
+  .lp-faq-item-body a { color: var(--c-sage); text-decoration: underline; }
+
+  /* CTA */
+  .lp-faq-cta {
+    background: var(--c-bg-dark); color: var(--c-bg);
+    text-align: center; padding: 110px 0 !important;
+  }
+  .lp-faq-cta .lp-eyebrow { color: var(--c-taupe); }
+  .lp-faq-cta h2 { color: var(--c-bg); font-size: clamp(34px, 4.5vw, 54px); margin: 0 0 20px; }
+  .lp-faq-cta h2 em { color: var(--c-taupe); font-style: italic; }
+  .lp-faq-cta p { color: rgba(250,250,247,0.72); font-size: 17px; max-width: 540px; margin: 0 auto 40px; }
+  .lp-faq a.lp-cta-btn {
+    display: inline-block !important;
+    padding: 18px 48px !important;
+    background-color: #fafaf7 !important;
+    background-image: none !important;
+    color: #1a1a1a !important;
+    text-decoration: none !important;
+    font-size: 12px !important;
+    letter-spacing: 0.28em !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    border: 1px solid #fafaf7 !important;
+    border-radius: 0 !important;
+    transition: all 0.3s var(--t) !important;
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    line-height: 1 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+  .lp-faq a.lp-cta-btn:hover {
+    background-color: transparent !important;
+    color: #fafaf7 !important;
+  }
+  .lp-faq a.lp-cta-btn.lp-secondary {
+    background-color: transparent !important;
+    color: #fafaf7 !important;
+    border-color: rgba(250,250,247,0.4) !important;
+    margin-left: 12px;
+  }
+  .lp-faq a.lp-cta-btn.lp-secondary:hover {
+    background-color: #fafaf7 !important;
+    color: #1a1a1a !important;
+    border-color: #fafaf7 !important;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 980px) {
+    .lp-faq .lp-container { padding: 0 24px; }
+    .lp-faq .lp-narrow { padding: 0 24px; }
+    .lp-faq section { padding: 60px 0; }
+    .lp-faq-hero { padding: 90px 0 60px !important; }
+    .lp-faq-jump-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .lp-faq-item summary { padding: 22px 50px 22px 24px; font-size: 19px; }
+    .lp-faq-item summary::after { right: 22px; }
+    .lp-faq-item-body { padding: 0 24px 24px; }
+    .lp-faq a.lp-cta-btn.lp-secondary { margin-left: 0; margin-top: 12px; }
+  }
+  @media (max-width: 540px) {
+    .lp-faq-jump-grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lp-faq *, .lp-faq *::before, .lp-faq *::after {
+      transition: none !important; animation: none !important;
+    }
+  }
+</style>
+
+<div class="lp-faq">
+
+  <!-- HERO -->
+  <section class="lp-faq-hero">
+    <div class="lp-container">
+      <span class="lp-hero-badge">Help Center</span>
+      <h1>Questions, <em>answered.</em></h1>
+      <p class="lp-hero-sub">Everything you might want to know — shipping, returns, products, and the small things that matter.</p>
+      <div class="lp-hero-divider"></div>
+    </div>
+  </section>
+
+  <!-- CATEGORY JUMP -->
+  <section class="lp-faq-jump">
+    <div class="lp-container">
+      <div class="lp-faq-jump-grid">
+        <a href="#shipping" class="lp-faq-jump-card">
+          <span class="lp-jump-icon">i</span>
+          <h3>Shipping</h3>
+          <p>Delivery times &amp; tracking</p>
+        </a>
+        <a href="#returns" class="lp-faq-jump-card">
+          <span class="lp-jump-icon">ii</span>
+          <h3>Returns</h3>
+          <p>The 30-day guarantee</p>
+        </a>
+        <a href="#products" class="lp-faq-jump-card">
+          <span class="lp-jump-icon">iii</span>
+          <h3>Products</h3>
+          <p>Use, safety &amp; results</p>
+        </a>
+        <a href="#brand" class="lp-faq-jump-card">
+          <span class="lp-jump-icon">iv</span>
+          <h3>About</h3>
+          <p>The brand &amp; mission</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHIPPING -->
+  <section class="lp-faq-section" id="shipping">
+    <div class="lp-container">
+      <div class="lp-section-head">
+        <span class="lp-eyebrow">i. Shipping &amp; delivery</span>
+        <h2 class="lp-h2">Getting to <em>your door.</em></h2>
+      </div>
+      <div class="lp-faq-list">
+        <details class="lp-faq-item">
+          <summary>How long does delivery take?</summary>
+          <div class="lp-faq-item-body"><p>Orders are fulfilled from within the United States and typically arrive in about 5–8 business days after they're processed. US shipping is free on orders over $50.</p></div>
+        </details>
+        <details class="lp-faq-item">
+          <summary>Do you ship internationally?</summary>
+          <div class="lp-faq-item-body"><p>For now, we ship only within the United States. If we expand beyond that, we'll announce it on the site.</p></div>
+        </details>
+        <details class="lp-faq-item">
+          <summary>How do I track my order?</summary>
+          <div class="lp-faq-item-body"><p>You'll receive a tracking link by email once your order ships. You can also find it in your account under Orders.</p></div>
+        </details>
+        <details class="lp-faq-item">
+          <summary>What if my order is late or missing?</summary>
+          <div class="lp-faq-item-body"><p>Email <a href="mailto:hello@lullpet.com">hello@lullpet.com</a> with your order number. We reply to every message within 24 hours, and we'll help track it down or sort out a replacement.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RETURNS -->
+  <section class="lp-faq-section alt" id="returns">
+    <div class="lp-container">
+      <div class="lp-section-head">
+        <span class="lp-eyebrow">ii. Returns &amp; refunds</span>
+        <h2 class="lp-h2">The 30-day <em>calm guarantee.</em></h2>
+      </div>
+      <div class="lp-faq-list">
+        <details class="lp-faq-item">
+          <summary>What's your return policy?</summary>
+          <div class="lp-faq-item-body"><p>You have thirty days from delivery to return an item for a full refund — no restocking fees. Items only need to be in reasonable condition; we understand pets test things. Email <a href="mailto:hello@lullpet.com">hello@lullpet.com</a> to start a return.</p></div>
+        </details>
+        <details class="lp-faq-item">
+          <summary>Do I pay for return shipping?</summary>
+          <div class="lp-faq-item-body"><p>If an item arrives defective or damaged, we cover the return shipping. For change-of-mind returns, the return shipping cost is the customer's.</p></div>
+        </details>
+        <details class="lp-faq-item">
+          <summary>When will I get my refund?</summary>
+          <div class="lp-faq-item-body"><p>We process refunds within 3 business days of receiving your return. Depending on your bank, the credit usually appears on your original payment method within 5–10 business days.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="lp-faq-section" id="products">
+    <div class="lp-container">
+      <div class="lp-section-head">
+        <span class="lp-eyebrow">iii. Products &amp; use</span>
+        <h2 class="lp-h2">Built for <em>real pets.</em></h2>
+      </div>
+      <div class="lp-faq-list">
+        <details class="lp-faq-item">
+          <summary>Will a calming product definitely work for my pet?</summary>
+          <div class="lp-faq-item-body"><p>We can't promise that — and we won't. Every pet is different. Calming products can genuinely help by making a space more comfortable and a routine more settled, but they're a support, not a cure.</p><p>If your pet has severe, sudden, or worsening anxiety, please speak to a veterinarian. A product is never a substitute for proper veterinary care.</p></div>
+        </details>
+        <details class="lp-faq-item">
+          <summary>How long until I see a difference?</summary>
+          <div class="lp-faq-item-body"><p>It varies. Some pets settle within days, others take longer, and some don't respond much at all. Give a new product a couple of weeks alongside a steady daily routine before deciding — and remember the 30-day guarantee is there if it isn't right.</p></div>
+        </details>
+        <details class="lp-faq-item">
+          <summary>Are your products safe for puppies and kittens?</summary>
+          <div class="lp-faq-item-body"><p>Please check the age guidance in each product's description, since it varies by item. If you're ever unsure whether something suits a young, senior, or unwell pet, ask your vet — we'd always rather you double-check than guess.</p></div>
+        </details>
+        <details class="lp-faq-item">
+          <summary>Are pheromone diffusers safe around children and other animals?</summary>
+          <div class="lp-faq-item-body"><p>Pheromones are species-specific and drug-free — for example, feline pheromones are only detected by cats, not by humans, dogs, or birds. As with any product, follow the instructions included with the item, and ask your vet if you have specific health concerns at home.</p></div>
+        </details>
+        <details class="lp-faq-item">
+          <summary>Can I wash the beds?</summary>
+          <div class="lp-faq-item-body"><p>Most of our beds are designed to be washable, but washing instructions differ by product. Always follow the care label and the guidance on that product's page.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="lp-faq-section alt" id="brand">
+    <div class="lp-container">
+      <div class="lp-section-head">
+        <span class="lp-eyebrow">iv. About Lullpet</span>
+        <h2 class="lp-h2">The brand <em>behind it.</em></h2>
+      </div>
+      <div class="lp-faq-list">
+        <details class="lp-faq-item">
+          <summary>Who is behind Lullpet?</summary>
+          <div class="lp-faq-item-body"><p>Lullpet is an online-only brand operated by a registered limited company. We're a small, founder-run business focused on one thing — calming essentials for cats and dogs. Every email is answered by a real person.</p></div>
+        </details>
+        <details class="lp-faq-item">
+          <summary>Is Lullpet a new brand?</summary>
+          <div class="lp-faq-item-body"><p>Yes — we're a young brand, and we'd rather say so than pretend otherwise. What we can promise from day one is honest information, a focused range, and the 30-day calm guarantee on everything we sell.</p></div>
+        </details>
+        <details class="lp-faq-item">
+          <summary>Where do you ship from?</summary>
+          <div class="lp-faq-item-body"><p>Orders for US customers are fulfilled from within the United States, which keeps delivery times reasonable — typically around 5–8 business days.</p></div>
+        </details>
+        <details class="lp-faq-item">
+          <summary>How does the 1% to shelters work?</summary>
+          <div class="lp-faq-item-body"><p>We pledge 1% of every order's revenue — not profit — to vetted animal shelters and rescues. It's a commitment built into how Lullpet is run. You can read more on our <a href="/pages/shelter-donation">1% pledge page</a>.</p></div>
+        </details>
+        <details class="lp-faq-item">
+          <summary>Can I send a Lullpet product as a gift?</summary>
+          <div class="lp-faq-item-body"><p>Yes — you can add a gift message at checkout, and it will be included with the order.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="lp-faq-cta">
+    <div class="lp-container">
+      <span class="lp-eyebrow">Still curious?</span>
+      <h2>We're real people. <em>We reply.</em></h2>
+      <p>Email us anytime — every message is answered by a human, usually within 24 hours.</p>
+      <a href="mailto:hello@lullpet.com" class="lp-cta-btn">Email Us</a>
+      <a href="/pages/contact" class="lp-cta-btn lp-secondary">Contact Page</a>
+    </div>
+  </section>
+
+</div>
