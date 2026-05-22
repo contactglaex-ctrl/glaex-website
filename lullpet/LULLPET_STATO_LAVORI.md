@@ -41,23 +41,23 @@ Pet Care Guide, Affiliate Program — fix "12 ore"→"24 ore", "vet-reviewed/vet
   contactPoint). Niente foundingDate / dipendenti / indirizzo inventato.
 - Care Instructions → schema `HowTo` già onesto, mantenuto.
 
+### 8 articoli blog corretti via API (22-05-2026)
+Tutti e 8 gli articoli del blog "Pet Care Guide": autore "Dr. Elena Russo, DVM"
+→ "The Lullpet Team"; badge "Vet-reviewed" → "Researched with care"; callout
+"Vet-reviewed" → "Health note"; rimossi i claim veterinari nei prodotti; titolo
+8° articolo "...15 Vet-Backed Ways" → "...15 Practical Ways".
+
 ### File locali
 File `*-honest.html` (versioni oneste) + file `*-v13.html` corretti, su git nel branch sopra.
 
 ## DA FARE
 
-1. **Articoli blog live (8) — PRIORITARIO.** Sulla live hanno ancora:
-   - autore falso "Dr. Elena Russo, DVM" su tutti e 8 → mettere "The Lullpet Team";
-   - nei body: badge "Vet-reviewed" + callout → versione onesta;
-   - 8° articolo "How to Get Your Cat to Drink More Water: 15 Vet-Backed Ways" — il
-     titolo stesso ("Vet-Backed") è un claim fabbricato, da cambiare.
-   I 7 file blog locali (`blog-1..7`) sono già corretti ma NON applicati alla live.
-2. **Pagina legale "Contact information"** — inserire indirizzo registrato UK reale +
+1. **Pagina legale "Contact information"** — inserire indirizzo registrato UK reale +
    numero Companies House (l'utente li manderà appena pronti).
-3. **Reviews page** — consigliato metterla offline / toglierla dal footer: contiene
+2. **Reviews page** — consigliato metterla offline / toglierla dal footer: contiene
    "4.247 verified reviews" finte; ripubblicarla con un'app reviews quando ci saranno
    recensioni vere.
-4. **Affiliate page** — pubblicarla solo se si attiva davvero un'app affiliate
+3. **Affiliate page** — pubblicarla solo se si attiva davvero un'app affiliate
    (tracking link, payout); altrimenti tenerla offline.
-5. **Organization schema** — aggiungere `logo` (URL del logo) e confermare che il nome
+4. **Organization schema** — aggiungere `logo` (URL del logo) e confermare che il nome
    legale esatto sia "Lullpet LTD" (come da Companies House).
